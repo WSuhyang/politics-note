@@ -1,0 +1,7 @@
+# 임시 검증 파일
+_check.js
+_*.txt
+_*.html
+_*.json
+# node
+node_modules/
