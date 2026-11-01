@@ -1,0 +1,619 @@
+{
+  "$comment": "인물 관계 엣지. type: family|lineage|faction|school|rival. strength 1~3. since: 관계 성립 연도(대략, 프로토타입 수준 — null이면 전 기간 표시). 수집일: 2026-10-25, 출처: 위키백과·언론 관용표현",
+  "edges": [
+    {
+      "source": "박정희",
+      "target": "박근혜",
+      "relation": "부녀",
+      "type": "family",
+      "strength": 3,
+      "since": null,
+      "detail": "박정희와 육영수 사이의 장녀. 1974년 육영수 피격 후 퍼스트레이디 역할을 맡으며 정치에 입문"
+    },
+    {
+      "source": "박정희",
+      "target": "김종필",
+      "relation": "5·16 동지 → later 결별",
+      "type": "faction",
+      "strength": 2,
+      "since": 1961
+    },
+    {
+      "source": "전두환",
+      "target": "노태우",
+      "relation": "육사 동기(신군부)",
+      "type": "school",
+      "strength": 3,
+      "since": null,
+      "detail": "육군사관학교 11기 동기 — 12·12 군사반란을 공동 주도한 신군부 핵심"
+    },
+    {
+      "source": "노태우",
+      "target": "김영삼",
+      "relation": "3당 합당(1990)",
+      "type": "faction",
+      "strength": 3,
+      "since": 1990
+    },
+    {
+      "source": "노태우",
+      "target": "김종필",
+      "relation": "3당 합당(1990)",
+      "type": "faction",
+      "strength": 3,
+      "since": 1990
+    },
+    {
+      "source": "김영삼",
+      "target": "김대중",
+      "relation": "양김 라이벌(1970s~90s)",
+      "type": "rival",
+      "strength": 2,
+      "since": 1971
+    },
+    {
+      "source": "김대중",
+      "target": "김종필",
+      "relation": "DJP 연합(1997)",
+      "type": "faction",
+      "strength": 2,
+      "since": 1997
+    },
+    {
+      "source": "김대중",
+      "target": "이낙연",
+      "relation": "DJ 계보",
+      "type": "lineage",
+      "strength": 2,
+      "since": 2000
+    },
+    {
+      "source": "김대중",
+      "target": "박지원",
+      "relation": "DJ 최측근",
+      "type": "lineage",
+      "strength": 3,
+      "since": null
+    },
+    {
+      "source": "김영삼",
+      "target": "홍준표",
+      "relation": "YS 키즈",
+      "type": "lineage",
+      "strength": 2,
+      "since": 1996
+    },
+    {
+      "source": "김영삼",
+      "target": "김기현",
+      "relation": "YS 키즈",
+      "type": "lineage",
+      "strength": 2,
+      "since": 1996
+    },
+    {
+      "source": "김대중",
+      "target": "노무현",
+      "relation": "2002 경선 승리 → 정권 교체",
+      "type": "lineage",
+      "strength": 1,
+      "since": 2002
+    },
+    {
+      "source": "노무현",
+      "target": "문재인",
+      "relation": "법률사무소 동료→참여정부",
+      "type": "lineage",
+      "strength": 3,
+      "since": 1982,
+      "detail": "1982년 부산 합동법률사무소에서 인권 변론을 함께 시작. 노무현 사후 문재인이 정치 유산을 계승"
+    },
+    {
+      "source": "노무현",
+      "target": "이재명",
+      "relation": "참여정부 계보(느슨)",
+      "type": "lineage",
+      "strength": 1,
+      "since": null
+    },
+    {
+      "source": "문재인",
+      "target": "정세균",
+      "relation": "국무총리 임명",
+      "type": "faction",
+      "strength": 2,
+      "since": 2020
+    },
+    {
+      "source": "문재인",
+      "target": "조국",
+      "relation": "청와대 비서실장·법무부",
+      "type": "faction",
+      "strength": 2,
+      "since": 2017
+    },
+    {
+      "source": "이명박",
+      "target": "박근혜",
+      "relation": "한나라당 내 경선 라이벌(MB vs PK)",
+      "type": "rival",
+      "strength": 2,
+      "since": 2007
+    },
+    {
+      "source": "박근혜",
+      "target": "이준석",
+      "relation": "박근혜 키즈",
+      "type": "lineage",
+      "strength": 2,
+      "since": 2014
+    },
+    {
+      "source": "박근혜",
+      "target": "나경원",
+      "relation": "친박 계열",
+      "type": "faction",
+      "strength": 2,
+      "since": 1998
+    },
+    {
+      "source": "이재명",
+      "target": "박범계",
+      "relation": "친명 캠프",
+      "type": "faction",
+      "strength": 2,
+      "since": 2021
+    },
+    {
+      "source": "이재명",
+      "target": "이상민",
+      "relation": "친명 캠프",
+      "type": "faction",
+      "strength": 2,
+      "since": 2022
+    },
+    {
+      "source": "이재명",
+      "target": "김한길",
+      "relation": "중앙대 동문",
+      "type": "school",
+      "strength": 1,
+      "since": null,
+      "detail": "이재명(중앙대 법학과)과 김한길(중앙대 신문방송학과)은 동문 — 친명 진영의 원로·중진 역할"
+    },
+    {
+      "source": "윤석열",
+      "target": "한동훈",
+      "relation": "검찰 동료(서울중앙지검)",
+      "type": "school",
+      "strength": 3,
+      "since": 2019,
+      "detail": "2019년 윤석열 검찰총장 시절 서울중앙지검장·법무부 차관을 지낸 한동훈은 윤석열 정부 출범 후 법무부장관"
+    },
+    {
+      "source": "윤석열",
+      "target": "김문수",
+      "relation": "21대 대선 후보·단일화",
+      "type": "faction",
+      "strength": 1,
+      "since": 2025
+    },
+    {
+      "source": "윤석열",
+      "target": "문재인",
+      "relation": "검찰총장 임명 → 수사 대립",
+      "type": "rival",
+      "strength": 2,
+      "since": 2019
+    },
+    {
+      "source": "윤석열",
+      "target": "이재명",
+      "relation": "20·21대 대선·수사 라이벌",
+      "type": "rival",
+      "strength": 2,
+      "since": 2021
+    },
+    {
+      "source": "이재명",
+      "target": "안철수",
+      "relation": "2022 대선 후 단일화",
+      "type": "faction",
+      "strength": 1,
+      "since": 2022
+    },
+    {
+      "source": "한덕수",
+      "target": "윤석열",
+      "relation": "국무총리 → 권한대행",
+      "type": "faction",
+      "strength": 2,
+      "since": 2022
+    },
+    {
+      "source": "윤보선",
+      "target": "장면",
+      "relation": "내각책임제 총리(제2공화국)",
+      "type": "faction",
+      "strength": 3,
+      "since": 1960,
+      "detail": "제2공화국은 내각책임제 — 대통령(윤보선)은 상징적 국가원수, 실권은 국무총리(장면)에게"
+    },
+    {
+      "source": "이승만",
+      "target": "허정",
+      "relation": "사임 후 권한대행 승계",
+      "type": "faction",
+      "strength": 2,
+      "since": 1960,
+      "detail": "4·19로 이승만이 사임하자 외무부장관 허정이 권한대행으로 국정을 이끌며 제2공화국으로 이행"
+    },
+    {
+      "source": "박근혜",
+      "target": "황교안",
+      "relation": "국무총리 → 권한대행",
+      "type": "faction",
+      "strength": 2,
+      "since": 2016
+    },
+    {
+      "source": "이명박",
+      "target": "오세훈",
+      "relation": "한나라당 서울시장",
+      "type": "faction",
+      "strength": 2,
+      "since": 2006
+    },
+    {
+      "source": "김영삼",
+      "target": "주호영",
+      "relation": "상도동 TK 계열",
+      "type": "lineage",
+      "strength": 2,
+      "since": 1996
+    },
+    {
+      "source": "문재인",
+      "target": "추미애",
+      "relation": "법무부장관 임명",
+      "type": "faction",
+      "strength": 2,
+      "since": 2019
+    },
+    {
+      "source": "문재인",
+      "target": "김부겸",
+      "relation": "국무총리 임명",
+      "type": "faction",
+      "strength": 2,
+      "since": 2021
+    },
+    {
+      "source": "이재명",
+      "target": "송영길",
+      "relation": "민주당 대표 체계(전임)",
+      "type": "faction",
+      "strength": 1,
+      "since": 2022
+    },
+    {
+      "source": "이재명",
+      "target": "우원식",
+      "relation": "여당 국회의장",
+      "type": "faction",
+      "strength": 2,
+      "since": 2024
+    },
+    {
+      "source": "유승민",
+      "target": "박근혜",
+      "relation": "경선·비박 갈등",
+      "type": "rival",
+      "strength": 2,
+      "since": 2012
+    },
+    {
+      "source": "김구",
+      "target": "이승만",
+      "relation": "단독정부 수립 대립",
+      "type": "rival",
+      "strength": 3,
+      "since": 1948,
+      "detail": "김구는 남북협상을 주장하며 단독정부에 반대 — 건국 노선의 대립. 1949년 안두희에게 피살"
+    },
+    {
+      "source": "신익희",
+      "target": "조병옥",
+      "relation": "민주당 공동 창당",
+      "type": "faction",
+      "strength": 2,
+      "since": 1955
+    },
+    {
+      "source": "신익희",
+      "target": "이승만",
+      "relation": "1956 대선 도전(사망으로 무산)",
+      "type": "rival",
+      "strength": 2,
+      "since": 1955
+    },
+    {
+      "source": "유진산",
+      "target": "김영삼",
+      "relation": "신민당 동료(YS의 정치적 스승)",
+      "type": "lineage",
+      "strength": 2,
+      "since": 1969,
+      "detail": "신민당 총재 유진산은 야당 신진 세력의 구심점 — 김영삼·김대중이 그 직계에서 성장"
+    },
+    {
+      "source": "장택상",
+      "target": "이승만",
+      "relation": "외무장관·내무장관 역임",
+      "type": "faction",
+      "strength": 1,
+      "since": 1948
+    },
+    {
+      "source": "이후락",
+      "target": "박정희",
+      "relation": "중앙정보부장(핵심 측근)",
+      "type": "faction",
+      "strength": 3,
+      "since": 1963
+    },
+    {
+      "source": "차지철",
+      "target": "박정희",
+      "relation": "비서실장(권력 2인자)",
+      "type": "faction",
+      "strength": 3,
+      "since": 1974,
+      "detail": "박정희의 최측근 비서실장. 1979년 10·26 당시 김재규의 총에 함께 피살"
+    },
+    {
+      "source": "김재규",
+      "target": "박정희",
+      "relation": "10·26 — 측근의 암살",
+      "type": "rival",
+      "strength": 3,
+      "since": 1979,
+      "detail": "중앙정보부장 김재규가 1979.10.26 궁정동에서 박정희를 사살 — 유신 독재의 극적 종말"
+    },
+    {
+      "source": "박태준",
+      "target": "박정희",
+      "relation": "포항제철 설립(경제개발 파트너)",
+      "type": "faction",
+      "strength": 2,
+      "since": 1968
+    },
+    {
+      "source": "이수성",
+      "target": "김영삼",
+      "relation": "국무총리 임명",
+      "type": "faction",
+      "strength": 2,
+      "since": 1995
+    },
+    {
+      "source": "이회창",
+      "target": "김영삼",
+      "relation": "여권 차기 주자 → 97 대선후보",
+      "type": "lineage",
+      "strength": 2,
+      "since": 1996,
+      "detail": "YS는 이회창을 차기 후보로 지원했으나 1997년 DJ에게 패배 — 보수의 10년 야당 시대 시작"
+    },
+    {
+      "source": "이회창",
+      "target": "이명박",
+      "relation": "2007 한나라당 경선 라이벌",
+      "type": "rival",
+      "strength": 2,
+      "since": 2007
+    },
+    {
+      "source": "정몽준",
+      "target": "박원순",
+      "relation": "2011 서울시장 보궐 라이벌",
+      "type": "rival",
+      "strength": 2,
+      "since": 2011,
+      "detail": "야권 단일화로 박원순이 후보로 나서 안철수의 지지를 등에 업고 당선 — 정몽준 낙선"
+    },
+    {
+      "source": "김무성",
+      "target": "박근혜",
+      "relation": "친박 → 2015 갈등(비박 전환)",
+      "type": "faction",
+      "strength": 2,
+      "since": 2012
+    },
+    {
+      "source": "박희태",
+      "target": "이명박",
+      "relation": "MB 정부 국회의장·핵심",
+      "type": "faction",
+      "strength": 2,
+      "since": 2008
+    },
+    {
+      "source": "이해찬",
+      "target": "노무현",
+      "relation": "교육부장관·청와대 비서실장",
+      "type": "faction",
+      "strength": 2,
+      "since": 2003
+    },
+    {
+      "source": "정동영",
+      "target": "노무현",
+      "relation": "통일부장관(15대 당 대표)",
+      "type": "faction",
+      "strength": 2,
+      "since": 2004
+    },
+    {
+      "source": "천정배",
+      "target": "노무현",
+      "relation": "법무부장관·원내대표",
+      "type": "faction",
+      "strength": 2,
+      "since": 2003
+    },
+    {
+      "source": "김근태",
+      "target": "노무현",
+      "relation": "보건복지부장관·당 대표",
+      "type": "faction",
+      "strength": 2,
+      "since": 2004
+    },
+    {
+      "source": "박원순",
+      "target": "문재인",
+      "relation": "민주당 계열 서울시장(참여연대 동료)",
+      "type": "faction",
+      "strength": 2,
+      "since": 2011,
+      "detail": "박원순과 문재인은 참여연대 시절부터 인권 변호사 네트워크로 연결"
+    },
+    {
+      "source": "한명숙",
+      "target": "노무현",
+      "relation": "국무총리 임명",
+      "type": "faction",
+      "strength": 2,
+      "since": 2006
+    },
+    {
+      "source": "강금실",
+      "target": "노무현",
+      "relation": "첫 여성 법무부장관",
+      "type": "faction",
+      "strength": 2,
+      "since": 2003
+    },
+    {
+      "source": "심상정",
+      "target": "문재인",
+      "relation": "2017 대선 3자 구도",
+      "type": "rival",
+      "strength": 1,
+      "since": 2017
+    },
+    {
+      "source": "노회찬",
+      "target": "노무현",
+      "relation": "진보 진영 동맹(2002 지지선언)",
+      "type": "faction",
+      "strength": 1,
+      "since": 2002
+    },
+    {
+      "source": "원희룡",
+      "target": "박근혜",
+      "relation": "국토교통부장관",
+      "type": "faction",
+      "strength": 2,
+      "since": 2013
+    },
+    {
+      "source": "남경필",
+      "target": "이명박",
+      "relation": "한나라당 경기지사",
+      "type": "faction",
+      "strength": 2,
+      "since": 2010
+    },
+    {
+      "source": "최문순",
+      "target": "노무현",
+      "relation": "참여정부 청와대 대변인",
+      "type": "faction",
+      "strength": 1,
+      "since": 2003
+    },
+    {
+      "source": "김동연",
+      "target": "문재인",
+      "relation": "기획재정부장관",
+      "type": "faction",
+      "strength": 2,
+      "since": 2017
+    },
+    {
+      "source": "박광온",
+      "target": "이재명",
+      "relation": "민주당 원내대표(친명 협치)",
+      "type": "faction",
+      "strength": 2,
+      "since": 2024
+    },
+    {
+      "source": "정청래",
+      "target": "이재명",
+      "relation": "친명계 핵심",
+      "type": "faction",
+      "strength": 2,
+      "since": 2022
+    },
+    {
+      "source": "김민석",
+      "target": "이재명",
+      "relation": "민주당 대표(친명)",
+      "type": "faction",
+      "strength": 2,
+      "since": 2025
+    },
+    {
+      "source": "박찬대",
+      "target": "이재명",
+      "relation": "민주당 원내대표",
+      "type": "faction",
+      "strength": 2,
+      "since": 2025
+    },
+    {
+      "source": "권성동",
+      "target": "윤석열",
+      "relation": "국힘 원내대표·비대위 대변인(친윤)",
+      "type": "faction",
+      "strength": 2,
+      "since": 2022
+    },
+    {
+      "source": "하태경",
+      "target": "한동훈",
+      "relation": "친한(비윤) 동맹",
+      "type": "faction",
+      "strength": 1,
+      "since": 2024
+    },
+    {
+      "source": "박지현",
+      "target": "이재명",
+      "relation": "비명계 젊은 의원",
+      "type": "rival",
+      "strength": 1,
+      "since": 2022
+    },
+    {
+      "source": "박영선",
+      "target": "문재인",
+      "relation": "중소벤처기업부장관",
+      "type": "faction",
+      "strength": 2,
+      "since": 2019
+    },
+    {
+      "source": "이인영",
+      "target": "문재인",
+      "relation": "통일부장관·당 대표",
+      "type": "faction",
+      "strength": 2,
+      "since": 2017
+    }
+  ]
+}

@@ -1,0 +1,759 @@
+{
+  "$comment": "인물 노드. id=이름(유일키). camp: dem|con|mid. 수집일: 2026-10-06, 출처: 위키백과",
+  "nodes": [
+    {
+      "id": "이승만",
+      "camp": "con",
+      "born": 1875,
+      "died": 1965,
+      "president": "1~3대(1948~60)",
+      "party": "자유당",
+      "event": "4.19로 사임",
+      "edu": "프린스턴대 박사",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/4/46/Rhee_Syng-Man_in_1948.jpg",
+      "role": "대통령"
+    },
+    {
+      "id": "윤보선",
+      "camp": "dem",
+      "born": 1897,
+      "died": 1990,
+      "president": "4대(1960~62)",
+      "party": "무소속(장면 내각)",
+      "event": "5.16으로 사임",
+      "edu": "에딘버러대",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/9/94/%EC%9C%A4%EB%B3%B4%EC%84%A0_%EB%8C%80%ED%86%B5%EB%A0%B9_%EC%A1%B4%EC%98%812.jpg",
+      "role": "대통령"
+    },
+    {
+      "id": "박정희",
+      "camp": "con",
+      "born": 1917,
+      "died": 1979,
+      "president": "5~9대(1963~79)",
+      "party": "민주공화당",
+      "event": "10.26 암살",
+      "edu": "육군사관학교",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Park_Chung_Hee_%28%EB%B0%95%EC%A0%95%ED%9D%AC%29_Presidential_Portrait.jpg",
+      "role": "대통령"
+    },
+    {
+      "id": "최규하",
+      "camp": "con",
+      "born": 1919,
+      "died": 2006,
+      "president": "10대(1979~80)",
+      "party": "무소속",
+      "event": "8월 사임",
+      "edu": "서울대·메이지대",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Presidents_of_the_Republic_Of_Korea_%284261836786%29_Choi.jpg",
+      "role": "대통령"
+    },
+    {
+      "id": "전두환",
+      "camp": "con",
+      "born": 1931,
+      "died": 2021,
+      "president": "11~12대(1980~88)",
+      "party": "민주정의당",
+      "event": "",
+      "edu": "육군사관학교(11기)",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/2/26/Chun_Doo-hwan_%28%EC%A0%84%EB%91%90%ED%99%98%29_Presidential_Portrait.jpg",
+      "role": "대통령"
+    },
+    {
+      "id": "노태우",
+      "camp": "con",
+      "born": 1932,
+      "died": 2021,
+      "president": "13대(1988~93)",
+      "party": "민주정의당→민주자유당",
+      "event": "",
+      "edu": "경복고·육사",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Roh_Tae-woo_%28%EB%85%B8%ED%83%9C%EC%9A%B0_%29_Presidential_Potraits.jpg",
+      "role": "대통령"
+    },
+    {
+      "id": "김영삼",
+      "camp": "con",
+      "born": 1927,
+      "died": 2015,
+      "president": "14대(1993~98)",
+      "party": "민주자유당→신한국당",
+      "event": "문민정부",
+      "edu": "서울대 철학 · 상도동 계보",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Kim_Young-sam_presidential_portrait.jpg/500px-Kim_Young-sam_presidential_portrait.jpg",
+      "role": "대통령"
+    },
+    {
+      "id": "김대중",
+      "camp": "dem",
+      "born": 1924,
+      "died": 2009,
+      "president": "15대(1998~2003)",
+      "party": "새정치국민회의→새천년민주당",
+      "event": "국민의 정부",
+      "edu": "고려대 명예 · DJ 계보(호남)",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Kim_Dae-jung_presidential_portrait.jpg/500px-Kim_Dae-jung_presidential_portrait.jpg",
+      "role": "대통령"
+    },
+    {
+      "id": "노무현",
+      "camp": "dem",
+      "born": 1946,
+      "died": 2009,
+      "president": "16대(2003~08)",
+      "party": "새천년민주당→열린우리당",
+      "event": "탄핵소추→기각",
+      "edu": "사법고시(독학) · 부산 인권변론",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/3/30/Roh_Moo-hyun_presidential_portrait.jpg",
+      "role": "대통령"
+    },
+    {
+      "id": "이명박",
+      "camp": "con",
+      "born": 1941,
+      "president": "17대(2008~13)",
+      "party": "한나라당→새누리당",
+      "event": "",
+      "edu": "고려대 · 현대그룹 출신",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/0/04/Lee_Myung-bak_presidential_portrait.jpg",
+      "role": "대통령"
+    },
+    {
+      "id": "박근혜",
+      "camp": "con",
+      "born": 1952,
+      "president": "18대(2013~17)",
+      "party": "새누리당",
+      "event": "탄핵(2017.3)",
+      "edu": "서강대 · 박정희 딸",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/5/52/Park_Geun-hye_presidential_portrait.png",
+      "role": "대통령"
+    },
+    {
+      "id": "문재인",
+      "camp": "dem",
+      "born": 1953,
+      "president": "19대(2017~22)",
+      "party": "더불어민주당",
+      "event": "",
+      "edu": "경희대 법학 · 사법연수원 23기",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/0/0d/President_Moon_Jae_In.jpg",
+      "role": "대통령"
+    },
+    {
+      "id": "윤석열",
+      "camp": "con",
+      "born": 1960,
+      "president": "20대(2022~25)",
+      "party": "국민의힘",
+      "event": "탄핵 파면(2025.4)",
+      "edu": "서울대 법학 · 사법연수원 33기",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/b/bf/South_Korea_President_Yoon_Suk_Yeol_portrait_%28crop%29.jpg",
+      "role": "대통령"
+    },
+    {
+      "id": "이재명",
+      "camp": "dem",
+      "born": 1963,
+      "president": "21대(2025~현임)",
+      "party": "더불어민주당",
+      "event": "",
+      "edu": "중앙대 법학 · 사법연수원 29기",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/5/59/President_Lee_Jae_Myung_20260306.jpg",
+      "role": "대통령"
+    },
+    {
+      "id": "김종필",
+      "camp": "con",
+      "born": 1926,
+      "died": 2018,
+      "party": "자유민주연합",
+      "edu": "육사 8기 · JP",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Kim_Jong-pil.png",
+      "role": "총리·장관"
+    },
+    {
+      "id": "홍준표",
+      "camp": "con",
+      "born": 1953,
+      "party": "자유의새벽당",
+      "edu": "서울대 법학 · 사법연수원 13기 · YS키즈",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Hong_Joon-pyo_at_April_26_2025_Debate.png",
+      "role": "지방단체장"
+    },
+    {
+      "id": "김기현",
+      "camp": "con",
+      "born": 1962,
+      "party": "국민의힘",
+      "edu": "성균관대 · YS키즈",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Kim_Gi-hyeon_2014-07-01.jpg",
+      "role": "국회의원"
+    },
+    {
+      "id": "이준석",
+      "camp": "mid",
+      "born": 1985,
+      "party": "개혁신당(대표)",
+      "edu": "하버드대 · 박근혜키즈",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Lee_Jun-seok%27s_Portait_%282024.11%29.jpg",
+      "role": "국회의원"
+    },
+    {
+      "id": "나경원",
+      "camp": "con",
+      "born": 1965,
+      "party": "국민의힘",
+      "edu": "서울대 법학 · 친박",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/1/19/%EB%82%98%EA%B2%BD%EC%9B%90_%EC%A0%84_%EC%9B%90%EB%82%B4%EB%8C%80%ED%91%9C_%EC%8B%A0%EB%85%84%EC%82%AC.png",
+      "role": "국회의원"
+    },
+    {
+      "id": "한동훈",
+      "camp": "con",
+      "born": 1972,
+      "party": "국민의힘",
+      "edu": "서울대·하버드 · 사법연수원 41기",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Han_dong_hoon_2026.png",
+      "role": "총리·장관"
+    },
+    {
+      "id": "김문수",
+      "camp": "con",
+      "born": 1951,
+      "party": "국민의힘",
+      "edu": "고려대 · 21대 대선 후보",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/2/24/Kim_Moon-soo_%28cropped%29.jpg",
+      "role": "지방단체장"
+    },
+    {
+      "id": "한덕수",
+      "camp": "mid",
+      "born": 1949,
+      "party": "무소속",
+      "edu": "서울대·하버드 · 국무총리·권한대행",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Prime_Minister_of_South_Korea_HAN_Duck-soo_20240516.jpg",
+      "role": "총리·장관"
+    },
+    {
+      "id": "이낙연",
+      "camp": "dem",
+      "born": 1952,
+      "party": "더불어민주당",
+      "edu": "서울대 신문학 · JP계보→민주당",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/0/08/South_Korean_Prime_Minister_Lee_-_2017_%2836235112603%29_%28cropped%29.jpg",
+      "role": "총리·장관"
+    },
+    {
+      "id": "박지원",
+      "camp": "dem",
+      "born": 1942,
+      "party": "더불어민주당",
+      "edu": "고려대 정외 · DJ 최측근",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Park_Ji-won_in_2017.png",
+      "role": "국회의원"
+    },
+    {
+      "id": "정세균",
+      "camp": "dem",
+      "born": 1950,
+      "party": "더불어민주당",
+      "edu": "고려대 정외 · 문재인 정부 총리",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Chung_Sye-kyun_20161027.jpg",
+      "role": "총리·장관"
+    },
+    {
+      "id": "김한길",
+      "camp": "dem",
+      "born": 1956,
+      "party": "더불어민주당",
+      "edu": "중앙대 신방 · 이재명과 동문",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/2/2d/%EA%B9%80%ED%95%9C%EA%B8%B8_%EA%B5%AD%EB%AF%BC%ED%86%B5%ED%95%A9%EC%9C%84%EC%9B%90%EC%9E%A5.jpg",
+      "role": "국회의원"
+    },
+    {
+      "id": "박범계",
+      "camp": "dem",
+      "born": 1968,
+      "party": "더불어민주당",
+      "edu": "서울대 법학 · 친명",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/5/58/Park_Beom-gye_ministerial_portrait.png",
+      "role": "총리·장관"
+    },
+    {
+      "id": "안철수",
+      "camp": "mid",
+      "born": 1962,
+      "party": "무소속",
+      "edu": "서울대 의대 · 3대 중도 후보",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Ahn_Cheol-Soo%27s_Portrait_%282025%29.png",
+      "role": "국회의원"
+    },
+    {
+      "id": "조국",
+      "camp": "dem",
+      "born": 1965,
+      "party": "조국혁신당(대표)",
+      "edu": "서울대·버클리 · 문재인 정부 청와대",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Cho_Kuk%27s_Portrait_%282024.3%29.png",
+      "role": "총리·장관"
+    },
+    {
+      "id": "이상민",
+      "camp": "dem",
+      "born": 1964,
+      "party": "더불어민주당",
+      "edu": "한양대 · 친명",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Lee_Sang-min%2C_20220519_%28Cropped%29.jpg",
+      "role": "총리·장관"
+    },
+    {
+      "id": "허정",
+      "camp": "mid",
+      "born": 1896,
+      "died": 1988,
+      "party": "무소속(권한대행)",
+      "event": "4·19 후 대행",
+      "edu": "프린스턴대 · 외무부장관",
+      "president": "권한대행(1960)",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Heo_Jeong.png",
+      "role": "총리·장관"
+    },
+    {
+      "id": "장면",
+      "camp": "dem",
+      "born": 1899,
+      "died": 1980,
+      "party": "제2공화국 내각",
+      "event": "내각책임제 총리",
+      "edu": "연희전문 · 국무총리",
+      "president": "4대 내각(1960~62)",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Chang_Myon_1955.jpg",
+      "role": "총리·장관"
+    },
+    {
+      "id": "우원식",
+      "camp": "dem",
+      "born": 1963,
+      "party": "더불어민주당(국회의장)",
+      "edu": "연세대 · 국회의장(2024~)",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Woo_Won-shik_20250203.jpg",
+      "role": "국회의원"
+    },
+    {
+      "id": "추미애",
+      "camp": "dem",
+      "born": 1958,
+      "party": "더불어민주당",
+      "edu": "부산대 · 법무부장관(2020~21)",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Choo_Mi-ae%27s_Portrait_%282026.5%29.png",
+      "role": "총리·장관"
+    },
+    {
+      "id": "김부겸",
+      "camp": "dem",
+      "born": 1958,
+      "party": "더불어민주당",
+      "edu": "서울대 · 국무총리(2021~22)",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Kim_Boo-kyum_-_20170119_k.jpg",
+      "role": "총리·장관"
+    },
+    {
+      "id": "송영길",
+      "camp": "dem",
+      "born": 1963,
+      "party": "더불어민주당",
+      "edu": "광운대 · 인천시장·당대표(역)",
+      "role": "지방단체장",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Song_Young-gil.jpg"
+    },
+    {
+      "id": "황교안",
+      "camp": "con",
+      "born": 1957,
+      "party": "자유와혁신(대표)",
+      "edu": "서울대 · 국무총리·권한대행(2016~17)",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Prime_Minister_Banquet_for_Palestinian_President_02_-_24825453290_%28cropped%29.jpg",
+      "role": "총리·장관"
+    },
+    {
+      "id": "유승민",
+      "camp": "con",
+      "born": 1958,
+      "party": "국민의힘",
+      "edu": "서울대 · 국회의원·중기청장",
+      "role": "국회의원",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/7/77/Yoo_Seong-min_in_Gangneung_%28Cropped%29.jpg"
+    },
+    {
+      "id": "오세훈",
+      "camp": "con",
+      "born": 1961,
+      "party": "국민의힘",
+      "edu": "고려대 · 서울시장(역)·변호사",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Oh_Se-hoon_%282023%29.jpg",
+      "role": "지방단체장"
+    },
+    {
+      "id": "주호영",
+      "camp": "con",
+      "born": 1957,
+      "party": "국민의힘",
+      "edu": "연세대 · TK·상도동계",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/3/38/Joo_Ho-young%27s_Portrait_%282024%29.jpg",
+      "role": "국회의원"
+    },
+    {
+      "id": "김구",
+      "camp": "mid",
+      "born": 1876,
+      "died": 1949,
+      "role": "독립·건국",
+      "party": "한국독립당",
+      "event": "암살(1949)",
+      "edu": "배재학당 · 임시정부 주석",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/d/db/Kim_Gu_in_1949.jpg"
+    },
+    {
+      "id": "신익희",
+      "camp": "dem",
+      "born": 1893,
+      "died": 1955,
+      "role": "독립·건국",
+      "party": "민국당→민주당",
+      "edu": "일본 메이지대 · 민주당 초대 총재",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Haegong_Shin_Ik-hee_in_1952.jpg"
+    },
+    {
+      "id": "조병옥",
+      "camp": "dem",
+      "born": 1894,
+      "died": 1960,
+      "role": "독립·건국",
+      "party": "민주당",
+      "edu": "연희전문 · 민주당 최고위원",
+      "photo": "https://upload.wikimedia.org/wikipedia/ko/f/ff/%EC%9C%A0%EC%84%9D_%EC%A1%B0%EB%B3%91%EC%98%A5.JPG"
+    },
+    {
+      "id": "장택상",
+      "camp": "con",
+      "born": 1893,
+      "died": 1969,
+      "role": "총리·장관",
+      "party": "자유당→공화당",
+      "edu": "중국 강무학교 · 외무장관·국무총리",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/1/13/Jang_Taek.jpg"
+    },
+    {
+      "id": "유진산",
+      "camp": "dem",
+      "born": 1925,
+      "died": 1974,
+      "role": "국회의원",
+      "party": "신민당",
+      "event": "서거(재임중)",
+      "edu": "서울대 법학 · 신민당 총재",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/0/05/%EC%9C%A0%EC%A7%84%EC%82%B0.jpg"
+    },
+    {
+      "id": "이후락",
+      "camp": "con",
+      "born": 1924,
+      "died": 2013,
+      "role": "총리·장관",
+      "party": "민주공화당",
+      "edu": "서울대 정외 · 중앙정보부장·총리서리",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/2/25/I_Hu-rak%2C_June_1973.jpg"
+    },
+    {
+      "id": "차지철",
+      "camp": "con",
+      "born": 1915,
+      "died": 1979,
+      "role": "국회의원",
+      "party": "민주공화당",
+      "event": "10·26 피살",
+      "edu": "육사 · 박정희 비서실장",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Cha_Ji-cheol_1961.jpg"
+    },
+    {
+      "id": "김재규",
+      "camp": "con",
+      "born": 1926,
+      "died": 1980,
+      "role": "총리·장관",
+      "party": "민주공화당",
+      "event": "박정희 암살 후 처형",
+      "edu": "육사 · 중앙정보부장",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/c/c1/19681021%E9%87%91%E8%BC%89%E5%9C%AD.jpg"
+    },
+    {
+      "id": "박태준",
+      "camp": "con",
+      "born": 1927,
+      "died": 2011,
+      "role": "총리·장관",
+      "party": "민주자유당",
+      "edu": "도쿄대 · 포항제철 창립·국무총리",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Park_Tae-jun%2C_1961-may-16.jpg"
+    },
+    {
+      "id": "이수성",
+      "camp": "con",
+      "born": 1936,
+      "role": "총리·장관",
+      "party": "민주자유당→신한국당",
+      "edu": "서울대 경제 · 국무총리·국회의장",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Lee_Soo-sung_1.jpg/500px-Lee_Soo-sung_1.jpg"
+    },
+    {
+      "id": "이회창",
+      "camp": "con",
+      "born": 1935,
+      "role": "국회의원",
+      "party": "한나라당(대선후보 2회)",
+      "edu": "서울대 법학 · 감사원장·대법관",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/2/22/Lee_Hoi-chang_%282010%29.jpg"
+    },
+    {
+      "id": "조순",
+      "camp": "con",
+      "born": 1934,
+      "role": "지방단체장",
+      "party": "신한국당(대표)",
+      "edu": "서울대 경제 · 서울시장·당대표",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/f/f0/%EC%A1%B0%EC%88%9C_%EB%B0%95%EC%82%AC.jpg"
+    },
+    {
+      "id": "정몽준",
+      "camp": "con",
+      "born": 1951,
+      "role": "국회의원",
+      "party": "국민의힘",
+      "edu": "서울대·MIT · 국회의장(역)·새누리 대표",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/0/0d/CMJhyundai.JPG"
+    },
+    {
+      "id": "김무성",
+      "camp": "con",
+      "born": 1951,
+      "role": "국회의원",
+      "party": "새누리당(대표)",
+      "edu": "고려대 경제 · 새누리당 대표",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Kimmoosung.jpg"
+    },
+    {
+      "id": "박희태",
+      "camp": "con",
+      "born": 1938,
+      "role": "국회의원",
+      "party": "한나라당",
+      "edu": "육사·한양대 · 국회의장(2010~12)",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Park_Hee-tae_in_2011.jpg"
+    },
+    {
+      "id": "이해찬",
+      "camp": "dem",
+      "born": 1952,
+      "role": "총리·장관",
+      "party": "더불어민주당(대표)",
+      "edu": "서울대 사학 · 국무총리·교육부장관",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/7/76/191028%EB%8D%94%EB%B6%88%EC%96%B4%EB%AF%BC%EC%A3%BC%EB%8B%B9%EC%98%88%EC%82%B0%EC%A0%95%EC%B1%85%ED%98%91%EC%9D%98%ED%9A%8C%283%29.jpg"
+    },
+    {
+      "id": "정동영",
+      "camp": "dem",
+      "born": 1953,
+      "role": "총리·장관",
+      "party": "더불어민주당",
+      "edu": "고려대 신문학 · 국무총리·통일부장관",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/5/58/Chung_Dong-young_20250822.jpg"
+    },
+    {
+      "id": "천정배",
+      "camp": "dem",
+      "born": 1953,
+      "role": "총리·장관",
+      "party": "민주당 계열",
+      "edu": "고려대 법학 · 법무부장관·원내대표",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Chun_Jung-bae.jpg"
+    },
+    {
+      "id": "김근태",
+      "camp": "dem",
+      "born": 1947,
+      "died": 2017,
+      "role": "총리·장관",
+      "party": "민주당 계열",
+      "edu": "서울대 사회 · 보건복지부장관·당대표",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Kim_Keun-Tae.jpg/500px-Kim_Keun-Tae.jpg"
+    },
+    {
+      "id": "박원순",
+      "camp": "dem",
+      "born": 1956,
+      "died": 2020,
+      "role": "지방단체장",
+      "party": "더불어민주당",
+      "event": "재임중 서거",
+      "edu": "서울대 법학 · 서울시장(3선)",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Park_Won_Soon_%28%EB%B0%95%EC%9B%90%EC%88%9C%29_in_Dec_2014.jpg"
+    },
+    {
+      "id": "한명숙",
+      "camp": "dem",
+      "born": 1944,
+      "role": "총리·장관",
+      "party": "열린우리당",
+      "edu": "이화여대 사학 · 국무총리(2006~07)",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/3/38/Prime_Minister_Han_Myeong-sook_taking_a_commemorative_photo_with_the_Speaker_of_the_National_Assembly.jpg"
+    },
+    {
+      "id": "강금실",
+      "camp": "dem",
+      "born": 1963,
+      "role": "총리·장관",
+      "party": "열린우리당",
+      "edu": "서울대·독일 프라이부르크대 · 첫 여성 법무부장관",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/d/dc/KumsilKang.JPG"
+    },
+    {
+      "id": "심상정",
+      "camp": "mid",
+      "born": 1959,
+      "role": "국회의원",
+      "party": "정의당(대표)",
+      "edu": "서울대 국사 · 정의당 대표·3선 의원",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Sim_Sang-jung_taking_a_commemorative_photo_with_the_Speaker_of_the_National_Assembly.jpg"
+    },
+    {
+      "id": "노회찬",
+      "camp": "mid",
+      "born": 1956,
+      "died": 2018,
+      "role": "국회의원",
+      "party": "진보신당→민주평화당? (진보)",
+      "edu": "아주대 전자공학 · 진보 정치 상징",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Roh_Hoechan_at_Busan_in_2017_-_3_%28cropped%29.JPG"
+    },
+    {
+      "id": "원희룡",
+      "camp": "con",
+      "born": 1964,
+      "role": "총리·장관",
+      "party": "국민의힘",
+      "edu": "제주대 · 국토교통부장관·제주지사",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/4/48/Minister_of_Land%2C_Infrastructure_and_Transport_WON_Hee-ryong_20231129.jpg"
+    },
+    {
+      "id": "남경필",
+      "camp": "con",
+      "born": 1964,
+      "role": "지방단체장",
+      "party": "새누리당",
+      "edu": "서울대·펜실베이니아대 · 경기지사(2010~18)",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Nam_Kyung-pil_at_18th_Puchon_International_Fantastic_Film_Festival%2C_July_17%2C_2014.jpg"
+    },
+    {
+      "id": "최문순",
+      "camp": "dem",
+      "born": 1959,
+      "role": "지방단체장",
+      "party": "더불어민주당",
+      "edu": "고려대 신문학 · 강원지사(3선)·MBC 기자",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/2016%EB%85%84_5%EC%9B%94_7%EC%9D%BC_%EA%B0%95%EC%9B%90%EB%8F%84%EC%A7%80%EC%82%AC_%EC%B5%9C%EB%AC%B8%EC%88%9C_DSC00462.jpg/500px-2016%EB%85%84_5%EC%9B%94_7%EC%9D%BC_%EA%B0%95%EC%9B%90%EB%8F%84%EC%A7%80%EC%82%AC_%EC%B5%9C%EB%AC%B8%EC%88%9C_DSC00462.jpg"
+    },
+    {
+      "id": "김동연",
+      "camp": "dem",
+      "born": 1960,
+      "role": "지방단체장",
+      "party": "더불어민주당",
+      "edu": "중앙대 경영 · 기획재정부장관→경기지사",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Kim_Dong-yeon_20250324.jpg"
+    },
+    {
+      "id": "박광온",
+      "camp": "dem",
+      "born": 1961,
+      "role": "국회의원",
+      "party": "더불어민주당",
+      "edu": "서울대 사회 · 민주당 원내대표",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Park_Kwang-on_20230714.jpg"
+    },
+    {
+      "id": "정청래",
+      "camp": "dem",
+      "born": 1968,
+      "role": "국회의원",
+      "party": "더불어민주당",
+      "edu": "서울대 사회 · 친명계·법사위 간사",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Jung_Chung-rae%27s_Portrait_%282026.6%29.png"
+    },
+    {
+      "id": "김민석",
+      "camp": "dem",
+      "born": 1964,
+      "role": "국회의원",
+      "party": "더불어민주당(대표)",
+      "edu": "서울대 사회 · 민주당 대표",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/0/02/Prime_Minister_Kim_Min-seok.jpg"
+    },
+    {
+      "id": "박찬대",
+      "camp": "dem",
+      "born": 1967,
+      "role": "국회의원",
+      "party": "더불어민주당",
+      "edu": "연세대 경제 · 민주당 원내대표",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Park_Chan-dae%27s_Portrait_%282026.7%29.jpg"
+    },
+    {
+      "id": "권성동",
+      "camp": "con",
+      "born": 1961,
+      "role": "국회의원",
+      "party": "국민의힘",
+      "edu": "연세대 법학 · 국힘 원내대표·비대위 대변인",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/4/47/Kweon_Seong-dong%27s_Portrait_%282025.1%29.png"
+    },
+    {
+      "id": "하태경",
+      "camp": "con",
+      "born": 1968,
+      "role": "국회의원",
+      "party": "국민의힘",
+      "edu": "서울대 외교 · 비윤계·친한동훈",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Ha_Tae-keung_signature.svg/langko-250px-Ha_Tae-keung_signature.svg.png"
+    },
+    {
+      "id": "박지현",
+      "camp": "dem",
+      "born": 1988,
+      "role": "국회의원",
+      "party": "더불어민주당",
+      "edu": "연세대 · 비례의원·비명계",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/9/9d/%EB%AF%BC%EC%A3%BC%EB%8B%B9_%EC%A0%84%EA%B5%AD%EC%97%AC%EC%84%B1%EC%9C%84%EC%9B%90%ED%9A%8C%2C_%EB%B8%94%EB%A3%A8%EC%8A%A4%ED%83%80%ED%8A%B8%ED%8F%AC%EB%9F%BC_%EB%B0%9C%EC%A1%B1%EC%8B%9D_2_%28cropped%29.jpg"
+    },
+    {
+      "id": "박영선",
+      "camp": "dem",
+      "born": 1962,
+      "role": "총리·장관",
+      "party": "더불어민주당",
+      "edu": "서울대 영문 · 중기부장관·서울시장 권한대행",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/1/1d/20211118_-_%EB%B0%95%EC%98%81%EC%84%A0.jpg"
+    },
+    {
+      "id": "이인영",
+      "camp": "dem",
+      "born": 1964,
+      "role": "총리·장관",
+      "party": "더불어민주당",
+      "edu": "서울대 사회 · 통일부장관·당대표",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Lee_In-young_in_2020.jpg"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+// assemblyEras를 parties.json에 추가하는 일회성 스크립트
+const fs = require("fs");
+const p = JSON.parse(fs.readFileSync("data/parties.json", "utf8"));
+p.assemblyEras = [
+ {id:"r1",label:"제1공화국 (1948~60)",presidents:["이승만","허정"],
+  note:"자유당 집권 — 초창기 무소속 중심에서 이승만의 자유당으로 결집, 야권은 민주당(신익희·조병옥 계열)",
+  parties:[
+   {name:"자유당",role:"여당",color:"var(--con)",desc:"이승만 직접 조직(1951~)"},
+   {name:"민주당",role:"야당",color:"var(--dem)",desc:"신익희·조병옥 등 야권 통합(1955)"},
+   {name:"무소속·기타",role:"",color:"var(--mid)",desc:"제헌국회 최다 세력"}]},
+ {id:"r2",label:"제2공화국 (1960~62)",presidents:["윤보선","장면"],
+  note:"내각책임제 — 민주당(구파·신파) 독주, 이후 5·16으로 중단",
+  parties:[
+   {name:"민주당",role:"집권",color:"var(--dem)",desc:"윤보선(대통령)·장면(내각) — 구파/신파 내분"},
+   {name:"신정당 등",role:"야당",color:"var(--mid)",desc:"군소 야권"}]},
+ {id:"r3",label:"제3·4공화국 (1963~79)",presidents:["박정희"],
+  note:"민주공화당 장기 집권 — 72년 유신헌법으로 제4공화국, 야권은 신민당",
+  parties:[
+   {name:"민주공화당",role:"여당",color:"var(--con)",desc:"박정희·김종필 창당(1963)"},
+   {name:"신민당",role:"야당",color:"var(--dem)",desc:"야권 통합 — 김영삼 대선 도전(1971)"}]},
+ {id:"r5",label:"제5공화국 (1980~88)",presidents:["최규하","전두환"],
+  note:"민주정의당 집권 — 야권은 민한당·신민당, 85년 신민당 약진",
+  parties:[
+   {name:"민주정의당",role:"여당",color:"var(--con)",desc:"전두환·노태우 신군부 정당"},
+   {name:"민주한국당",role:"야당",color:"var(--dem)",desc:"관제야당 논란"},
+   {name:"신민당",role:"야당",color:"var(--dem)",desc:"86년 야권 통합으로 민주당"}]},
+ {id:"r6",label:"제6공화국 초 · 여소야대 (1988~93)",presidents:["노태우"],
+  note:"역대 처음 여소야대 — 1990년 3당 합당으로 민주자유당 탄생(관계도에서 확인)",
+  parties:[
+   {name:"민주정의당→민주자유당",role:"여당",color:"var(--con)",desc:"노태우 + 3당 합당(1990)"},
+   {name:"평화민주당",role:"야당",color:"var(--dem)",desc:"김대중 — 재야 통합"},
+   {name:"통일민주당",role:"야당",color:"var(--dem)",desc:"김영삼(→합당)"},
+   {name:"신민주공화당",role:"야당",color:"var(--mid)",desc:"김종필(→합당)"}]},
+ {id:"r14",label:"문민정부 (1993~98)",presidents:["김영삼"],
+  note:"문민정부 — 민주자유당→신한국당, 야권은 김대중 계열",
+  parties:[
+   {name:"민주자유당→신한국당",role:"여당",color:"var(--con)",desc:"김영삼 — 여권 개편"},
+   {name:"민주당",role:"야당",color:"var(--dem)",desc:"김대중 계열"}]},
+ {id:"r15",label:"국민의 정부 (1998~2003)",presidents:["김대중"],
+  note:"수평 정권교체 — DJP 연합으로 시작, 97년 IMF 극복·햇볕정책",
+  parties:[
+   {name:"새정치국민회의→새천년민주당",role:"여당",color:"var(--dem)",desc:"김대중"},
+   {name:"한나라당",role:"야당",color:"var(--con)",desc:"이회창 — 보수 통합(97)"}]},
+ {id:"r16",label:"참여정부 (2003~08)",presidents:["노무현"],
+  note:"참여정부 — 탄핵 기각 후 2004년 총선 압승(열린우리당 과반)",
+  parties:[
+   {name:"열린우리당",role:"여당",color:"var(--dem)",desc:"2004년 총선 과반"},
+   {name:"한나라당",role:"야당",color:"var(--con)",desc:"박근혜 대표 체제"}]},
+ {id:"r17",label:"보수 정권 (2008~17)",presidents:["이명박","박근혜"],
+  note:"한나라당→새누리당 집권 — 2016년 박근혜 탄핵으로 종료",
+  parties:[
+   {name:"한나라당→새누리당",role:"여당",color:"var(--con)",desc:"이명박·박근혜"},
+   {name:"민주당계",role:"야당",color:"var(--dem)",desc:"민주통합당→더불어민주당"}]},
+ {id:"r19",label:"문재인 정부 · 20대 국회",presidents:["문재인"],seats:true,
+  note:"2016년 20대 총선 결과 기준 — 새누리 과반 실패로 시작한 탄핵 정국 속 정권 교체",
+  parties:[
+   {name:"더불어민주당",role:"여당",color:"var(--dem)",seats:123,desc:"2016 총선 1당"},
+   {name:"새누리당",role:"야당",color:"var(--con)",seats:122,desc:"과반 실패 — 비박 분열"},
+   {name:"국민의당",role:"야당",color:"var(--mid)",seats:38,desc:"안철수·박지원"},
+   {name:"정의당",role:"야당",color:"#d4a017",seats:6,desc:"진보 정당"}]},
+ {id:"r20",label:"윤석열 정부 · 21대 국회",presidents:["윤석열"],seats:true,
+  note:"2020년 21대 총선 결과 — 민주 180석 압승, 윤석열 정부 내내 여소야대",
+  parties:[
+   {name:"더불어민주당·시민당",role:"원내 1당(야당)",color:"var(--dem)",seats:180,desc:"역대급 압승"},
+   {name:"미래통합당·미래한국당",role:"정부 여당",color:"var(--con)",seats:103,desc:"집권 후에도 원내 2당"}]},
+ {id:"r21",label:"이재명 정부 · 22대 국회",presidents:["이재명"],seats:true,
+  note:"2024년 22대 총선 직후 기준 — 야당 단독 과반 최초(민주 175)",
+  parties:[
+   {name:"더불어민주당·민주연합",role:"여당",color:"var(--dem)",seats:175,desc:"취임 시점 원내 1당"},
+   {name:"국민의힘·미래",role:"야당",color:"var(--con)",seats:108,desc:"개헌저지선 확보"},
+   {name:"조국혁신당",role:"야당",color:"#5a7fa8",seats:12,desc:"제2야당"}]}
+];
+fs.writeFileSync("data/parties_new.json", JSON.stringify(p, null, 2));
+console.log("assemblyEras", p.assemblyEras.length, "추가 → parties_new.json");

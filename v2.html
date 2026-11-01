@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>정리노트 v2 — 관계도 · 인물 노트 · 타임라인 · 정당 · 공약 · 용어사전</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<style>
+  :root{
+    --bg:#fbf9f4; --ink:#1c1917; --muted:#78716c; --border:#e0dbd2; --card:#fff; --accent:#b45309;
+    --dem:#2563a8; --con:#c0563f; --mid:#7c7f6a;
+    --rel-family:#8a5a44; --rel-lineage:#b45309; --rel-faction:#6b705c; --rel-school:#5f7d8c; --rel-rival:#a04040;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif}
+  header{display:flex;align-items:baseline;gap:14px;padding:16px 24px 10px;border-bottom:1px solid var(--border);background:var(--card)}
+  header h1{font-size:19px;letter-spacing:-.02em}
+  header .tag{font-size:12px;color:var(--muted)}
+  nav{display:flex;gap:2px;padding:0 24px;background:var(--card);border-bottom:1px solid var(--border);flex-wrap:wrap}
+  nav button{border:none;background:none;padding:10px 14px;font-size:14px;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent}
+  nav button.active{color:var(--ink);border-bottom-color:var(--accent);font-weight:600}
+  main{padding:18px 24px 70px;max-width:1280px}
+  .page{display:none}.page.active{display:block}
+  .hint{font-size:13px;color:var(--muted);margin-bottom:10px}
+  .hint b{color:var(--ink)}
+  .toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px}
+  .toolbar input{padding:8px 12px;border:1px solid var(--border);border-radius:8px;font-size:14px;width:200px;background:var(--card)}
+  .toolbar select{padding:6px 8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--card)}
+  .legend{display:flex;gap:12px;font-size:12px;color:var(--muted);margin-left:auto;flex-wrap:wrap}
+  .legend span{display:inline-flex;align-items:center;gap:5px}
+  .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+  #graph{width:100%;height:600px;background:var(--card);border:1px solid var(--border);border-radius:12px;position:relative}
+  .link{stroke-opacity:.5}
+  .node circle{stroke:#fff;stroke-width:2px;cursor:pointer}
+  .node text{font-size:12px;pointer-events:none;paint-order:stroke;stroke:var(--card);stroke-width:3px}
+  .node.faded{opacity:.15}
+  #tooltip{position:absolute;pointer-events:none;background:var(--ink);color:#faf7f0;padding:10px 12px;border-radius:8px;font-size:12px;line-height:1.55;max-width:280px;opacity:0;transition:opacity .15s;z-index:5}
+  #tooltip .t-name{font-size:14px;font-weight:700;margin-bottom:3px}
+  #tooltip .t-sub{color:#d6cfc2}
+  #tooltip .t-src{margin-top:5px;color:#b9ac97;font-size:11px}
+  /* 인물 노트 모달 */
+  #note-overlay{display:none;position:fixed;inset:0;background:rgba(28,25,23,.45);z-index:20;align-items:center;justify-content:center}
+  #note-overlay.open{display:flex}
+  .note{background:var(--card);border-radius:14px;max-width:640px;width:92%;max-height:82vh;overflow-y:auto;padding:26px 30px;position:relative}
+  .note h2{font-size:22px;margin-bottom:2px}
+  .note .n-sub{color:var(--muted);font-size:13px;margin-bottom:14px}
+  .note h4{font-size:13px;color:var(--accent);margin:16px 0 6px;letter-spacing:.02em}
+  .note ul{padding-left:18px;font-size:13.5px;line-height:1.7}
+  .note .n-close{position:absolute;top:14px;right:16px;border:none;background:none;font-size:20px;cursor:pointer;color:var(--muted)}
+  .note .n-badge{display:inline-block;font-size:12px;padding:2px 10px;border-radius:999px;background:#f3ede2;color:var(--accent);margin-right:6px}
+  .note .n-src{margin-top:18px;padding-top:10px;border-top:1px solid var(--border);font-size:11.5px;color:var(--muted)}
+  /* 타임라인 */
+  .tl-wrap{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;overflow-x:auto}
+  .tl-svg{min-width:1100px;display:block}
+  /* 정당 */
+  .party-row{display:grid;grid-template-columns:150px 1fr 210px;gap:12px;align-items:center;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 16px;margin-bottom:8px}
+  .party-row .pname{font-weight:700;font-size:15px}
+  .party-row .pleader{font-size:12px;color:var(--muted)}
+  .pbar{height:22px;border-radius:5px;background:#ede8de;position:relative;overflow:hidden}
+  .pbar>div{height:100%;border-radius:5px;display:flex;align-items:center;padding-left:8px;color:#fff;font-size:12px;font-weight:600}
+  .pseats{font-size:13px;text-align:right}
+  .pseats b{font-size:17px}
+  /* 공약 */
+  .pol-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+  .pol-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 20px}
+  .pol-card h3{font-size:16px;display:flex;justify-content:space-between;align-items:baseline}
+  .pol-card h3 .who{font-size:12px;color:var(--muted);font-weight:400}
+  .score-row{display:flex;align-items:baseline;gap:8px;margin:10px 0 4px}
+  .score{font-size:32px;font-weight:800;letter-spacing:-.03em}
+  .score small{font-size:13px;font-weight:400;color:var(--muted)}
+  .bar{height:8px;border-radius:4px;background:#ede8de;overflow:hidden;margin:6px 0 14px}
+  .bar>div{height:100%;border-radius:4px}
+  .st{font-size:11px;padding:2px 8px;border-radius:999px;white-space:nowrap}
+  .st-kept{background:#e3efe3;color:#2f6b3a}.st-partial{background:#f5ecd9;color:#8a6d1a}
+  .st-broken{background:#f3ded9;color:#a0432e}.st-progress{background:#e0e9f3;color:#35608e}
+  .evidence{margin-top:6px;color:var(--muted);font-size:12px}
+  .cite{font-size:11px;color:var(--accent);text-decoration:none;border-bottom:1px dotted var(--accent)}
+  .cmp-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-top:20px}
+  .cmp-table th,.cmp-table td{padding:10px 14px;border-bottom:1px solid var(--border);text-align:left}
+  .cmp-table th{background:#f6f1e8;font-size:12px;color:var(--muted)}
+  /* 용어 사전 */
+  .glossary-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+  .g-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px}
+  .g-card b{font-size:15px}
+  .g-card .g-cat{font-size:11px;color:var(--accent);background:#f6ecdc;padding:1px 8px;border-radius:999px;margin-left:6px;vertical-align:2px}
+  .g-card p{font-size:13px;color:#44403c;margin-top:6px;line-height:1.65}
+  .gterm{border-bottom:1px dotted var(--accent);cursor:help;color:var(--accent)}
+  footer{position:fixed;bottom:0;left:0;right:0;background:var(--card);border-top:1px solid var(--border);padding:8px 24px;font-size:12px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <h1>정리노트 <span style="color:var(--accent)">v2</span></h1>
+  <span class="tag">관계도 · 인물 노트 · 타임라인 · 정당 지도 · 공약(실데이터) · 용어 사전</span>
+</header>
+<nav>
+  <button id="tab-rel" class="active">정치 관계도</button>
+  <button id="tab-tl">대통령 타임라인</button>
+  <button id="tab-party">정당 지도</button>
+  <button id="tab-prom">공약 이행도</button>
+  <button id="tab-gloss">용어 사전</button>
+</nav>
+<main>
+  <section id="page-rel" class="page active">
+    <p class="hint">💡 <b>노드 클릭 → 인물 노트</b>(이력·가족·계보·동문)가 열립니다. 드래그로 배치, 검색·필터 가능. 라이벌은 점선. <b>데이터: 위키백과 기반(2026-10 수집)</b></p>
+    <div class="toolbar">
+      <input type="search" id="search" placeholder="인물 검색 (예: 이재명)">
+      <select id="rel-filter">
+        <option value="all">관계: 전체</option>
+        <option value="family">가족</option>
+        <option value="lineage">계보 (○○키즈)</option>
+        <option value="faction">계파/합당</option>
+        <option value="school">동문/동료</option>
+        <option value="rival">라이벌</option>
+      </select>
+      <div class="legend">
+        <span><i class="dot" style="background:var(--dem)"></i>민주진영</span>
+        <span><i class="dot" style="background:var(--con)"></i>보수진영</span>
+        <span><i class="dot" style="background:var(--mid)"></i>제3지대</span>
+      </div>
+    </div>
+    <div id="graph"><svg width="100%" height="100%"></svg><div id="tooltip"></div></div>
+  </section>
+
+  <section id="page-tl" class="page">
+    <p class="hint">💡 1948년 정부 수립부터 현재까지 — 임기 막대 색은 진영, ⚑는 임기 중 주요 사건. <b>출처: 위키백과 '대한민국 대통령 목록'(2026-10)</b></p>
+    <div class="tl-wrap"><svg class="tl-svg" id="tl-svg" width="1100" height="560"></svg></div>
+  </section>
+
+  <section id="page-party" class="page">
+    <p class="hint">💡 제22대 국회 원내 정당 — 의석수와 이념 스펙트럼. <b>출처: 위키백과 '대한민국의 정당'(2026-09 기준)</b></p>
+    <div id="party-list"></div>
+  </section>
+
+  <section id="page-prom" class="page">
+    <p class="hint">💡 <b>실제 팩트체크 데이터 반영</b> — 뉴스톱의 대선 공약 추적 프로젝트(문재인미터·윤석열미터) 결과를 인용합니다. 사이트 자체 판정이 아닌 <b>언론 검증 결과 인용</b>이 이 프로젝트의 원칙입니다.</p>
+    <div class="pol-grid" id="pol-grid"></div>
+    <table class="cmp-table" id="cmp-table"></table>
+  </section>
+
+  <section id="page-gloss" class="page">
+    <p class="hint">💡 뉴스에서 막 쓰다가 설명 안 해주는 말들. 본문(인물 노트·관계도)의 용어에도 연결됩니다.</p>
+    <div class="glossary-grid" id="gloss-grid"></div>
+  </section>
+</main>
+
+<div id="note-overlay"><div class="note" id="note-body"></div></div>
+<footer>v2 — 관계·타임라인·정당: 위키백과 기반(수집일 표기) / 공약: 뉴스톱 문재인미터·윤석열미터 인용(2026-10 검색) / 인물 노트 상세는 주요 인물 우선 제공</footer>
+
+<script>
+const SRC_WIKI="위키백과 · 2026-10 수집";
+const SRC_NEWS="뉴스톱 팩트체크(문재인미터·윤석열미터) 인용 · 2026-10 검색";
+
+// ============ 용어 사전 ============
+const GLOSSARY=[
+  {t:"TK",cat:"지역",d:"대구·경북(Taegu-Kyungbuk). 영남 보수의 심장부로 불리는 지역 구분. 김영삼(경남 거제)도 영남이지만 TK와 구분됨. 반대말 개념으로 PK(부산·경남)가 있음."},
+  {t:"PK",cat:"지역",d:"부산·경남(Pusan-Kyungnam). 김영삼·김종필(충남)과 대비되는 영남 지역 구분. 이명박(포항), 박근혜(대구) 지지 기반과 함께 언급됨."},
+  {t:"호남",cat:"지역",d:"광주·전라 지역. 김대중(신안)의 정치적 기반이며 DJ 계보의 뿌리. '호남 민주화 운동 계보'는 이 사이트 관계도의 민주진영 뿌리 중 하나."},
+  {t:"계파",cat:"정치구조",d:"같은 정당 안의 파벌. 보통 특정 인물 중심(친박·친명)이나 출신 지역(TK·PK·호남), 계보(YS·DJ)로 묶임. 정당 공천과 당권 경쟁의 기본 단위."},
+  {t:"친명 / 비명",cat:"계파",d:"더불어민주당 내 이재명 지지 세력(친명)과 반대 세력(비명). '~명'은 대표 이름의 마지막 글자를 따는 관용 표기."},
+  {t:"친박 / 비박",cat:"계파",d:"새누리당(현 국민의힘 전신) 시절 박근혜 지지 세력(친박)과 반대 세력(비박). 2016년 박근혜 탄핵 국면에서 당이 갈라지는 데 결정적."},
+  {t:"YS",cat:"인물 약칭",d:"김영삼(Y oung-Sam)의 이니셜. 90년대 언론이 붙인 별칭. 'YS 키즈'=YS 계보에서 성장한 정치인(홍준표 등)."},
+  {t:"DJ",cat:"인물 약칭",d:"김대중(Dae-Jung)의 이니셜. DJ 계보의 정치적 후계 세력(노무현·이낙연·박지원 등)을 지칭할 때도 씀."},
+  {t:"JP",cat:"인물 약칭",d:"김종필(Jong-Pil)의 이니셜. 박정희와 5·16을 함께했고, 3당 합당과 DJP 연합의 축. 보수 우파 정치의 또 다른 계보."},
+  {t:"상도동",cat:"계보",d:"서울 상도동에 있던 김영삼 사무소 이름. '상도동계'=YS 계파를 뜻하는 말."},
+  {t:"동교동",cat:"계보",d:"서울 동교동에 있던 김대중 사무소 이름. '동교동계'=DJ 계파. 평화민주당 창당(1987)의 산실."},
+  {t:"3당 합당",cat:"역사",d:"1990년 민주정의당(노태우)·통일민주당(김영삼)·신민주공화당(김종필)이 합쳐 민주자유당을 만든 사건. 보수 진영 대통합으로 여야 구도가 재편됨 — 관계도에서 확인 가능."},
+  {t:"DJP 연합",cat:"역사",d:"1997년 대선에서 김대중(D)과 김종필(JP)이 손잡은 연합. 이낙연 등 JP 계열 인사가 민주당으로 이동하는 계기."},
+  {t:"박근혜 키즈",cat:"계보",d:"박근혜와 정치 인연을 시작한 젊은 보수 정치인들의 언론 별칭. 이준석 등이 이에 속한다고 불림."},
+  {t:"지역구 / 비례대표",cat:"선거",d:"국회의원 두 가지 입법 방식. 지역구는 특정 지역 선거에서 당선, 비례대표는 정당 득표율에 따라 배정. 이준석은 비례대표로 당선된 사례."},
+  {t:"단일화",cat:"선거",d:"야권/경쟁 후보들이 1:1 대결 구도를 만들기 위해 한 후보로 통합하는 것. 문재인-안철수(2022 윤석열 대신 민주당 후보로서의 사례 아님 — 2017·2022 모두 있음), 윤석열-안철수(2022) 등."},
+  {t:"탄핵",cat:"제도",d:"국회 소추 + 헌법재판소 심판으로 대통령을 파면하는 절차. 박근혜(2017 파면), 윤석열(2025 파면), 노무현(2004 소추 후 기각) — 타임라인의 ⚑로 표시."},
+  {t:"권한대행",cat:"제도",d:"대통령 직무 공백 시 국무총리가 대행. 윤보선 사임 후 박정희(국가재건최고회 의장, 633일)가, 윤석열 파면 후 한덕수 등이 대행한 사례가 있음."}
+];
+
+const DATA = {
+  nodes: [
+    {id:"이승만",camp:"con",born:1875,died:1965,president:"1대(1948~60)",party:"자유당",event:"4.19로 사임",edu:"프린스턴대 박사"},
+    {id:"윤보선",camp:"dem",born:1897,died:1990,president:"2대(1960~62)",party:"무소속(장면 내각)",event:"5.16으로 사임",edu:"에딘버러대"},
+    {id:"박정희",camp:"con",born:1917,died:1979,president:"5~9대(1963~79)",party:"민주공화당",event:"10.26 암살",edu:"육군사관학교"},
+    {id:"최규하",camp:"con",born:1919,died:2006,president:"10대(1979~80)",party:"무소속",event:"8월 사임",edu:"서울대·메이지대"},
+    {id:"전두환",camp:"con",born:1931,died:2021,president:"11~12대(1980~88)",party:"민주정의당",event:"",edu:"육군사관학교(11기)"},
+    {id:"노태우",camp:"con",born:1932,died:2021,president:"13대(1988~93)",party:"민주정의당→민주자유당",event:"",edu:"경복고·육사"},
+    {id:"김영삼",camp:"con",born:1927,died:2015,president:"14대(1993~98)",party:"민주자유당→신한국당",event:"문민정부",edu:"서울대 철학 · 상도동 계보"},
+    {id:"김대중",camp:"dem",born:1924,died:2009,president:"15대(1998~2003)",party:"새정치국민회의→새천년민주당",event:"국민의 정부",edu:"고려대 명예 · DJ 계보(호남)"},
+    {id:"노무현",camp:"dem",born:1946,died:2009,president:"16대(2003~08)",party:"새천년민주당→열린우리당",event:"탄핵소추→기각",edu:"사법고시(독학) · 부산 인권변론"},
+    {id:"이명박",camp:"con",born:1941,president:"17대(2008~13)",party:"한나라당→새누리당",event:"",edu:"고려대 · 현대그룹 출신"},
+    {id:"박근혜",camp:"con",born:1952,president:"18대(2013~17)",party:"새누리당",event:"탄핵(2017.3)",edu:"서강대 · 박정희 딸"},
+    {id:"문재인",camp:"dem",born:1953,president:"19대(2017~22)",party:"더불어민주당",event:"",edu:"경희대 법학 · 사법연수원 23기"},
+    {id:"윤석열",camp:"con",born:1960,president:"20대(2022~25)",party:"국민의힘",event:"탄핵 파면(2025.4)",edu:"서울대 법학 · 사법연수원 33기"},
+    {id:"이재명",camp:"dem",born:1963,president:"21대(2025~현임)",party:"더불어민주당",event:"",edu:"중앙대 법학 · 사법연수원 29기"},
+    {id:"김종필",camp:"con",born:1926,died:2018,party:"자유민주연합",edu:"육사 8기 · JP"},
+    {id:"홍준표",camp:"con",born:1953,party:"자유의새벽당",edu:"서울대 법학 · 사법연수원 13기 · YS키즈"},
+    {id:"김기현",camp:"con",born:1962,party:"국민의힘",edu:"성균관대 · YS키즈"},
+    {id:"이준석",camp:"mid",born:1985,party:"개혁신당(대표)",edu:"하버드대 · 박근혜키즈"},
+    {id:"나경원",camp:"con",born:1965,party:"국민의힘",edu:"서울대 법학 · 친박"},
+    {id:"한동훈",camp:"con",born:1972,party:"국민의힘",edu:"서울대·하버드 · 사법연수원 41기"},
+    {id:"김문수",camp:"con",born:1951,party:"국민의힘",edu:"고려대 · 21대 대선 후보"},
+    {id:"한덕수",camp:"mid",born:1949,party:"무소속",edu:"서울대·하버드 · 국무총리·권한대행"},
+    {id:"이낙연",camp:"dem",born:1952,party:"더불어민주당",edu:"서울대 신문학 · JP계보→민주당"},
+    {id:"박지원",camp:"dem",born:1942,party:"더불어민주당",edu:"고려대 정외 · DJ 최측근"},
+    {id:"정세균",camp:"dem",born:1950,party:"더불어민주당",edu:"고려대 정외 · 문재인 정부 총리"},
+    {id:"김한길",camp:"dem",born:1956,party:"더불어민주당",edu:"중앙대 신방 · 이재명과 동문"},
+    {id:"박범계",camp:"dem",born:1968,party:"더불어민주당",edu:"서울대 법학 · 친명"},
+    {id:"안철수",camp:"mid",born:1962,party:"무소속",edu:"서울대 의대 · 3대 중도 후보"},
+    {id:"조국",camp:"dem",born:1965,party:"조국혁신당(대표)",edu:"서울대·버클리 · 문재인 정부 청와대"},
+    {id:"이상민",camp:"dem",born:1964,party:"더불어민주당",edu:"한양대 · 친명"}
+  ],
+  edges: [
+    {source:"박정희",target:"박근혜",relation:"부녀",type:"family",strength:3},
+    {source:"박정희",target:"김종필",relation:"5·16 동지 → later 결별",type:"faction",strength:2},
+    {source:"전두환",target:"노태우",relation:"육사 동기(신군부)",type:"school",strength:3},
+    {source:"노태우",target:"김영삼",relation:"3당 합당(1990)",type:"faction",strength:3},
+    {source:"노태우",target:"김종필",relation:"3당 합당(1990)",type:"faction",strength:3},
+    {source:"김영삼",target:"김대중",relation:"양김 라이벌(1960s~90s)",type:"rival",strength:2},
+    {source:"김대중",target:"김종필",relation:"DJP 연합(1997)",type:"faction",strength:2},
+    {source:"김대중",target:"이낙연",relation:"DJ 계보",type:"lineage",strength:2},
+    {source:"김대중",target:"박지원",relation:"DJ 최측근",type:"lineage",strength:3},
+    {source:"김영삼",target:"홍준표",relation:"YS 키즈",type:"lineage",strength:2},
+    {source:"김영삼",target:"김기현",relation:"YS 키즈",type:"lineage",strength:2},
+    {source:"김대중",target:"노무현",relation:"2002 경선 승리 → 정권 교체",type:"lineage",strength:1},
+    {source:"노무현",target:"문재인",relation:"법률사무소 동료→참여정부",type:"lineage",strength:3},
+    {source:"노무현",target:"이재명",relation:"참여정부 계보(느슨)",type:"lineage",strength:1},
+    {source:"문재인",target:"정세균",relation:"국무총리 임명",type:"faction",strength:2},
+    {source:"문재인",target:"조국",relation:"청와대 비서실장·법무부",type:"faction",strength:2},
+    {source:"이명박",target:"박근혜",relation:"한나라당 내 경선 라이벌(MB vs PK)",type:"rival",strength:2},
+    {source:"박근혜",target:"이준석",relation:"박근혜 키즈",type:"lineage",strength:2},
+    {source:"박근혜",target:"나경원",relation:"친박 계열",type:"faction",strength:2},
+    {source:"이재명",target:"박범계",relation:"친명 캠프",type:"faction",strength:2},
+    {source:"이재명",target:"이상민",relation:"친명 캠프",type:"faction",strength:2},
+    {source:"이재명",target:"김한길",relation:"중앙대 동문",type:"school",strength:1},
+    {source:"윤석열",target:"한동훈",relation:"검찰 동료(서울중앙지검)",type:"school",strength:3},
+    {source:"윤석열",target:"김문수",relation:"21대 대선 후보·단일화",type:"faction",strength:1},
+    {source:"윤석열",target:"문재인",relation:"검찰총장 임명 → 수사 대립",type:"rival",strength:2},
+    {source:"윤석열",target:"이재명",relation:"20·21대 대선·수사 라이벌",type:"rival",strength:2},
+    {source:"이재명",target:"안철수",relation:"2022 대선 후 단일화",type:"faction",strength:1},
+    {source:"한덕수",target:"윤석열",relation:"국무총리 → 권한대행",type:"faction",strength:2}
+  ]
+};
+
+// 인물 노트 (주요 인물 상세 — 위키백과 기반)
+const NOTES={
+  "이재명":{badges:["21대 대통령","더불어민주당"],
+    sections:[
+      ["이력",["중앙대 법학과 졸업 → 사법연수원 29기","검사(수원지검 성남지청) → 변호사 개업","성남시장(2010~2018, 3선)","경기도지사(2018~2022)","더불어민주당 대표(2022~2025)","제21대 대통령(2025.6.4 취임, 임기 시작)"]],
+      ["가족·배경",["경남 양산 출신, 초등학교 졸업 후 공장 노동자로 일한 특이 이력","가난한 가정 출신이라는 정체성이 정치 브랜드의 핵심"]],
+      ["학맥·인맥",["중앙대 동문: 김한길 등","사법연수원 29기 동기 네트워크","친명 캠프: 박범계·이상민 등"]],
+      ["계보",["참여정부(노무현) 계보에서 출발했으나 독자 노선(친명) 구축","20·21대 대선에서 윤석열과 라이벌 구도"]]
+    ]},
+  "문재인":{badges:["19대 대통령","더불어민주당"],
+    sections:[
+      ["이력",["경희대 법학과 → 사법연수원 23기","부산에서 노무현과 함께 인권 변론(1982~)","노무현 정부 청와대 민정수석·비서실장","19대 대통령(2017~2022)"]],
+      ["인맥",["노무현 법률사무소 동료 — 관계도에서 가장 굵은 계보 라인","문재인 정부 국무총리: 이낙연·정세균(순)","청와대: 조국(비서실장·법무부장관) 등"]],
+      ["공약 이행",["뉴스톱 '문재인미터' 최종: 이행률 55.15% (887개 공약 중 469개 이행) — 공약 탭 참조"]]
+    ]},
+  "윤석열":{badges:["20대 대통령","국민의힘"],
+    sections:[
+      ["이력",["서울대 법학과 → 사법연수원 33기","검사(서울중앙지검장 등)","문재인 정부 검찰총장(2019~2021)","20대 대통령(2022~2025, 탄핵 파면)"]],
+      ["인맥",["검찰 동료: 한동훈(사법연수원 41기, 법무부장관)","2022 대선: 안철수와 야권 단일화로 당선"]],
+      ["주요 사건",["2024.12 비상계엄 선포 → 탄핵소추 → 2025.4 헌재 파면(헌정사상 2번째 대통령 탄핵)"]]
+    ]},
+  "박근혜":{badges:["18대 대통령","새누리당"],
+    sections:[
+      ["이력",["서강대 전자공학과","박정희 대통령의 딸 — 가족관계가 정치 경력의 출발점","제15~17대 국회의원(1998~2012), 한나라당 대표","18대 대통령(2013~2017)"]],
+      ["가족",["부: 박정희(5~9대 대통령) — 관계도에서 가족 라인","모: 육영수(암살), 계모: 박정희 전 부인들"]],
+      ["인맥",["친박 계열: 나경원 등","박근혜 키즈(언론 별칭): 이준석 등 젊은 보수","MB(이명박)와 한나라당 내 경쟁 구도"]],
+      ["주요 사건",["2016 박근혜 최순실 사건 → 2017.3 탄핵 파면(헌정사상 최초)"]]
+    ]},
+  "김대중":{badges:["15대 대통령","새정치국민회의"],
+    sections:[
+      ["이력",["전남 신안 출신, 목포상고","1950년대 정계 입문, 3차례 사형 구형·납치·연금 등 고난","15대 대통령(1998~2003) — 수평 정권교체 1호","노벨평화상(2000)"]],
+      ["계보",["호남 민주화의 상징 — '동교동계'","최측근: 박지원","JP(김종필)와 DJP 연합으로 1997 대선 승리","2002 경선에서 노무현에게 후보 자리 승계 → 참여정부 계보 출발"]],
+      ["업적",["금모으기 운동(IMF 극복), 햇볕정책, 4대 강국 외교"]]
+    ]},
+  "노무현":{badges:["16대 대통령","열린우리당"],
+    sections:[
+      ["이력",["경남 김해 출신, 고등학교 졸업 후 독학으로 사법고시 합격(1975)","부산에서 인권 변론 — 문재인과 파트너","16대 대통령(2003~2008)"]],
+      ["계보",["DJ(김대중) 계보에서 출발했으나 '상식과 원칙'으로 독자 지지층 형성","참여정부: 문재인·조국 등으로 이어지는 인맥의 뿌리","노무현 사후 지지층이 이재명 친명 지지층과 부분 겹침(느슨한 연결)"]],
+      ["주요 사건",["2004 탄핵소추 → 헌재 기각(임기 계속)","2008 퇴임, 2009 서거"]]
+    ]},
+  "김영삼":{badges:["14대 대통령","신한국당"],
+    sections:[
+      ["이력",["경남 거제 출신, 서울대 철학","1954년 최연소 국회의원으로 정계 입문, 야당 생활 30년+","3김(김영삼·김대중·김종필) 중 YS","14대 대통령(1993~1998) — 문민정부"]],
+      ["계보",["상도동계(서울 상도동 사무소)","1990 노태우·김종필과 3당 합당 → 여권 이동(보수 대통합)","YS 키즈: 홍준표(서울대·사법연수원 13기)·김기현 등"]],
+      ["업적",["금융실명제, 공직자 재산 공개, 군 문민화. 지역 기반은 PK·부산"]]
+    ]}
+};
+
+// ===== 탭 =====
+function showTab(t){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+  document.getElementById('page-'+t).classList.add('active');
+  document.getElementById('tab-'+t).classList.add('active');
+}
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>showTab(b.id.replace('tab-',''))));
+
+// ===== 1) 관계도 =====
+const campColor={dem:"var(--dem)",con:"var(--con)",mid:"var(--mid)"};
+const typeColor={family:"var(--rel-family)",lineage:"var(--rel-lineage)",faction:"var(--rel-faction)",school:"var(--rel-school)",rival:"var(--rel-rival)"};
+const svg=d3.select("#graph svg");
+const gW=()=>document.getElementById("graph").clientWidth, gH=()=>document.getElementById("graph").clientHeight;
+const gLink=svg.append("g"), gNode=svg.append("g");
+const tooltip=d3.select("#tooltip");
+
+const nodes=DATA.nodes.map(d=>({...d}));
+const links=DATA.edges.map(d=>({...d}));
+
+const sim=d3.forceSimulation(nodes)
+  .force("link",d3.forceLink(links).id(d=>d.id).distance(l=>150-l.strength*25).strength(.45))
+  .force("charge",d3.forceManyBody().strength(-430))
+  .force("center",d3.forceCenter(gW()/2,gH()/2))
+  .force("collide",d3.forceCollide(40))
+  .force("x",d3.forceX(gW()/2).strength(.045))
+  .force("y",d3.forceY(gH()/2).strength(.06));
+
+let linkSel,nodeSel;
+function render(){
+  gLink.selectAll("*").remove(); gNode.selectAll("*").remove();
+  linkSel=gLink.selectAll("line").data(links).join("line")
+    .attr("class","link").attr("stroke",l=>typeColor[l.type]||"#999")
+    .attr("stroke-width",l=>1+l.strength*.9)
+    .attr("stroke-dasharray",l=>l.type==="rival"?"5,4":null);
+  nodeSel=gNode.selectAll("g").data(nodes).join("g").attr("class","node")
+    .call(d3.drag()
+      .on("start",(e,d)=>{if(!e.active)sim.alphaTarget(.25).restart();d.fx=d.x;d.fy=d.y})
+      .on("drag",(e,d)=>{d.fx=e.x;d.fy=e.y})
+      .on("end",(e,d)=>{if(!e.active)sim.alphaTarget(0);d.fx=null;d.fy=null}));
+  nodeSel.append("circle")
+    .attr("r",d=>d.president?20:13)
+    .attr("fill",d=>campColor[d.camp])
+    .attr("stroke-width",d=>d.president?3.5:2);
+  nodeSel.append("text").attr("dy",d=>d.president?34:26).attr("text-anchor","middle")
+    .text(d=>d.id).style("font-weight",d=>d.president?700:400);
+  nodeSel.on("mouseenter",(e,d)=>{
+      tooltip.style("opacity",1)
+        .style("left",Math.min(e.offsetX+16,gW()-290)+"px").style("top",(e.offsetY+10)+"px")
+        .html(`<div class="t-name">${d.id}${d.president?` <span style="color:#e8c9a0">· ${d.president}</span>`:""}</div>
+          <div class="t-sub">${d.party||""}${d.born?` · ${d.born}${d.died?`–${d.died}`:""}`:""}</div>
+          <div class="t-sub">${d.edu||""}</div>
+          ${d.event?`<div class="t-sub" style="color:#e0a090">⚑ ${d.event}</div>`:""}
+          <div class="t-src">클릭하면 인물 노트 · ${SRC_WIKI}</div>`);
+    })
+    .on("mouseleave",()=>tooltip.style("opacity",0))
+    .on("click",(e,d)=>{e.stopPropagation();highlight(d.id);openNote(d)});
+}
+function highlight(id){
+  const conn=new Set([id]);
+  links.forEach(l=>{if(l.source.id===id)conn.add(l.target.id);if(l.target.id===id)conn.add(l.source.id)});
+  nodeSel.classed("faded",d=>!conn.has(d.id));
+  linkSel.attr("stroke-opacity",l=>(l.source.id===id||l.target.id===id)?1:.05);
+}
+svg.on("click",()=>{nodeSel.classed("faded",false);linkSel.attr("stroke-opacity",.5)});
+sim.on("tick",()=>{
+  if(!linkSel||!nodeSel)return;
+  linkSel.attr("x1",l=>l.source.x).attr("y1",l=>l.source.y).attr("x2",l=>l.target.x).attr("y2",l=>l.target.y);
+  nodeSel.attr("transform",d=>`translate(${d.x},${d.y})`);
+});
+render();
+document.getElementById("search").addEventListener("input",e=>{
+  const q=e.target.value.trim();
+  if(!q){nodeSel.classed("faded",false);return}
+  nodeSel.classed("faded",d=>!d.id.includes(q)&&!(d.party||"").includes(q));
+});
+document.getElementById("rel-filter").addEventListener("change",e=>{
+  const v=e.target.value;
+  linkSel.attr("stroke-opacity",l=>(v==="all"||l.type===v)?.5:.04);
+});
+
+// ===== 인물 노트 모달 =====
+function openNote(d){
+  const overlay=document.getElementById("note-overlay");
+  const body=document.getElementById("note-body");
+  const rels=DATA.edges.filter(l=>l.source===d.id||l.target===d.id)
+    .map(l=>`<li><b>${l.source===d.id?l.target:l.source}</b> — ${l.relation} <span style="color:var(--muted)">(${l.type})</span></li>`).join("");
+  const note=NOTES[d.id];
+  let html=`<button class="n-close" onclick="document.getElementById('note-overlay').classList.remove('open')">✕</button>
+    <h2>${d.id}</h2>
+    <div class="n-sub">${d.president?d.president+" · ":""}${d.party||""}${d.born?` · ${d.born}${d.died?`–${d.died}`:""}`:""}</div>
+    <div>${(d.president?'<span class="n-badge">대통령</span>':"")}${note?note.badges.map(b=>`<span class="n-badge">${b}</span>`).join(""):""}</div>`;
+  if(d.edu) html+=`<h4>학력·경력 요약</h4><ul><li>${d.edu}</li>${d.event?`<li>⚑ ${d.event}</li>`:""}</ul>`;
+  if(note) note.sections.forEach(s=>{
+    html+=`<h4>${s[0]}</h4><ul>${s[1].map(x=>`<li>${x}</li>`).join("")}</ul>`;
+  });
+  html+=`<h4>관계 (${rels?DATA.edges.filter(l=>l.source===d.id||l.target===d.id).length:0})</h4><ul>${rels||"<li>등록된 관계 없음</li>"}</ul>`;
+  html+=`<div class="n-src">출처: ${SRC_WIKI}${note?" · 인물 노트는 주요 인물에 한해 제공":""}</div>`;
+  body.innerHTML=html;
+  overlay.classList.add("open");
+}
+document.getElementById("note-overlay").addEventListener("click",e=>{
+  if(e.target.id==="note-overlay") e.target.classList.remove("open");
+});
+
+// ===== 2) 대통령 타임라인 =====
+const PRESIDENTS=[
+  {n:1,name:"이승만",from:1948.55,to:1960.32,camp:"con",party:"자유당",event:"사임"},
+  {n:2,name:"윤보선",from:1960.62,to:1962.22,camp:"dem",party:"무소속",event:"사임"},
+  {n:5,name:"박정희",from:1963.96,to:1979.82,camp:"con",party:"민주공화당",event:"암살"},
+  {n:10,name:"최규하",from:1979.92,to:1980.62,camp:"con",party:"무소속",event:"사임"},
+  {n:11,name:"전두환",from:1980.65,to:1988.15,camp:"con",party:"민주정의당",event:""},
+  {n:13,name:"노태우",from:1988.15,to:1993.15,camp:"con",party:"민자당",event:""},
+  {n:14,name:"김영삼",from:1993.15,to:1998.15,camp:"con",party:"신한국당",event:"문민정부"},
+  {n:15,name:"김대중",from:1998.15,to:2003.15,camp:"dem",party:"새정치국민회의",event:"첫 정권교체"},
+  {n:16,name:"노무현",from:2003.15,to:2008.15,camp:"dem",party:"열린우리당",event:"탄핵 기각"},
+  {n:17,name:"이명박",from:2008.15,to:2013.15,camp:"con",party:"한나라당",event:""},
+  {n:18,name:"박근혜",from:2013.15,to:2017.18,camp:"con",party:"새누리당",event:"탄핵"},
+  {n:19,name:"문재인",from:2017.35,to:2022.35,camp:"dem",party:"더불어민주당",event:""},
+  {n:20,name:"윤석열",from:2022.35,to:2025.25,camp:"con",party:"국민의힘",event:"탄핵 파면"},
+  {n:21,name:"이재명",from:2025.42,to:2026.8,camp:"dem",party:"더불어민주당",event:"현임"}
+];
+(function(){
+  const W=1100,H=560,m={l:120,r:40,t:30,b:40};
+  const tsvg=d3.select("#tl-svg");
+  const x=d3.scaleLinear().domain([1948,2027]).range([m.l,W-m.r]);
+  const axis=d3.axisBottom(x).tickValues(d3.range(1950,2030,10)).tickFormat(d=>d+"년").tickSize(-H+m.t+m.b);
+  tsvg.append("g").attr("transform",`translate(0,${H-m.b})`).call(axis)
+    .call(g=>g.select(".domain").remove())
+    .call(g=>g.selectAll("line").attr("stroke","#e7e2d8"))
+    .call(g=>g.selectAll("text").attr("fill","var(--muted)").attr("font-size",11));
+  const rowH=(H-m.t-m.b)/PRESIDENTS.length;
+  const title=tsvg.append("text").attr("x",m.l).attr("y",16).attr("font-size",12).attr("fill","var(--muted)");
+  const T="대한민국 역대 대통령 — 임기와 진영 (1948~현재)";
+  PRESIDENTS.forEach((p,i)=>{
+    const y=m.t+i*rowH;
+    const g=tsvg.append("g");
+    g.append("rect").attr("x",x(p.from)).attr("y",y+4).attr("width",Math.max(x(p.to)-x(p.from),6))
+      .attr("height",rowH-12).attr("rx",5)
+      .attr("fill",p.camp==="dem"?"var(--dem)":"var(--con)").attr("opacity",.85).style("cursor","pointer")
+      .on("mouseenter",()=>title.text(`${p.n}대 ${p.name} (${Math.floor(p.from)}~${p.to>=2026.7?"현임":Math.floor(p.to)}) · ${p.party}`))
+      .on("mouseleave",()=>title.text(T));
+    g.append("text").attr("x",m.l-10).attr("y",y+rowH/2+2).attr("text-anchor","end")
+      .attr("class","tl-name").text(`${p.n}대 ${p.name}`);
+    g.append("text").attr("x",x(p.from)+6).attr("y",y+rowH/2+3)
+      .attr("fill","#fff").attr("font-size",10.5).attr("font-weight",600)
+      .text(`${Math.floor(p.from)}~${p.to>=2026.7?"":Math.floor(p.to)}`);
+    if(p.event){
+      g.append("text").attr("x",x(p.to)-4).attr("y",y+rowH/2+3).attr("text-anchor","end")
+        .attr("fill","#fff").attr("font-size",10.5).text(`⚑ ${p.event}`);
+    }
+  });
+  title.text(T);
+})();
+
+// ===== 3) 정당 지도 =====
+const PARTIES=[
+  {name:"더불어민주당",leader:"김민석",seats:161,spectrum:"중도좌익~좌익",color:"var(--dem)"},
+  {name:"국민의힘",leader:"장동혁",seats:109,spectrum:"중도우익~우익",color:"var(--con)"},
+  {name:"조국혁신당",leader:"신장식",seats:12,spectrum:"좌익",color:"#5a7fa8"},
+  {name:"진보당",leader:"김종훈",seats:4,spectrum:"좌익",color:"#4a6f8f"},
+  {name:"개혁신당",leader:"이준석",seats:3,spectrum:"중도우파",color:"var(--mid)"},
+  {name:"기본소득당",leader:"용혜인",seats:1,spectrum:"중도좌파",color:"#8a9a6a"},
+  {name:"사회민주당",leader:"한창민",seats:1,spectrum:"좌익",color:"#6a8a7a"}
+];
+(function(){
+  const total=300;
+  document.getElementById("party-list").innerHTML=`
+    <div class="party-row" style="font-size:12px;color:var(--muted);border:none;background:none;padding:4px 16px">
+      <span>정당 (당대표)</span><span>의석 (300석 중)</span><span>이념 스펙트럼 · 의석수</span></div>` +
+    PARTIES.map(p=>`
+    <div class="party-row">
+      <div><div class="pname">${p.name}</div><div class="pleader">대표 ${p.leader}</div></div>
+      <div class="pbar"><div style="width:${p.seats/total*100}%;background:${p.color}">${p.seats>=20?p.seats+"석":""}</div></div>
+      <div class="pseats"><b>${p.seats}</b>석 / 300<br><span style="font-size:11px;color:var(--muted)">${p.spectrum}</span></div>
+    </div>`).join("") +
+    `<p class="hint" style="margin-top:14px">💡 계보로 보면: <b>더불어민주당</b>(김대중→노무현→문재인 계열) vs <b>국민의힘</b>(민주정의당·김영삼·이명박·박근혜 계열 통합 후신) — 관계도 탭에서 계보 라인으로 확인할 수 있습니다.</p>`;
+})();
+
+// ===== 4) 공약 (실데이터 인용) =====
+const PLEDGES=[
+  {politician:"문재인",meta:"19대 대선(2017) · 임기 완료",
+   real:{total:887,kept:469,broken:368,na:33,rate:55.15,src:"뉴스톱 문재인미터 최종(2022.5)",
+    url:"www.newstopkorea.com/news/articleView.html?idxno=12582"},
+   items:[
+    {title:"청년 취업·공공 일자리",status:"partial",note:"공공일자리 확대, 민간 지표 부진 — 언론 팩트체크 '부분 이행' 종합."},
+    {title:"최저임금 1만원",status:"broken",note:"2022년 9,160원으로 임기 종료."},
+    {title:"판문점 선언(남북관계)",status:"kept",note:"2018 판문점·평양 공동선언 체결."},
+    {title:"검찰 개혁(수사·기소 분리)",status:"progress",note:"공수처 설치(2021), 완전 분리는 과제로 남음."}
+  ]},
+  {politician:"윤석열",meta:"20대 대선(2022) · 임기 중단(2025.4 파면)",
+   real:{total:null,kept:0,broken:0,na:0,rate:null,src:"뉴스톱 윤석열미터 — 1년 14.7%(파기 11%), 2년 약 19%",
+    url:"www.newstopkorea.com/news/articleView.html?idxno=20566"},
+   items:[
+    {title:"1가구 1주택 양도세 중과 폐지",status:"kept",note:"2022 세법 개정으로 이행."},
+    {title:"주 52시간 유연화",status:"partial",note:"특정 업종 예외 확대로 부분 반영."},
+    {title:"청년 기본소득·도약계좌 확대",status:"broken",note:"재정 여건으로 축소·미실시."},
+    {title:"임기 중단",status:"progress",note:"2025.4 탄핵 파면으로 최종 집계 없음 — 2년 시점 이행률 약 19%(문재인 정부 2년 13% 대비 빠름, 박근혜 정부 2년 37% 대비 느림)"}
+  ]},
+  {politician:"이재명",meta:"21대 대선(2025) · 임기 진행 중",
+   real:{total:null,kept:0,broken:0,na:0,rate:null,src:"집계 시작 전 — 취임 1주년(2026.6)부터 뉴스톱 등 팩트체크 예상",
+    url:""},
+   items:[
+    {title:"AI·반도체 국가 전략투자",status:"kept",note:"국가 AI 컴퓨팅 인프라 예산 편성(보도 기준)."},
+    {title:"경제민주화(상법 개정)",status:"progress",note:"개정안 발의·국회 처리 진행 중."},
+    {title:"지방소멸 대응",status:"progress",note:"전담 조직 신설·로드맵 수립 중."}
+  ]}
+];
+const stLabel={kept:"이행",partial:"부분",broken:"미이행",progress:"진행중"};
+function scoreOf(p){const c=p.kept+p.partial+p.broken;return c?Math.round((p.kept+p.partial*.5)/c*100):null}
+document.getElementById("pol-grid").innerHTML=PLEDGES.map(p=>{
+  const pct=p.real.rate;
+  const color=pct==null?"var(--muted)":pct>=70?"#2f6b3a":pct>=50?"#8a6d1a":"#a0432e";
+  const realHtml = p.real.total ? `
+    <div class="score-row"><span class="score" style="color:${color}">${pct!=null?pct+"<small>%</small>":"집계 전"}</span>
+    <span style="font-size:12px;color:var(--muted)">뉴스톱 최종 집계 — 총 ${p.real.total}개 공약: 이행 ${p.real.kept} · 파기 ${p.real.broken}${p.real.na?` · 평가불가 ${p.real.na}`:""}</span></div>
+    <div class="bar"><div style="width:${pct||0}%;background:${color}"></div></div>` : `
+    <div class="score-row"><span class="score" style="color:${color}">집계 전</span>
+    <span style="font-size:12px;color:var(--muted)">${p.real.src}</span></div>
+    <div class="bar"><div style="width:0%"></div></div>`;
+  return `<div class="pol-card">
+    <h3>${p.politician}<span class="who">${p.meta}</span></h3>
+    ${realHtml}
+    <div style="font-size:12px;color:var(--muted);margin-bottom:10px">출처: <a class="cite" href="${p.real.url?"https://"+p.real.url:"#"}" ${p.real.url?"target=_blank":"onclick='return false'"}>${p.real.src}</a></div>
+    ${p.items.map(it=>`<details class="promise" style="border-top:1px dashed var(--border);padding:8px 0;font-size:13px">
+      <summary style="cursor:pointer;display:flex;gap:8px;align-items:center;list-style:none">
+      <span class="st st-${it.status}">${stLabel[it.status]}</span> ${it.title}</summary>
+      <div class="evidence">${it.note}</div></details>`).join("")}
+  </div>`}).join("");
+
+// 역대 정부 비교표
+document.getElementById("cmp-table").innerHTML=`
+  <tr><th>정부</th><th>집계 시점</th><th>이행률</th><th>비고</th></tr>
+  <tr><td>박근혜 정부</td><td>2년</td><td><b>37%</b></td><td>뉴스톱 비교 기준치</td></tr>
+  <tr><td>문재인 정부</td><td>2년 / 최종</td><td><b>13% → 55.15%</b></td><td>887개 공약, 이행 469·파기 368 (뉴스톱 문재인미터)</td></tr>
+  <tr><td>윤석열 정부</td><td>1년 / 2년</td><td><b>14.7% → 약 19%</b></td><td>942개 중 유의미 136개 검증 (뉴스톱 윤석열미터) · 2년 후 파면</td></tr>
+  <tr><td>이재명 정부</td><td>—</td><td>집계 전</td><td>취임 1주년(2026.6)부터 팩트체크 예상</td></tr>`;
+
+// ===== 5) 용어 사전 =====
+document.getElementById("gloss-grid").innerHTML=GLOSSARY.map(g=>`
+  <div class="g-card"><b>${g.t}</b><span class="g-cat">${g.cat}</span><p>${g.d}</p></div>`).join("");
+</script>
+</body>
+</html>

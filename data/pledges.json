@@ -1,0 +1,704 @@
+{
+  "$comment": "공약 이행. office: president|assembly|local|party. real.rate=최종 이행률, rateLabel=최종은 없지만 현재 기준 수치 텍스트. status: kept|partial|broken|progress. 수집일: 2026-10-25. 출처: 뉴스톱 문재인미터·윤석열미터 / 박근혜는 경실련 집권4년차 평가(2016.2)",
+  "pledges": [
+    {
+      "politician": "문재인",
+      "meta": "19대 대선(2017) · 임기 완료",
+      "office": "president",
+      "real": {
+        "total": 887,
+        "kept": 469,
+        "broken": 368,
+        "na": 33,
+        "rate": 55.15,
+        "rateLabel": null,
+        "src": "뉴스톱 문재인미터 최종(2022.5)",
+        "url": "www.newstopkorea.com/news/articleView.html?idxno=12582"
+      },
+      "items": [
+        {
+          "title": "청년 취업·공공 일자리",
+          "status": "partial",
+          "note": "공공일자리 확대, 민간 지표 부진 — 언론 팩트체크 '부분 이행' 종합.",
+          "news": [
+            {
+              "title": "일자리 정책 - 오피니언 | 뉴스 - 대한민국 정책브리핑",
+              "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1rczh5OGN5N05oVVp1YU90NjdWMXdHU0VwYjJNWlFzX3dRUUluWGR0YWFWY0pES3FhZ05fVHMybXdURFo2WWphSHNwM1dLSERNME5yeWVya19XYktnNmVjamNkWmwzbVA2OWJXeUxqTmE?oc=5",
+              "date": "2022-04-05",
+              "source": "대한민국 정책브리핑"
+            },
+            {
+              "title": "文정부 '일자리 사업'은 통계 기만용...127조 썼지만 완전 실패 - 자유일보",
+              "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9NVUFLbWgtTUs2UDBJaktnNFRWc3c1SlBpY0pXM19HTVJSMkNVdHlKMjVQd2ZoRTFiQTZNeHRQbklyaFlua29QdGdsX1VUYVVwTE01U3k4cG5HQ0swNm84aHl6OHVURWlidlU00gFvQVVfeXFMTmlvckgtdFdTQmRKc1A4RkpRRExzY0JNbjRpc3ltNlFrc2NSM2pNbkUtZGVoaHloaWJnQ2tneE9OS1cxU2VRRWFIWW1TSWhEdkQxNGRacUhrclVnYUQzb2p5X2ZQcFE2dGVTblVDMnQ0?oc=5",
+              "date": "2023-09-17",
+              "source": "자유일보"
+            }
+          ]
+        },
+        {
+          "title": "최저임금 1만원",
+          "status": "broken",
+          "note": "2022년 9,160원으로 임기 종료.",
+          "news": [
+            {
+              "title": "'시간당 1만원'까지 반발짝 남긴 내년도 최저임금(종합) - 매일경제 마켓",
+              "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5SbGNpemlwcEpmNEdDUHA1Wm1TSld5S1FPV1BLd3NYeWtiRUtreElWTUdkZWlHSl9NWUk2MnR6MzU1dUhPQURWSmZpSlV0R1ZH?oc=5",
+              "date": "2026-10-21",
+              "source": "매일경제 마켓"
+            },
+            {
+              "title": "‘시급 1만원’으론 비빔밥은 못 사먹지 [유레카] - 한겨레",
+              "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBGcHhCMDlMV3F6ZTYxLVVrTHpUZmxNbnZQWFA1YVNyYTlYanN0bVF0XzFEUDY1NjdvM1lLTzhSanpOaUJsVmxTb3hOd1lQMm1LY1NTU0IyMHhGb0dEemwyTzhzOWJzQQ?oc=5",
+              "date": "2026-05-16",
+              "source": "한겨레"
+            }
+          ]
+        },
+        {
+          "title": "판문점 선언(남북관계)",
+          "status": "kept",
+          "note": "2018 판문점·평양 공동선언 체결.",
+          "news": [
+            {
+              "title": "문재인 전 대통령, 오늘 국회서 ‘판문점선언’ 8주년 기념사 - 경향신문",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9LUVVUbjdnMUlJT2Nhbl85QnN6TDYzZjB3NmdwYUlHWHZHRUU5Zk1MNWpWR0tqZU1SM1lZUHNoY2FfRWk1UUJGNDZ6Z2YzNnhra0Zlckh0TEJXQdIBX0FVX3lxTE51cEpaSlpTZEdLejlqVXFxeUtyTzFRMXJxeUxaY2VaMGRncmhYSWxTa0daelMxZk9BT3h5MzhGYmpGTUZWc2F5enJJeUlRRlVXcGVkenM1VjM1bkRlLWNB?oc=5",
+              "date": "2026-04-27",
+              "source": "경향신문"
+            },
+            {
+              "title": "판문점선언 8주년…문 전 대통령 “김정은·트럼프, 과감하게 마주 앉아야” - 한겨레",
+              "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBQTDBJQy1IZGhVdUNkV3JRZEVQekpZY2I2WWRvMlVHWUQ5Z2ZaUU5WUTFVRGlOcm9qbmQ5NVYzWVZwakhGeUtZMFBIaDRwY0VMREg2cVZJUDMwc1c3OEFVM21tNVdYRFRmenRDT1hpcnE3amRT?oc=5",
+              "date": "2026-04-27",
+              "source": "한겨레"
+            }
+          ]
+        },
+        {
+          "title": "검찰 개혁(수사·기소 분리)",
+          "status": "progress",
+          "note": "공수처 설치(2021), 완전 분리는 과제로 남음.",
+          "news": [
+            {
+              "title": "문재인 “검찰개혁 환영…다 이루지 못한 개혁 완수해 감회 깊어” - KBS 뉴스",
+              "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE12T1NDMC1qRXptQko3OFZDLUQwcGkwYTVMQXJkbjhOZ1dtTnN6d0N4WHRuNm0tSU1wRmpDeWZabjNKOXVzVWtQdU9Cd2dDYnpCNW9xakQtUW1odGM?oc=5",
+              "date": "2026-07-31",
+              "source": "KBS 뉴스"
+            },
+            {
+              "title": "문재인 전 대통령 \"검찰개혁 완수 다행…국민 권익 침해 없도록 준비 당부\" - 연합뉴스TV",
+              "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFB4aGVCWEZjNG82empRSFZPTzI3MzJXVXg5elJQVHBNM0lMNEZ4MW1fYjVEcjJqTnR4clNpWVNqZlJGOVZMekdKVUdYUE9OYmliUjBEVmdNZHFQWGI1UjlYNHlEWFBCbUk?oc=5",
+              "date": "2026-07-31",
+              "source": "연합뉴스TV"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "politician": "박근혜",
+      "meta": "18대 대선(2012) · 임기 중단(2017.3 탄핵)",
+      "office": "president",
+      "real": {
+        "total": 674,
+        "kept": 273,
+        "broken": 134,
+        "na": 260,
+        "rate": 41,
+        "rateLabel": null,
+        "src": "경실련 집권 4년차 대선공약 이행평가(2016.2) — 완전이행 273(41%)·후퇴이행 260(39%)·미이행 134(20%)",
+        "url": "ccej.or.kr/posts/92tnKo"
+      },
+      "items": [
+        {
+          "title": "국민대통합 5대 공약(부마 명예회복 등)",
+          "status": "broken",
+          "note": "경실련 평가 이행률 0% — 하나도 이행 안 됨.",
+          "news": [
+            {
+              "title": "박근혜 정부 2년…거꾸로 가는 국민대통합 - 뉴스타파",
+              "link": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBId0RyVWdTUXdDTWIyMUZMaE91RGN6S2Fvc2xLdFJxX2lpQVdvQ0s3SW9DSDRld1V4WkNmRVkyd3VDQ3pPRmVyMXNR?oc=5",
+              "date": "2015-02-24",
+              "source": "뉴스타파"
+            },
+            {
+              "title": "박근혜 대통령 집권 3년차 대선공약 이행 평가 결과 - 경제정의실천시민연합",
+              "link": "https://news.google.com/rss/articles/CBMiRkFVX3lxTFB3WEVULTJJOUJRb0lmQ1RwSHdsRHI2YWNkTlo2N3RyZHVXV1RlOVlOZ00tMHVGMmx6VUV4TS1DempTM044ZWc?oc=5",
+              "date": "2015-02-16",
+              "source": "경제정의실천시민연합"
+            }
+          ]
+        },
+        {
+          "title": "고교 무상교육·무상보육",
+          "status": "kept",
+          "note": "행복교육 분야 이행률 61% — 상대적 성과.",
+          "news": [
+            {
+              "title": "박근혜 정부 어떻게 달라지나 - 복지·교육 - 중앙일보",
+              "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5IV19NcHdHeUt0RU1EVEhhOHBrbWlUVTE3Xzd1RXNqM2lDa3Q4aWFVWlgwTHc4eXdYUjhsS1JnRUx6WjVyUlN3Z0VwQmItV2JHd1cxZXhR?oc=5",
+              "date": "2012-12-26",
+              "source": "중앙일보"
+            },
+            {
+              "title": "초등-중등-유치원 이어 고교까지 무상교육 완성 - 뉴시스",
+              "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFA3LVB0Q3h6UXBvRUZmS3JMRXdMUS1wdzl4V3pINUpzZXFiQmQ3VEFIMlZHa1A0X3FodVNJN2FZa0lxUkxMRXlBRFRDRGNpZTZVc000eUQ2U3ZqdmJaemlkatIBeEFVX3lxTE1oZDNST1VLVDljRU5ocjBHdmxhVzRkV0thREZoLXpGZmhiRGdDZUx5Y1RUUEU2b3BrQW5PTi10dDR0NVBDWWN1RXpCUnhaU2RpZDUtMWxiMnNpMVlobUxGdHhZU3JyUzRDYnFPRXhYQUlnX0VjVTZleg?oc=5",
+              "date": "2019-10-31",
+              "source": "뉴시스"
+            }
+          ]
+        },
+        {
+          "title": "경제민주화(재벌 지배구조 개선)",
+          "status": "broken",
+          "note": "18개 중 5개 이행(28%) — 총수 일가 사익편취 방치 지적.",
+          "news": [
+            {
+              "title": "한라그룹, ‘순환출자’ 꼼수…박근혜 ‘경제민주화’에도 역행 - 참세상",
+              "link": "https://news.google.com/rss/articles/CBMiQEFVX3lxTE10RG5mNGlvQ3pJcDk1YURmU0RablZDZzlVX2FnM2QtT28wNUhZa3pKNU1aT2NtalpmX2NoT3FYbUU?oc=5",
+              "date": "2026-10-19",
+              "source": "참세상"
+            },
+            {
+              "title": "[단독][새해 경제정책 방향]박 대통령 핵심 공약 ‘경제민주화’…3년 만에 종적 감췄다 - 경향신문",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBwTmtkOW5NYWZWNl9HeXIxLUlTYWh5ai1wVXlscnNkVDhrX24yQ2hEV21pdzlaRXNjb3kwVEZPQUtaSFdTM3lyNDJRUTM2SlhtRC1MYWg2aUd1Z9IBX0FVX3lxTE9EYVlMcnk2bjVtTWlGUUgyamwzZzJEMTYzUFZrc0hoVGpYdkJLZEZ4VmVKcEVCeTR4Z1BWSFVGX2NrcHU2bFB2MkZNeFhlWk9WVFVRdE0ydWQ2MHZsV2VJ?oc=5",
+              "date": "2015-12-16",
+              "source": "경향신문"
+            }
+          ]
+        },
+        {
+          "title": "창조경제",
+          "status": "partial",
+          "note": "14개 중 완전이행 1개(미래부 신설) — 창의산업 14%.",
+          "news": [
+            {
+              "title": "야당 의원 우재준, 金 총리에 “박근혜표 창조경제, 이재명 정부가 살려야” - 영남일보",
+              "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBLcUU1WTBJb1YzRXFuWERuTV9TWnBGckVVaUtqUlJBVG5hVWRjbmxYemRxZTFuRFhtN05iS2pPY2hHQ0ZMMGJheHJtU1BMU245MTV3cXhwMlVrWGozenpDdFJiSVg5V1ZsV1Bj?oc=5",
+              "date": "2026-02-12",
+              "source": "영남일보"
+            },
+            {
+              "title": "[단독]박근혜 정부서 만든 ‘창조경제혁신센터’, 대기업 지원금 끊긴 지역 상당수 - 경향신문",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBpeGlDWlQ4QXo4NmlqX0NCS29kdkNDT0U3QnZhcC1ySGN0ZDA0RnZjelZfZzNFODE4T1BnWFdzeUNVMjdrQU9ZZ19yUmhLVDk4elRpYW1SaDF4UdIBX0FVX3lxTFBtLTdfTEI2M2RicFNuM2dLRUdsY0VsZ05lQmNkQUwxQVJ6TG8wOUNJblA4dFdERzBpV2ZoeVdZX2hMWF8yYk1YT2lsNFc3VjJjWmNFZUVYNHNJM3NDNDdn?oc=5",
+              "date": "2024-10-24",
+              "source": "경향신문"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "politician": "윤석열",
+      "meta": "20대 대선(2022) · 임기 중단(2025.4 파면)",
+      "office": "president",
+      "real": {
+        "total": null,
+        "kept": 0,
+        "broken": 0,
+        "na": 0,
+        "rate": null,
+        "rateLabel": "약 19% (2년 시점)",
+        "src": "뉴스톱 윤석열미터 — 1년 14.7%(파기 11%) → 2년 약 19%. 2025.4 파면으로 최종집계 없음 — 이것이 '현재 기준' 마지막 공식 수치",
+        "url": "www.newstopkorea.com/news/articleView.html?idxno=20566"
+      },
+      "items": [
+        {
+          "title": "1가구 1주택 양도세 중과 폐지",
+          "status": "kept",
+          "note": "2022 세법 개정으로 이행.",
+          "news": [
+            {
+              "title": "‘양도세 중과’ 못 박은 이재명 대통령, 다주택자 셈법 복잡해진 시장 - 비즈한국",
+              "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1RdElHMERITVBXUEw2Wmo1eElrZTlHSjgwRnhuOWlBRHVmSU5tRjY1V0VjZUdhVk50dHBybXJMT1lxLThSTENDMzZESXBHTjdvclZ2Rw?oc=5",
+              "date": "2026-01-26",
+              "source": "비즈한국"
+            },
+            {
+              "title": "재기산 폐지...2년 보유한 12억원 주택 18억에 팔면 양도세 1.5억 아낀다 - 뉴스핌",
+              "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBETjF4RWw3NVdiS2pySWI2LUlRZFR4T0d4dWlQTnZOcjJEVnFQaEpNUWJ6ek1OM1k3MU1KYVlySGgxcDlyZm5vLTdVUFpTRnBzQng0cS1oWXJYMFNI?oc=5",
+              "date": "2022-05-10",
+              "source": "뉴스핌"
+            }
+          ]
+        },
+        {
+          "title": "주 52시간 유연화",
+          "status": "partial",
+          "note": "특정 업종 예외 확대로 부분 반영.",
+          "news": [
+            {
+              "title": "[대선공약] 이재명 \"주4.5일제\" vs 윤석열 \"주52시간 유연화\"…노동공약 맞장 - 뉴스핌",
+              "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9tS0lTY3RUVnVvN1RIbTYzY0Z2WXFSSG5IQzZLdnRDYWk2blVTT1dOUmV1cFY3eFl6YWVhZTYyRkdNWUw5RG9jZzBDZFBGLUhLcS1RUlJiYkE3U1M0?oc=5",
+              "date": "2022-02-16",
+              "source": "뉴스핌"
+            },
+            {
+              "title": "‘주 52시간제 유연화’…우려 커지는 윤석열식 노동개혁 - 경향신문",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1kN1hhaXhQYU8wdklXbEVZMXVVNjN1MWw2RW11S29IZmk5WWM2TGNOLU15X2NGaUtCSVc5VU9RUXlvY0ktb2Uwc2wtRlE2ZnR2U25HbnV2d0std9IBX0FVX3lxTE9xOFEzNzd0Z29SZkhveHZzVjc0YmFzcTNLZDFJYkZ5YUhPazNKWWFSUVRWSzJfN0dfU3VBUHM4cmUyTnJSOXc0ZHlyeU1faF9USFppMER3UXpRTjBiMlIw?oc=5",
+              "date": "2022-06-23",
+              "source": "경향신문"
+            }
+          ]
+        },
+        {
+          "title": "청년 기본소득·도약계좌 확대",
+          "status": "broken",
+          "note": "재정 여건으로 축소·미실시.",
+          "news": [
+            {
+              "title": "청년도약계좌 → 청년미래적금 갈아탈 준비 완료! - 대한민국 정책브리핑",
+              "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFAyLUR0OW9FaGJiVWhISzJoZDZ6YVJZdW51SWwtQS1tT1RRTWV6TjduSTZLa3FVRktVRXJfNkVNbWY2UGcyRm95ZF9kS3M2Y0VZeVZqX0VwOXVmVTdjNGNrX1c2UnI0QWgxckE?oc=5",
+              "date": "2025-11-19",
+              "source": "대한민국 정책브리핑"
+            },
+            {
+              "title": "1억원 만들어준다는 '청년도약계좌'…벌써 수천명 카페까지 - 연합뉴스",
+              "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFA2Nkh5SW4tcnFnanNER0syUVFLMFdmd0EweEtTaXBNdy01dHdlVG14eUxWNmR0MnVkVXVXY2lycE0xaGpsNHVicEdzUFdZajhGb1lzbC13cDdmNjTSAWBBVV95cUxOQ1Q5QlY2Z0VNRTByTWttaV9qbzlFT3pILUs1VFU0ZnFlWHZTNWF1YndySFBzVkNJSE1qYjFJQ0JxOEZYcTZJTVhvYjFMaW1fS3IzTThlbHRrRjlkaXRlODc?oc=5",
+              "date": "2022-05-16",
+              "source": "연합뉴스"
+            }
+          ]
+        },
+        {
+          "title": "임기 중단(2025.4 파면)",
+          "status": "progress",
+          "note": "2년 시점 이행률 약 19% — 문재인 정부 2년 13% 대비 빠름, 박근혜 정부 2년 37% 대비 느림. 이후 집계 없음.",
+          "news": [
+            {
+              "title": "박성재 판결문이 새로 드러낸 12.3 내란의 여섯 장면 ① - 뉴스타파",
+              "link": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE9IblRLeGVGWlVpRG9LVDg3Yl92c2tCSFhQQWNPVlJRRk1IWUVmbDllQmlPV3hWYndBVGpVQVRQUU1SZXVwTTkxWmxR?oc=5",
+              "date": "2026-07-06",
+              "source": "뉴스타파"
+            },
+            {
+              "title": "임기 끝나도 안 나가는 인천공항의 ‘윤석열 정부 사람들’ 왜? - 경향신문",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9QUVkzTjhJMHNuX1MzQ3Z1S0R1dTdqMk1IOGpWMVBSNHNmM0VpWjZKSlNRNlJFT0RhQWo2cWhFSlJCY3Q4eGdWZmZIV1Q3bDZQeGtwSU1XMUlTUdIBX0FVX3lxTE8zZDBJaGpDUTRJRzNZTkhVMDl6NkxfRDluMEZvMlRqbndUeWE5YUVlTTBMRmlsY0c4cUtLb3lSQ0prbzlyOVBVVG5uQnlQdzctQlV2VjR0amxOYkliQUow?oc=5",
+              "date": "2026-05-17",
+              "source": "경향신문"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "politician": "이재명",
+      "meta": "21대 대선(2025) · 임기 진행 중",
+      "office": "president",
+      "real": {
+        "total": null,
+        "kept": 0,
+        "broken": 0,
+        "na": 0,
+        "rate": null,
+        "rateLabel": "취임 5개월",
+        "src": "집계 시작 전 — 취임 1주년(2026.6)부터 뉴스톱 등 팩트체크 예상",
+        "url": ""
+      },
+      "items": [
+        {
+          "title": "AI·반도체 국가 전략투자",
+          "status": "kept",
+          "note": "국가 AI 컴퓨팅 인프라 예산 편성(보도 기준).",
+          "news": [
+            {
+              "title": "이재명 대통령 \"AI 반도체 호황 추가세수, 미래대응기금으로 전략 투자“ - 인더스트리뉴스",
+              "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBQM3hCZkRxUTFqMlBLWEluOWJabGg0QUg2TzVUVEwtVWpmU19kZkhmaTdsTTF6MHZjMm1qZUtqbXZ1UHNaaFBZbkdlc3ZuSndtZ3JDM1BaNXVfbU5jZ3JubkVxVlVXSDF5OUtrTmIwZXFkZw?oc=5",
+              "date": "2026-07-13",
+              "source": "인더스트리뉴스"
+            },
+            {
+              "title": "\"대체불가 대한민국 원년\"…이재명 대통령, AI·반도체 국가전략 선언 - 경기일보",
+              "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1YN3M3WHZzMVVLenpSUFNyMVdVMWMwVFNqbmlBRHhvbS14RkczMEdqOHJMTFVvcy01TVBOdnhqaUQ2Z0FVNVFEbmFzbU1QUEpsdE5qQzFkbE9faTQ?oc=5",
+              "date": "2026-06-29",
+              "source": "경기일보"
+            }
+          ]
+        },
+        {
+          "title": "경제민주화(상법 개정)",
+          "status": "progress",
+          "note": "개정안 발의·국회 처리 진행 중.",
+          "news": [
+            {
+              "title": "[공동좌담회] 이재명 정부 출범 1년 경제민주화 민생정책 평가 좌담회 - 경제정의실천시민연합",
+              "link": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE44TDh1M1M2akRtZnR6bGdtZl9xZzJWblRub3NfVl9IZllmS2Nnc0tVNzc3SUZCMERUS2pfS2tya1pGUTdkM1FR?oc=5",
+              "date": "2026-06-24",
+              "source": "경제정의실천시민연합"
+            },
+            {
+              "title": "이재명 정부 1년, 경제민주화 정책 '대체로 선방'…“양극화 해소 위한 구조개혁 시급” - 한국NGO신문",
+              "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9iY0lnRVNTZVRaSUxRekR5ajZfWG9NaU85MERLXzV3cVVCRHFaeU5ObjJubzI0bUZ0VFBEQWxTcmxfdUN0dUt1R2dzeG1NenpqRG54SnFDN1hZeTJRejhjNk5pUHlvYWV3?oc=5",
+              "date": "2026-06-24",
+              "source": "한국NGO신문"
+            }
+          ]
+        },
+        {
+          "title": "지방소멸 대응",
+          "status": "progress",
+          "note": "전담 조직 신설·로드맵 수립 중.",
+          "news": [
+            {
+              "title": "이재명, '수도권 집중 vs 지방소멸' 대응… 대통령 집무실 미래는 - 중도일보",
+              "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9ITXhHMWhTUUJ5RTJFbXAxX2pXZk5Sei1SZ3FXWk95ZDE5UHdwS1Q5c3djSFowZHlTV2ZzX1IwNzRZNldJY0JHRUp5elpqV0hLVWxpUGp4UmM1Z292WHpNYnVtSHo?oc=5",
+              "date": "2026-06-08",
+              "source": "중도일보"
+            },
+            {
+              "title": "자치운동연대, \"이재명정부는 일방적 미래대응기금 재원 마련 방안 전면 재검토하라\" - 제주환경일보",
+              "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5DdUJVWVlaRkg1MkdfLV9XRVh0WFhVcndMdDJTaW5keUZyZWUxLXF2UmNRS1NSTVJ5Z25mZnpVVHoyVEFkU3Z4eWNFY2Fjc09YZHB5akpRRzJuVU01M05OYnlBb0E5dXVr?oc=5",
+              "date": "2026-09-08",
+              "source": "제주환경일보"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "politician": "조국혁신당",
+      "meta": "22대 총선(2024) · 정당 단위 공약",
+      "office": "party",
+      "real": {
+        "total": null,
+        "kept": 0,
+        "broken": 0,
+        "na": 0,
+        "rate": null,
+        "rateLabel": null,
+        "src": "예시 데이터(언론 보도 요약) — 정당 공약집 기반 실데이터 수집 예정",
+        "url": ""
+      },
+      "items": [
+        {
+          "title": "검찰개혁(수사·기소 완전 분리)",
+          "status": "progress",
+          "note": "22대 국회 법사위 계류 — 여야 이견.",
+          "news": [
+            {
+              "title": "조국혁신당, 불평등 해소·주거안정 9개 법안 당론 추진…월세 공제 확대·세입자 보호 강화 - www.kmsnews.co.kr",
+              "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE82aThWYUNDUkI0NHBjeHFqVzUzby1xbVdGVW54WU52aHkybXdzd2N5NFBlUGlHQW9Nazd4LUVaVVZOV091aWloZW5CdC1LT1FNMGRhVGRrbXROYVROS3RmdlNac0Z0RlRWUnc?oc=5",
+              "date": "2026-10-27",
+              "source": "www.kmsnews.co.kr"
+            },
+            {
+              "title": "‘이 대통령 vs 유시민’ 검찰개혁 누가 맞나 ‘팽팽’…조국당 지지율 첫 9%대ㅣ미디어토마토 - JTBC",
+              "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBGd2dwelhLOWEyYzZKRFhiWk56eVFSVjVHNFpHZTVmTGlqRl9NcVFESzNJUm5VUzRiVkUxeDJKWXBha2JIajR5TUlCZ0JmbTdUa3pwMg?oc=5",
+              "date": "2026-10-22",
+              "source": "JTBC"
+            }
+          ]
+        },
+        {
+          "title": "양극화 해소 특별법",
+          "status": "progress",
+          "note": "발의 완료, 처리 지연.",
+          "news": [
+            {
+              "title": "조국혁신당, 청년 월세 세액공제 1500만 원 확대 9개 법안 당론 - 한국사회복지저널",
+              "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5OaFhnUU5CTTA4cEtneWdpbnRpakUwWC04RUxmSWFwR3BGZjZFNmZfNzV2cmFnX2cxS0xTNm9HMHF6LXdFenJKejhCaXI1WmJsajNPWVJZRzU2anZ0TjBzd0R5T3ROclh2TU5BbQ?oc=5",
+              "date": "2026-10-28",
+              "source": "한국사회복지저널"
+            },
+            {
+              "title": "조국혁신당, 불평등 해소·주거안정 9개 법안 당론 추진…월세 공제 확대·세입자 보호 강화 - www.kmsnews.co.kr",
+              "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE82aThWYUNDUkI0NHBjeHFqVzUzby1xbVdGVW54WU52aHkybXdzd2N5NFBlUGlHQW9Nazd4LUVaVVZOV091aWloZW5CdC1LT1FNMGRhVGRrbXROYVROS3RmdlNac0Z0RlRWUnc?oc=5",
+              "date": "2026-10-27",
+              "source": "www.kmsnews.co.kr"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "politician": "이준석",
+      "meta": "22대 총선(2024) · 개혁신당",
+      "office": "assembly",
+      "real": {
+        "total": null,
+        "kept": 0,
+        "broken": 0,
+        "na": 0,
+        "rate": null,
+        "rateLabel": null,
+        "src": "예시 데이터(언론 보도 요약) — 의원실·정당 공약 대조 실데이터 수집 예정",
+        "url": ""
+      },
+      "items": [
+        {
+          "title": "정당 민주화(당원 소환제)",
+          "status": "kept",
+          "note": "개혁신당 당헌·당규에 반영.",
+          "news": [
+            {
+              "title": "‘정당민주화’가 낳은 팬덤 정치 - 중앙일보",
+              "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9IUDM3ZzlzRVhJYThaY0dZRFJBeFlBWjVlQmIzOTNpd01hbWFGZVNZd3lwY0lCbUR3RmQyMkNjZE9rZ0Exa0hOR1hKNl9Ka09zc21FLVZB?oc=5",
+              "date": "2026-07-27",
+              "source": "중앙일보"
+            },
+            {
+              "title": "광주 간 이준석 \"5·18 가치 훼손? 지탄받을 일…기업에 경고 필요\" - 매일신문",
+              "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFB1ZmdRNFh5QUlzLVdudm1keVJlZFFNZVdBQTQzQnQ4TXRwY0V0SVM3NXVrSjBrM3ZYWWkxQVVVcWVWUTQ3WGdzOV9aZG9GU09famU4emsxM3pxN05RdnM3OHFR?oc=5",
+              "date": "2026-05-26",
+              "source": "매일신문"
+            }
+          ]
+        },
+        {
+          "title": "지역구(화성 을) 현안 처리",
+          "status": "progress",
+          "note": "의정활동 보도 기준 진행 중.",
+          "news": [
+            {
+              "title": "이준석 \"吳, '차도살인·정치공세'에서 명예회복…동탄 현안 함께 풀것\" - 머니투데이 - 머니투데이",
+              "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1paC1XRUU5Z0ljWTFPZVRGdHZBYVdYZnFHd1laTkhweVFZZ2lwdW9VVEx4LVBFU0xydmdjZWVjSkNjV3EzZ3BmQWxId25PdGNYRlMwbGZhS3Q2WFJ4ZWExWVA2QktCZWNhZ0RuV9IBckFVX3lxTE1QT25pM2JKLWhvaHEySmp2YmJMbVp4LTBFNllVY09lamR1N2NTakJYa2x4amttT3p2dmstR3FtVlVtOTlXWnVDZWNtUlFSSGJRQTNVNVZxSkJOcnZWSElrckt4RXNKSlFNZWtVSU9sWTJjUQ?oc=5",
+              "date": "2026-10-23",
+              "source": "머니투데이"
+            },
+            {
+              "title": "개혁신당 화성을 당원협의회 출범…지역 현안 중심 조직 운영 - 신아일보",
+              "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1Bc1publg1TkV6aXdsT1NuSk9ONHNUWkRWZGZ5QU5RbF9oeV80aDZleGpyRzdvVFFKbHRsWjBReTJINkNwd1hMR2lzbE5lbEJCZGxGS21CVUFDNjlDbFNqelhmZ2VOajNBTTBrR3VRZmM?oc=5",
+              "date": "2026-07-24",
+              "source": "신아일보"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "politician": "오세훈",
+      "meta": "제8회 지방선거(2022) · 서울시장",
+      "office": "local",
+      "real": {
+        "total": null,
+        "kept": 0,
+        "broken": 0,
+        "na": 0,
+        "rate": null,
+        "rateLabel": null,
+        "src": "예시 데이터(언론 보도 요약) — 서울시 공약 이행계획서 대조 실데이터 수집 예정",
+        "url": ""
+      },
+      "items": [
+        {
+          "title": "청년 임대주택 확대",
+          "status": "progress",
+          "note": "공급 사업 진행 중(시 발표 기준).",
+          "news": [
+            {
+              "title": "오세훈, 청년들 만나 \"집 때문에 서울 떠나지 않게 하겠다\" - 연합뉴스",
+              "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE80SkRVajVGNlNQeHEwbl9CVXMwWDE2b1VEbkhIYnJaazlqaDZjNjc3NzBFdDh5c181VzcwZjQyZnlraFpHVERWMm4yRmhWeFZrdmZCVFo5ajU1NWPSAWBBVV95cUxPWVlaVTdsU3d1YjBZRFVSeXBLRHJqNFE0ZG83dUs5TW9RMjg2QzJBcmZJRzIyd1huS1Ntdzhoa3N1MV8wR0d6eWYyMDMwOEtRYnFZY3lSS3FOVzdFSFB2bUQ?oc=5",
+              "date": "2026-08-12",
+              "source": "연합뉴스"
+            },
+            {
+              "title": "오세훈 서울시장 \"2030년까지 7만4000가구 청년 주택 공급\" - 조선일보",
+              "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNd0p4ZmlZQVBaRld1dHRTeUtSTU1yZGpfZGpnMU9SazcwYklUYTNSdTFRUTZ2SWhicG9BSXZTaS1fM045QllTeFF1UjZGcVFJTnhzN09tOGlGbm14QnhfZzZ6d25pZi1UTmYxTF9jRjlUQlBIQlJwTkNvLTZ2TVJXMFQ2Rm1IZkJaQUdXbHVzMkk?oc=5",
+              "date": "2026-06-30",
+              "source": "조선일보"
+            }
+          ]
+        },
+        {
+          "title": "탄소중립 서울 2050",
+          "status": "progress",
+          "note": "로드맵 발표·단계 시행.",
+          "news": [
+            {
+              "title": "방풍재부터 자원회수시설까지…서울시, 2050년까지 탄소배출 '제로' - 머니투데이 - 머니투데이",
+              "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE90Tk1vODhqVjE0c0hxazhsQVdMb1pOSFdsc1VVRnd6NFBGdC1xN2hvT1Faa0U0d3JZdzQ4RkIycGVOQ1RoOWJQeWUwVzZiZDFaeHdYNjhzNUxNcXJZVGtQTjlpc0FJai00N2FLekxpQdIBb0FVX3lxTE90Tk1vODhqVjE0c0hxazhsQVdMb1pOSFdsc1VVRnd6NFBGdC1xN2hvT1Faa0U0d3JZdzQ4RkIycGVOQ1RoOWJQeWUwVzZiZDFaeHdYNjhzNUxNcXJZVGtQTjlpc0FJai00N2FLekxpQQ?oc=5",
+              "date": "2026-10-28",
+              "source": "머니투데이"
+            },
+            {
+              "title": "[국토부] 건물 탄소 Zero를 향해! 정부·지자체 및 학계 공동협력 강화 - 국가기후위기대응위원회",
+              "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQVUpfUEVQa2hTT0l4OWFLcDVnMW9jQ3hzbEJsb0J6M1dDVE5iRlZrSDlzMzZoTzhTOFgwQ0ltRVgzS2xZS0xwYlFJdWwzZTJOQVVfcFlKdm9jM0xpU1BoeEM4NlpBR3k1ZlNnN2JPUVdManM3em9JLWI4RzA2Y1lhUDdzVTV4RTIyUFMtMnhTZUp3YVNfOHVXUW9MYjNxVnRDcnZVYW16eW5vQ1hQXzZpWW9BcF92QkpCZ043XzNfTFFqS2FPaFZ4VUQwR0pESXlkZlRjazRQU2YyNE0?oc=5",
+              "date": "2026-09-25",
+              "source": "국가기후위기대응위원회"
+            }
+          ]
+        },
+        {
+          "title": "노후 지하철 안전 대책",
+          "status": "partial",
+          "note": "예산 반영되었으나 속도 논란.",
+          "news": [
+            {
+              "title": "[단독] ‘오세훈표’ 9조원대 서울 지하철 신설…싱크홀 위험지대 지난다 - 시사저널",
+              "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5NS19uemhRbE5DTDN3emFTRmNIbE5kZlpieXAxWkwwcTdDcl8zVzBpUXFkdEFXM2pSdEx1X0lMNlozcEdmbVVqaEJzZ21QTFE5am5xTllfZkZndmRsS0NHdkVDN19LQ2Y3YVk4MDVfZ9IBc0FVX3lxTFAzdHd0TUs1WTVrRklVVjlyUHJFejJxQ3d3aHdEV05sR0xLblV0NzI4Y1Ftdl9GemhtUS1XajVMZEVscm1yUkNmNEFUdmhURmRtX3hVUE90UllrbWs1VkNYRlE4TkJOaFpUakpnUDlENFRzUWM?oc=5",
+              "date": "2026-06-19",
+              "source": "시사저널"
+            },
+            {
+              "title": "“서울지하철 노후화로 ‘D’ 등급…자체 재원만으로 해결 어려워” - 주간한국",
+              "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9tb1lMUU1tcjRFWTNiZGd5UG9RZXNLUFpQZkd4WXdjZXM5ekFhVXdYelJxb3o2UUM5N0tZcFF5OWRRc1FlRkJhX08xNU5NRnA0dnBYMzB3bjl3ZU15V3NBekxnZ3JwbGg1MFh0OXFxbHXSAXRBVV95cUxNd1gxcEEtNzUyZnJZMEhZVFNkY2NISkhnTDBkV0xvemFFUVNWRWVZaXlibTg0V3BheloyaVZxOFVDcWlkLTgyeGdwaV9qUjJ3VWFGWTJEUHdqaHNMY3BWTV9lTEJReVZZR1BZOTBRNWI5WlIwMg?oc=5",
+              "date": "2026-07-24",
+              "source": "주간한국"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "politician": "안철수",
+      "meta": "19대 대선(2017) · 국민의당",
+      "office": "president",
+      "real": {
+        "total": null,
+        "kept": 0,
+        "broken": 0,
+        "na": 0,
+        "rate": null,
+        "rateLabel": null,
+        "url": "",
+        "src": "자체 집계(보도 기반) — 2017 대선 후 패배로 정권 공약 이행 없음, 국민의당 해체·통합 과정에서 대부분 폐기"
+      },
+      "items": [
+        {
+          "title": "공정경제(재벌 개혁)",
+          "status": "broken",
+          "note": "야당 후보로 정권 교체 실패 — 공약 이행 주체 소멸."
+        },
+        {
+          "title": "기본소득 논의 확산",
+          "status": "progress",
+          "note": "안철수 이후 기본소득당(용혜인) 창당으로 부분 계승."
+        }
+      ]
+    },
+    {
+      "politician": "홍준표",
+      "meta": "19대 대선(2017) · 자유한국당",
+      "office": "president",
+      "real": {
+        "total": null,
+        "kept": 0,
+        "broken": 0,
+        "na": 0,
+        "rate": null,
+        "rateLabel": null,
+        "url": "",
+        "src": "자체 집계(보도 기반) — 패배 후 대구시장 당선, 대선 공약은 지방 정책으로 부분 계승"
+      },
+      "items": [
+        {
+          "title": "감세·규제개혁",
+          "status": "progress",
+          "note": "이후 보수 정권(윤석열) 감세 정책으로 방향 계승."
+        },
+        {
+          "title": "대구 혁신도시 육성",
+          "status": "kept",
+          "note": "대구시장 재임 중 혁신도시 유치·확충."
+        }
+      ]
+    },
+    {
+      "politician": "박원순",
+      "meta": "제7회 지방선거(2018) · 서울시장 3선",
+      "office": "local",
+      "real": {
+        "total": null,
+        "kept": 0,
+        "broken": 0,
+        "na": 0,
+        "rate": null,
+        "rateLabel": null,
+        "url": "",
+        "src": "자체 집계(보도 기반) — 2020.7 재임중 서거로 임기 중단"
+      },
+      "items": [
+        {
+          "title": "그린시티 서울(탈원전 도시)",
+          "status": "progress",
+          "note": "태양광 확충 등 진행 중 서거."
+        },
+        {
+          "title": "주거 대책(공공임대 확대)",
+          "status": "partial",
+          "note": "공급 목표 일부 달성 — 이후 시장(오세훈)의 정책 전환."
+        }
+      ]
+    },
+    {
+      "politician": "김동연",
+      "meta": "제8회 지방선거(2022) · 경기지사",
+      "office": "local",
+      "real": {
+        "total": null,
+        "kept": 0,
+        "broken": 0,
+        "na": 0,
+        "rate": null,
+        "rateLabel": null,
+        "url": "",
+        "src": "자체 집계(보도 기반) — 임기 진행 중"
+      },
+      "items": [
+        {
+          "title": "경기 기본소득(청년)",
+          "status": "kept",
+          "note": "만 24세 경기 청년 기본소득(분기 25만 원) 시행 — 전국 첫 광역 단위."
+        },
+        {
+          "title": "경기도 혁신 산업 클러스터",
+          "status": "progress",
+          "note": "반도체·미래차 클러스터 조성 진행."
+        }
+      ]
+    },
+    {
+      "politician": "최문순",
+      "meta": "제8회 지방선거(2022) · 강원지사 3선",
+      "office": "local",
+      "real": {
+        "total": null,
+        "kept": 0,
+        "broken": 0,
+        "na": 0,
+        "rate": null,
+        "rateLabel": null,
+        "url": "",
+        "src": "자체 집계(보도 기반) — 임기 진행 중"
+      },
+      "items": [
+        {
+          "title": "강원 세계겨울스포츠대회 유치",
+          "status": "kept",
+          "note": "2024 강원동계청소년올림픽 개최."
+        },
+        {
+          "title": "강원 관광 르네상스",
+          "status": "progress",
+          "note": "K-관광 도시 조성 사업 진행."
+        }
+      ]
+    }
+  ],
+  "comparison": [
+    {
+      "gov": "박근혜 정부",
+      "point": "2년 / 4년(사실상 최종)",
+      "rate": "37% → 41%",
+      "note": "674개 공약 — 완전이행 273·후퇴 260·미이행 134 (경실련 2016.2, 탄핵으로 5년차 없음)"
+    },
+    {
+      "gov": "문재인 정부",
+      "point": "2년 / 최종",
+      "rate": "13% → 55.15%",
+      "note": "887개 공약, 이행 469·파기 368 (뉴스톱 문재인미터 2022.5)"
+    },
+    {
+      "gov": "윤석열 정부",
+      "point": "1년 / 2년(마지막 집계)",
+      "rate": "14.7% → 약 19%",
+      "note": "942개 중 유의미 136개 검증 (뉴스톱 윤석열미터) · 2025.4 파면"
+    },
+    {
+      "gov": "이재명 정부",
+      "point": "—",
+      "rate": "집계 전",
+      "note": "취임 1주년(2026.6)부터 팩트체크 예상"
+    }
+  ],
+  "newsCollected": "2026-10-28"
+}

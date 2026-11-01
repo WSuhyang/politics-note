@@ -1,0 +1,38 @@
+{
+  "nodes": [
+    {"id": "이재명", "party": "더불어민주당", "camp": "민주", "born": 1963, "roles": ["대통령(21대)", "경기지사", "성남시장"], "edu": "중앙대 법학 · 사법연수원 29기"},
+    {"id": "이준석", "party": "개혁신당", "camp": "보수", "born": 1985, "roles": ["국회의원", "국민의힘 대표(역)"], "edu": "하버드대"},
+    {"id": "김문수", "party": "국민의힘", "camp": "보수", "born": 1951, "roles": ["경기지사", "노동부장관"], "edu": "고려대"},
+    {"id": "한동훈", "party": "국민의힘", "camp": "보수", "born": 1972, "roles": ["법무부장관"], "edu": "서울대 · 하버드"},
+    {"id": "박근혜", "party": "무소속", "camp": "보수", "born": 1952, "roles": ["대통령(18대)"], "edu": "서강대"},
+    {"id": "홍준표", "party": "자유의새벽당", "camp": "보수", "born": 1953, "roles": ["대구시장", "대표(역)"], "edu": "서울대 · 사법연수원 13기"},
+    {"id": "김기현", "party": "국민의힘", "camp": "보수", "born": 1962, "roles": ["당대표(역)"], "edu": "성균관대"},
+    {"id": "나경원", "party": "국민의힘", "camp": "보수", "born": 1965, "roles": ["국회의원"], "edu": "서울대"},
+    {"id": "김영삼", "party": "신한국당", "camp": "보수", "born": 1927, "died": 2015, "roles": ["대통령(14대)"], "edu": "서울대"},
+    {"id": "박정희", "party": "민주공화당", "camp": "보수", "born": 1917, "died": 1979, "roles": ["대통령(5~9대)"], "edu": "육군사관학교"},
+    {"id": "김대중", "party": "새정치국민회의", "camp": "민주", "born": 1924, "died": 2009, "roles": ["대통령(15대)"], "edu": "고려대 명예"},
+    {"id": "노무현", "party": "열린우리당", "camp": "민주", "born": 1946, "died": 2009, "roles": ["대통령(16대)"], "edu": "사법고시(독학)"},
+    {"id": "문재인", "party": "더불어민주당", "camp": "민주", "born": 1953, "roles": ["대통령(19대)"], "edu": "경희대"},
+    {"id": "윤석열", "party": "무소속", "camp": "보수", "born": 1960, "roles": ["대통령(20대)", "검찰총장"], "edu": "서울대"},
+    {"id": "이낙연", "party": "더불어민주당", "camp": "민주", "born": 1952, "roles": ["국무총리(역)"], "edu": "서울대"},
+    {"id": "박지원", "party": "더불어민주당", "camp": "민주", "born": 1942, "roles": ["국회의원", "정보원장(역)"], "edu": "고려대"},
+    {"id": "김한길", "party": "더불어민주당", "camp": "민주", "born": 1956, "roles": ["국회의원(역)"], "edu": "중앙대"},
+    {"id": "박용진", "party": "더불어민주당", "camp": "민주", "born": 1971, "roles": ["국회의원"], "edu": "고려대"},
+    {"id": "박범계", "party": "더불어민주당", "camp": "민주", "born": 1968, "roles": ["법무부장관(역)"], "edu": "서울대"}
+  ],
+  "edges": [
+    {"source": "박정희", "target": "박근혜", "relation": "부녀", "type": "family", "strength": 3},
+    {"source": "박근혜", "target": "이준석", "relation": "박근혜 키즈", "type": "lineage", "strength": 2},
+    {"source": "박근혜", "target": "나경원", "relation": "친박 계열", "type": "faction", "strength": 2},
+    {"source": "김영삼", "target": "홍준표", "relation": "YS 키즈", "type": "lineage", "strength": 2},
+    {"source": "김영삼", "target": "김기현", "relation": "YS 키즈", "type": "lineage", "strength": 2},
+    {"source": "노무현", "target": "문재인", "relation": "인권변론 파트너 → 참여정부", "type": "lineage", "strength": 3},
+    {"source": "노무현", "target": "이재명", "relation": "참여정부 계보 → 친명", "type": "lineage", "strength": 1},
+    {"source": "김대중", "target": "이낙연", "relation": "DJ 계보", "type": "lineage", "strength": 2},
+    {"source": "김대중", "target": "박지원", "relation": "DJ 최측근", "type": "faction", "strength": 3},
+    {"source": "윤석열", "target": "한동훈", "relation": "검찰 동료", "type": "school", "strength": 3},
+    {"source": "이재명", "target": "김한길", "relation": "중앙대 동문", "type": "school", "strength": 1},
+    {"source": "이재명", "target": "박용진", "relation": "캠프(친명)", "type": "faction", "strength": 2},
+    {"source": "이재명", "target": "박범계", "relation": "캠프(친명)", "type": "faction", "strength": 2}
+  ]
+}

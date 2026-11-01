@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>정리노트 — 정치 관계도 · 공약 이행도 프로토타입</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<style>
+  :root {
+    --bg: #fbf9f4; --ink: #1c1917; --muted: #78716c; --border: #e0dbd2;
+    --card: #ffffff; --accent: #b45309;
+    --camp-dem: #2563a8; --camp-con: #c0563f; --camp-mid: #7c7f6a;
+    --rel-family: #8a5a44; --rel-lineage: #b45309; --rel-faction: #6b705c; --rel-school: #5f7d8c;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--ink); font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; }
+  header { display: flex; align-items: baseline; gap: 14px; padding: 18px 28px 10px; border-bottom: 1px solid var(--border); background: var(--card); }
+  header h1 { font-size: 20px; letter-spacing: -0.02em; }
+  header .tag { font-size: 12px; color: var(--muted); }
+  nav { display: flex; gap: 2px; padding: 0 28px; background: var(--card); border-bottom: 1px solid var(--border); }
+  nav button { border: none; background: none; padding: 10px 16px; font-size: 14px; cursor: pointer; color: var(--muted); border-bottom: 2px solid transparent; }
+  nav button.active { color: var(--ink); border-bottom-color: var(--accent); font-weight: 600; }
+  main { padding: 20px 28px 60px; }
+  .page { display: none; }
+  .page.active { display: block; }
+  .toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 14px; }
+  .toolbar input[type="search"] { padding: 8px 12px; border: 1px solid var(--border); border-radius: 8px; font-size: 14px; width: 220px; background: var(--card); }
+  .legend { display: flex; gap: 14px; font-size: 12px; color: var(--muted); margin-left: auto; flex-wrap: wrap; }
+  .legend span { display: inline-flex; align-items: center; gap: 5px; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  #graph { width: 100%; height: 620px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; position: relative; }
+  .link { stroke-opacity: 0.55; }
+  .link.highlight, .link.dimmed-off { transition: stroke-opacity .2s; }
+  .node circle { stroke: #fff; stroke-width: 2px; cursor: grab; }
+  .node text { font-size: 12px; pointer-events: none; paint-order: stroke; stroke: var(--card); stroke-width: 3px; }
+  .node.faded { opacity: 0.15; }
+  #tooltip { position: absolute; pointer-events: none; background: var(--ink); color: #faf7f0; padding: 10px 12px; border-radius: 8px; font-size: 12px; line-height: 1.55; max-width: 260px; opacity: 0; transition: opacity .15s; z-index: 5; }
+  #tooltip .t-name { font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+  #tooltip .t-sub { color: #d6cfc2; }
+  /* 공약 페이지 */
+  .pol-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; }
+  .pol-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; }
+  .pol-card h3 { font-size: 16px; display: flex; justify-content: space-between; align-items: baseline; }
+  .pol-card h3 .who { font-size: 12px; color: var(--muted); font-weight: 400; }
+  .score-row { display: flex; align-items: baseline; gap: 8px; margin: 10px 0 4px; }
+  .score { font-size: 34px; font-weight: 800; letter-spacing: -0.03em; }
+  .score small { font-size: 14px; font-weight: 400; color: var(--muted); }
+  .bar { height: 8px; border-radius: 4px; background: #ede8de; overflow: hidden; margin: 6px 0 14px; }
+  .bar > div { height: 100%; border-radius: 4px; }
+  details.promise { border-top: 1px dashed var(--border); padding: 8px 0; font-size: 13px; }
+  details.promise summary { cursor: pointer; display: flex; gap: 8px; align-items: center; list-style: none; }
+  details.promise summary::-webkit-details-marker { display: none; }
+  .st { font-size: 11px; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+  .st-kept { background: #e3efe3; color: #2f6b3a; }
+  .st-partial { background: #f5ecd9; color: #8a6d1a; }
+  .st-broken { background: #f3ded9; color: #a0432e; }
+  .st-progress { background: #e0e9f3; color: #35608e; }
+  .evidence { margin-top: 6px; color: var(--muted); font-size: 12px; padding-left: 2px; }
+  .evidence a { color: var(--accent); text-decoration: none; }
+  footer { position: fixed; bottom: 0; left: 0; right: 0; background: var(--card); border-top: 1px solid var(--border); padding: 8px 28px; font-size: 12px; color: var(--muted); }
+  .hint { font-size: 13px; color: var(--muted); margin-bottom: 10px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>정리노트 <span style="color:var(--accent)">v0</span></h1>
+  <span class="tag">정치 입문자를 위한 관계도 · 공약 이행 추적 — 프로토타입</span>
+</header>
+<nav>
+  <button id="tab-rel" class="active" onclick="showTab('rel')">정치 관계도</button>
+  <button id="tab-prom" onclick="showTab('prom')">공약 이행도</button>
+</nav>
+<main>
+  <!-- ===== 관계도 페이지 ===== -->
+  <section id="page-rel" class="page active">
+    <div class="toolbar">
+      <input type="search" id="search" placeholder="인물 검색 (예: 이재명)">
+      <label style="font-size:13px;color:var(--muted)"><input type="checkbox" id="only-rel" style="vertical-align:-2px"> 관계 유형:
+        <select id="rel-filter" style="padding:4px 6px;border:1px solid var(--border);border-radius:6px">
+          <option value="all">전체</option>
+          <option value="family">가족</option>
+          <option value="lineage">계보 (○○키즈)</option>
+          <option value="faction">계파/캠프</option>
+          <option value="school">동문/동료</option>
+        </select>
+      </label>
+      <div class="legend">
+        <span><i class="dot" style="background:var(--camp-dem)"></i>민주진영</span>
+        <span><i class="dot" style="background:var(--camp-con)"></i>보수진영</span>
+        <span><i class="dot" style="background:var(--camp-mid)"></i>제3지대</span>
+      </div>
+    </div>
+    <div id="graph">
+      <svg width="100%" height="100%"></svg>
+      <div id="tooltip"></div>
+    </div>
+    <p class="hint">💡 노드를 드래그해 배치, 클릭하면 그 인물의 관계만 하이라이트. 마우스 오버 시 간단 프로필. — 실제 서비스에서는 노드 클릭 → 인물 노트(가족관계·학력·사법연수원 기수·동기 현황) 페이지로 이동.</p>
+  </section>
+
+  <!-- ===== 공약 페이지 ===== -->
+  <section id="page-prom" class="page">
+    <p class="hint">💡 예시 데이터(공개 보도 기준 요약). 실제 서비스는 <b>공공데이터포털 '대통령 공약' API + 정당 공약집 PDF + 언론 팩트체크</b>를 출처 표기와 함께 표시합니다.</p>
+    <div class="pol-grid" id="pol-grid"></div>
+  </section>
+</main>
+<footer>프로토타입 — 모든 데이터는 예시이며, 실제 서비스는 반드시 출처(공공데이터·언론 보도)를 표기합니다.</footer>
+
+<script>
+const DATA = {
+  nodes: [
+    {id:"이재명", party:"더불어민주당", camp:"dem", born:1963, roles:["대통령(21대)","경기지사","성남시장"], edu:"중앙대 법학 · 사법연수원 29기"},
+    {id:"이준석", party:"개혁신당", camp:"con", born:1985, roles:["국회의원","국민의힘 대표(역)"], edu:"하버드대"},
+    {id:"김문수", party:"국민의힘", camp:"con", born:1951, roles:["경기지사","노동부장관"], edu:"고려대"},
+    {id:"한동훈", party:"국민의힘", camp:"con", born:1972, roles:["법무부장관(역)"], edu:"서울대 · 하버드"},
+    {id:"박근혜", party:"무소속", camp:"con", born:1952, roles:["대통령(18대)"], edu:"서강대"},
+    {id:"홍준표", party:"자유의새벽당", camp:"con", born:1953, roles:["대구시장"], edu:"서울대 · 사법연수원 13기"},
+    {id:"김기현", party:"국민의힘", camp:"con", born:1962, roles:["당대표(역)"], edu:"성균관대"},
+    {id:"나경원", party:"국민의힘", camp:"con", born:1965, roles:["국회의원"], edu:"서울대"},
+    {id:"김영삼", party:"신한국당", camp:"con", born:1927, died:2015, roles:["대통령(14대)"], edu:"서울대 · 상도동"},
+    {id:"박정희", party:"민주공화당", camp:"con", born:1917, died:1979, roles:["대통령(5~9대)"], edu:"육사"},
+    {id:"김대중", party:"새정치국민회의", camp:"dem", born:1924, died:2009, roles:["대통령(15대)"], edu:"DJ · 호남 계보"},
+    {id:"노무현", party:"열린우리당", camp:"dem", born:1946, died:2009, roles:["대통령(16대)"], edu:"사법고시 독학"},
+    {id:"문재인", party:"더불어민주당", camp:"dem", born:1953, roles:["대통령(19대)"], edu:"경희대 · 부산 인권변론"},
+    {id:"윤석열", party:"무소속", camp:"con", born:1960, roles:["대통령(20대)","검찰총장"], edu:"서울대"},
+    {id:"이낙연", party:"더불어민주당", camp:"dem", born:1952, roles:["국무총리(역)"], edu:"서울대"},
+    {id:"박지원", party:"더불어민주당", camp:"dem", born:1942, roles:["국회의원","정보원장(역)"], edu:"고려대"},
+    {id:"김한길", party:"더불어민주당", camp:"dem", born:1956, roles:["국회의원(역)"], edu:"중앙대"},
+    {id:"박용진", party:"더불어민주당", camp:"dem", born:1971, roles:["국회의원"], edu:"고려대"},
+    {id:"박범계", party:"더불어민주당", camp:"dem", born:1968, roles:["법무부장관(역)"], edu:"서울대"}
+  ],
+  edges: [
+    {source:"박정희", target:"박근혜", relation:"부녀", type:"family", strength:3},
+    {source:"박근혜", target:"이준석", relation:"박근혜 키즈", type:"lineage", strength:2},
+    {source:"박근혜", target:"나경원", relation:"친박 계열", type:"faction", strength:2},
+    {source:"김영삼", target:"홍준표", relation:"YS 키즈", type:"lineage", strength:2},
+    {source:"김영삼", target:"김기현", relation:"YS 키즈", type:"lineage", strength:2},
+    {source:"노무현", target:"문재인", relation:"인권변론 파트너 → 참여정부", type:"lineage", strength:3},
+    {source:"노무현", target:"이재명", relation:"참여정부 계보 → 친명", type:"lineage", strength:1},
+    {source:"김대중", target:"이낙연", relation:"DJ 계보", type:"lineage", strength:2},
+    {source:"김대중", target:"박지원", relation:"DJ 최측근", type:"faction", strength:3},
+    {source:"윤석열", target:"한동훈", relation:"검찰 동료", type:"school", strength:3},
+    {source:"이재명", target:"김한길", relation:"중앙대 동문", type:"school", strength:1},
+    {source:"이재명", target:"박용진", relation:"캠프(친명)", type:"faction", strength:2},
+    {source:"이재명", target:"박범계", relation:"캠프(친명)", type:"faction", strength:2},
+    {source:"윤석열", target:"김문수", relation:"20대 대선 후보 단일화", type:"faction", strength:1}
+  ]
+};
+
+const campColor = {dem:"var(--camp-dem)", con:"var(--camp-con)", mid:"var(--camp-mid)"};
+const typeColor = {family:"var(--rel-family)", lineage:"var(--rel-lineage)", faction:"var(--rel-faction)", school:"var(--rel-school)"};
+
+// ===== 탭 =====
+function showTab(t) {
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+  document.getElementById('page-'+t).classList.add('active');
+  document.getElementById('tab-'+t).classList.add('active');
+}
+
+// ===== 관계도 (d3 force) =====
+const svg = d3.select("#graph svg");
+const gW = () => document.getElementById("graph").clientWidth;
+const gH = () => document.getElementById("graph").clientHeight;
+
+const gLink = svg.append("g");
+const gNode = svg.append("g");
+const tooltip = d3.select("#tooltip");
+
+let nodes = DATA.nodes.map(d => ({...d}));
+let links = DATA.edges.map(d => ({...d}));
+
+const sim = d3.forceSimulation(nodes)
+  .force("link", d3.forceLink(links).id(d=>d.id).distance(l => 150 - l.strength*25).strength(0.5))
+  .force("charge", d3.forceManyBody().strength(-420))
+  .force("center", d3.forceCenter(gW()/2, gH()/2))
+  .force("collide", d3.forceCollide(38))
+  .force("x", d3.forceX(gW()/2).strength(0.04))
+  .force("y", d3.forceY(gH()/2).strength(0.06));
+
+let linkSel, nodeSel;
+
+function render() {
+  gLink.selectAll("*").remove(); gNode.selectAll("*").remove();
+
+  linkSel = gLink.selectAll("line").data(links).join("line")
+    .attr("class","link")
+    .attr("stroke", l => typeColor[l.type] || "#999")
+    .attr("stroke-width", l => 1 + l.strength * 0.9);
+
+  nodeSel = gNode.selectAll("g").data(nodes).join("g")
+    .attr("class","node")
+    .call(d3.drag()
+      .on("start",(e,d)=>{ if(!e.active) sim.alphaTarget(.25).restart(); d.fx=d.x; d.fy=d.y; })
+      .on("drag",(e,d)=>{ d.fx=e.x; d.fy=e.y; })
+      .on("end",(e,d)=>{ if(!e.active) sim.alphaTarget(0); d.fx=null; d.fy=null; }));
+
+  nodeSel.append("circle")
+    .attr("r", d => d.roles.some(r=>r.includes("대통령")) ? 20 : 13)
+    .attr("fill", d => campColor[d.camp])
+    .attr("stroke-width", d => d.roles.some(r=>r.includes("대통령")) ? 3.5 : 2);
+
+  nodeSel.append("text")
+    .attr("dy", d => (d.roles.some(r=>r.includes("대통령")) ? 34 : 26))
+    .attr("text-anchor","middle")
+    .text(d => d.id);
+
+  nodeSel.on("mouseenter", (e,d)=>{
+      tooltip.style("opacity",1)
+        .style("left",(e.offsetX+16)+"px").style("top",(e.offsetY+10)+"px")
+        .html(`<div class="t-name">${d.id}</div>
+               <div class="t-sub">${d.party}${d.died?` · ${d.born}–${d.died}`:" · "+d.born}</div>
+               <div class="t-sub">${d.edu}</div>
+               <div class="t-sub">${d.roles.join(" · ")}</div>`);
+    })
+    .on("mouseleave", ()=> tooltip.style("opacity",0))
+    .on("click", (e,d)=> highlight(d.id));
+}
+
+function highlight(id) {
+  const connected = new Set([id]);
+  links.forEach(l=>{ if(l.source.id===id) connected.add(l.target.id); if(l.target.id===id) connected.add(l.source.id); });
+  nodeSel.classed("faded", d=>!connected.has(d.id));
+  linkSel.attr("stroke-opacity", l => (l.source.id===id||l.target.id===id) ? 1 : 0.06);
+}
+svg.on("click", ()=>{ nodeSel.classed("faded",false); linkSel.attr("stroke-opacity",0.55); });
+
+sim.on("tick", ()=>{
+  if(!linkSel||!nodeSel) return;
+  linkSel.attr("x1",l=>l.source.x).attr("y1",l=>l.source.y).attr("x2",l=>l.x).attr("y2",l=>l.y);
+  nodeSel.attr("transform", d=>`translate(${d.x},${d.y})`);
+});
+
+render();
+
+// 검색 & 필터
+document.getElementById("search").addEventListener("input", e=>{
+  const q = e.target.value.trim();
+  if(!q) { nodeSel.classed("faded",false); return; }
+  nodeSel.classed("faded", d=>!d.id.includes(q) && !d.party.includes(q));
+});
+document.getElementById("rel-filter").addEventListener("change", e=>{
+  const v = e.target.value;
+  linkSel.attr("stroke-opacity", l => (v==="all"||l.type===v) ? 0.55 : 0.04);
+});
+
+// ===== 공약 이행도 (예시 데이터) =====
+const PLEDGES = [
+  {
+    politician:"문재인", meta:"19대 대선(2017) · 더불어민주당",
+    kept:8, partial:4, broken:2, progress:3, total:17,
+    items:[
+      {title:"청년 취업 · 공공부문 일자리", status:"partial", note:"공공일자리 사업은 확대됐으나 민간 일자리 지표는 부진 — 언론 팩트체크 '부분 이행' 종합.", src:"언론 팩트체크 종합(2017~2022 보도)"},
+      {title:"최저임금 1만원", status:"broken", note:"2022년 9,160원에서 종료. 목표 미달.", src:"고용노동부 최저임금 고시"},
+      {title:"소득주도성장 · 법인세 인하 반대", status:"partial", note:"법인세 최고세율 인하 단행(2018 의결).", src:"국회 의결록"},
+      {title:"비대위 → 당민주화 개혁", status:"kept", note:"당헌당규 개정으로 대의원제 축소.", src:"당헌당규 개정 이력"},
+      {title:"남북관계 개선(판문점 선언)", status:"kept", note:"2018 판문점·평양 공동선언 체결.", src:"2018南北정상회담 백서"},
+      {title:"검찰 개혁(수사·기소 분리)", status:"progress", note:"공수처 설치(2021)·검경 수사권 조정, 분리 완성은 과제로 남음.", src:"공수처 설치법"}
+    ]
+  },
+  {
+    politician:"윤석열", meta:"20대 대선(2022) · 국민의힘",
+    kept:3, partial:5, broken:4, progress:2, total:14,
+    items:[
+      {title:"부동산 규제 완화(1가구 1주택 양도세 중과 폐지)", status:"kept", note:"2022년 세법 개정으로 폐지.", src:"국회 세법 개정안 의결"},
+      {title:"검찰·경찰 수사권 조정 재검토", status:"kept", note:"경찰 국가수사본부 설치 등 재조정.", src:"경찰청 조직 개편"},
+      {title:"주 52시간 유연화", status:"partial", note:"특정 업종 예외 확대로 부분 반영.", src:"근로기준법 개정"},
+      {title:"기본소득 · 청년도약계좌 확대", status:"broken", note:"재정 여건으로 축소·미실시.", src:"국회 예산결산 보고"},
+      {title:"이사비 절감(전월세 거래 비용 인하)", status:"partial", note:"일부 세제 혜택만 반영.", src:"국토부 발표"}
+    ]
+  },
+  {
+    politician:"이재명", meta:"21대 대선(2025) · 더불어민주당",
+    kept:1, partial:1, broken:0, progress:4, total:6,
+    items:[
+      {title:"경제민주화 · 대기업 지배구조 개혁", status:"progress", note:"상법 개정안 발의 · 본회의 처리 진행 중.", src:"국회 법제사법위원회"},
+      {title:"AI·반도체 국가 전략투자", status:"kept", note:"국가 AI 컴퓨팅 인프라 예산 편성 · 반도체 특별법 발의.", src:"정부 예산안 · 국회 발의안"},
+      {title:"지방소멸 대응 · 인구 비전", status:"progress", note:"전담 조직 신설 · 로드맵 수리 중.", src:"정부 조직 개편"}
+    ]
+  }
+];
+
+const stLabel = {kept:"이행", partial:"부분 이행", broken:"미이행", progress:"진행 중"};
+const stScore = {kept:1, partial:0.5, broken:0, progress:null};
+
+function scoreOf(p) {
+  const counted = p.kept + p.partial + p.broken;
+  if (counted === 0) return null;
+  return Math.round(((p.kept + p.partial*0.5) / counted) * 100);
+}
+
+document.getElementById("pol-grid").innerHTML = PLEDGES.map(p=>{
+  const pct = scoreOf(p);
+  const color = pct==null?"var(--muted)": pct>=70?"#2f6b3a": pct>=50?"#8a6d1a":"#a0432e";
+  return `
+  <div class="pol-card">
+    <h3>${p.politician}<span class="who">${p.meta}</span></h3>
+    <div class="score-row">
+      <span class="score" style="color:${color}">${pct==null?"평가 대기":pct+"<small>점</small>"}</small></span>
+      <span style="font-size:12px;color:var(--muted)">이행률 ${(p.kept+p.partial*0.5).toFixed(1)} / 판정 ${p.kept+p.partial+p.broken}건</span>
+    </div>
+    <div class="bar"><div style="width:${pct||0}%;background:${color}"></div></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;font-size:12px;margin-bottom:10px">
+      ${Object.keys(stLabel).filter(k=>p[k]>0).map(k=>`<span class="st st-${k}">${stLabel[k]} ${p[k]}</span>`).join("")}
+    </div>
+    ${p.items.map(it=>`
+      <details class="promise">
+        <summary><span class="st st-${it.status}">${stLabel[it.status]}</span> ${it.title}</summary>
+        <div class="evidence">${it.note}<br>출처: <a href="#" onclick="return false">${it.src}</a></div>
+      </details>`).join("")}
+  </div>`;
+}).join("");
+</script>
+</body>
+</html>

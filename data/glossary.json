@@ -1,0 +1,1124 @@
+{
+  "$comment": "정치 용어 사전. cat: 지역|정치구조|계파|인물 약칭|계보|역사|선거|제도. news는 fetch_news.js가 Google News RSS에서 자동 수집(직접 편집 금지).",
+  "glossary": [
+    {
+      "t": "TK",
+      "cat": "지역",
+      "d": "대구·경북(Taegu-Kyungbuk). 영남 보수의 심장부로 불리는 지역 구분. 김영삼(경남 거제)도 영남이지만 TK와 구분됨. 반대말 개념으로 PK(부산·경남)가 있음.",
+      "q": "TK 대구 경북 정치",
+      "news": [
+        {
+          "title": "[토크ON] 월간정치 ① '사법 리스크' 직면한 대구시정 ···TK 정치 지형은? - 대구MBC",
+          "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE5vTXZNdzIxbzZZQ2VYNHdJdTl6QS13dDJIOExtV1dYY0NzTVlPeFpHQWV3Q1NNNlA2NTdTeTE3NlBNYWVGT2hYWk5ETGs?oc=5",
+          "date": "2026-10-25",
+          "source": "대구MBC"
+        },
+        {
+          "title": "吳 무죄에 빨라진 `경북 3선` 행보…TK 철새정치 되풀이? - 매일신문",
+          "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5ncnR5VkN0RWdnSS0zNGFfUTI0VklxWnJRdUxlcGF4aTFtanl0WnBwb09abUV4dkw3NXVNQVhVVEFQX0JVaUlaYjFoUGVPaDVneWcxa1dLcVZYeW5VRTZTS0VB?oc=5",
+          "date": "2026-10-27",
+          "source": "매일신문"
+        },
+        {
+          "title": "정치가 가장 필요한 그곳, TK에 사다리를 놓으련다 - 한���레21",
+          "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9SVlZrLW9LbjRCMktFcDZ2LVZIN2RoVzloc0NadGpDRHdaTWVFRmJLQ1pyQTlIcUMyYVJsLWdZbXRhZk85VlZwMV9UeVk1UFNRU19DTnZtd2U2dDNUclZaNWMtb1R5Q0V2aFZjMDlXQ2d6UQ?oc=5",
+          "date": "2026-10-01",
+          "source": "한겨레21"
+        }
+      ]
+    },
+    {
+      "t": "PK",
+      "cat": "지역",
+      "d": "부산·경남(Pusan-Kyungnam). 김영삼·김종필(충남)과 대비되는 영남 지역 구분. 이명박(포항), 박근혜(대구) 지지 기반과 함께 언급됨.",
+      "q": "PK 부산 경남 정치",
+      "news": [
+        {
+          "title": "국민의힘 PK지지율 '폭락'...계속되는 '장외 정치' [앵커리포트] - YTN",
+          "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5sSmdGQldBZkNvTmw1TUZ4Z2J3b091Z25WZUIxQVZfTldBX3NxRURuUnZGYW1KVzlneHVCT2ZoSzQtV2pVWDJmVmZiaEFzUl96ZDY3M2htV1RKMk9JTGc?oc=5",
+          "date": "2026-07-13",
+          "source": "YTN"
+        },
+        {
+          "title": "김민석, 덧셈·확장정치 시동…盧묘역 참배 후 文예방 - 연합뉴스",
+          "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1BRU0zR1U3d0RIRVhFMVBONTFzdm1tRjVwTW96YzJLVWtjUTNpRm9Ra0VPb2NydDVYM0ZZY1RmTTdVY25URG5oOEY1R2drMzJXbGFZWHdNbzFnOGfSAWBBVV95cUxNMlNqNllRb2lLdDB0a01YZDYteFd2RlpVcWpndEhNaEp6cjVFd1FVbGxTNGhVZVJmU0Eyd1NNRFlPa2hSWkJyTEoxeUt6cWp4amNZVHNlX3gwNGpTNDBYaWk?oc=5",
+          "date": "2026-08-19",
+          "source": "연합뉴스"
+        },
+        {
+          "title": "PK 대표할 새로운 정치 리더의 부상, 지방선거 성적표가 좌우 - 부산일보",
+          "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBtU3lqSm42OUNVeU9MMWtBdnoyaVQ0VU84d25oWGRGVDRGX09McUZkTVZldG0zTXpYYTZUWEllYzhuZzVSYk8yaTN0MnBOSmkxcndEeHpVMFRRbDRDZFVMbDBTcmZOdnp1Q1FkOVc4d003T2xN?oc=5",
+          "date": "2026-06-01",
+          "source": "부산일보"
+        }
+      ]
+    },
+    {
+      "t": "호남",
+      "cat": "지역",
+      "d": "광주·전라 지역. 김대중(신안)의 정치적 기반이며 DJ 계보의 뿌리. '호남 민주화 운동 계보'는 이 사이트 관계도의 민주진영 뿌리 중 하나.",
+      "q": "호남 정치 민주당",
+      "news": [
+        {
+          "title": "[KSOI] 민주당 지지도 31.5%로 최저치, 호남·40대·50대는 물론 중도층도 추락 : 국힘과 격차 9.0%p로 확대 - 허프포스트코리아",
+          "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBoaXkyOWVDR0VZVkhqaEtOaVlOdUhpMlRMVktHVjlqdy1BTWU4TXlVX1BpWkVEZzdJc2xrcFVoRFJLTUpHWUhiVjA1WmV0OEtMdmdNZjV3OA?oc=5",
+          "date": "2026-10-28",
+          "source": "허프포스트코리아"
+        },
+        {
+          "title": "민주당 당권주자 3인, 10일 호남 반도체·SOC·정치 복원 해법 놓고 격돌 - KBC광주방송",
+          "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE44V2ltSW9tZHJGVjdFcDVTQzhRWHlIdXh5X2NQYW5BRlB6UlpZcUx0cHhwRTNCVjFRcUZtU3BoSWtpQ3RwSm1uTy1VSjlIcFB6ZHc1b3YzM3dSR1k3SkZRdA?oc=5",
+          "date": "2026-08-08",
+          "source": "KBC광주방송"
+        },
+        {
+          "title": "[이슈]민주당 지지 호남서 21%p 급락…무슨 일-리얼미터 - 문화일보",
+          "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE05Y2hOUy1iWi1fTEJFb003TnluT1dURU90WUFWWlc4aW9EWjlaR3ZxemRSZFVVUnROck1tdF9WcHlQTVUzS3JQN09SUWgySTBI?oc=5",
+          "date": "2026-08-24",
+          "source": "문화일보"
+        }
+      ]
+    },
+    {
+      "t": "영남",
+      "cat": "지역",
+      "d": "대구·경북(TK)과 부산·경남(PK)을 아우르는 경상권 통칭. 한국 선거 지형에서 보수 정당의 전통적 지지 기반으로, '영남 vs 호남' 구도가 87년 체제 이후 정치 지형의 기본축이었다.",
+      "q": "영남 정치 보수",
+      "news": [
+        {
+          "title": "유승민 \"영남 안주론 안 된다…보수 빅텐트 필요\" - 데일리안",
+          "link": "https://news.google.com/rss/articles/CBMimAJBVV95cUxQSWk1MG5uRElNYzRsVDJjREZpYW1Hdl9BQjN0VDY1cXNfWVhZVlMwLU5ZelZxdVhpVUFyUWVfMWRDVDVWbnpKX1ZjSWUtSnVSdi0xRWZtRS1ZVGFZeUhyRkhqSTBITHVIdHlETFF6THRPRFY3eTdBTkhjUDdDc0RobkJiSkJfc09KdF80QjhMd0kwUHN2M2ZiODgweTZ3VWlETnYtdFBjTmI4MEJqekxlalRNajlYNzhuNzdndm00c2VnZDJocV81TGhLN2lqZ2pwWThxWGwxOFB2cVZlRW1GVXhrWkpWbXBUWG5kOUhsc1NRR1J3Z0VPYkF2RDhvSmJfZU9TZGRUd1RFcXp4cmJZd1hhdC0yNW43?oc=5",
+          "date": "2026-10-21",
+          "source": "데일리안"
+        },
+        {
+          "title": "[세상읽기] 영남은 보수, 호남은 진보라는 고정관념을 넘어 - 대구일보",
+          "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9kVERyeDgyYThrRE40ZmhuUzR0YWRZX3lRUlIwcU5qUl9HVDdDci05SUswRWVWdTV2SWpNcFBPYjVoZkp4NmdKbzM4OXplWEFYNHN2SkFpZ0dHS1BvNlhlbWkza2NBcGU2?oc=5",
+          "date": "2026-06-16",
+          "source": "대구일보"
+        },
+        {
+          "title": "민주당, 영남지역 보수의 벽 낮췄지만 한계도 뚜렷 - 세상을 바꾸는 시민언론 민들레",
+          "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1YMG9hOGVPSThjTFpqUXY2Yk45Zlhyc3dwaC1WcDRBV293RVJ2aEtLUHJLZVI1N25rNGFhb2xrY1BhZjlsNjVQTWcxcFlZUFktZUEyYWViVjk4ekcyLXNtUUhOUHhUYktpcldVaQ?oc=5",
+          "date": "2026-06-05",
+          "source": "세상을 바꾸는 시민언론 민들레"
+        }
+      ]
+    },
+    {
+      "t": "충청",
+      "cat": "지역",
+      "d": "대전·충남·충북·세종. 중도 성향 유권자가 많아 선거마다 판세의 변수로 불림. JP(김종필) 충남 기반, 2016년 국민의당(안철수) 지지 기반 등.",
+      "q": "충청 정치 중도",
+      "news": [
+        {
+          "title": "충청권 4개 시·도, 충청광역연합 특별법 제정 본격 추진 - 중도일보",
+          "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9pM0dYajBGVllnVXc2My1iVUU3Qnh4Q21ObGJHbTk0bGFoZ1lmbnFZQkZjdnZxNHJ3MzBRTHpsZk1sYkdkOURYRmExdlZFWU5kU2hVX1R0VG1iaC1iekhyREhOU2s?oc=5",
+          "date": "2026-10-05",
+          "source": "중도일보"
+        },
+        {
+          "title": "이 대통령 국정운영 긍정평가 35.2%…충청권·중도층 하락 두드러져 - 서울뉴스통신",
+          "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1MWUp6Rjd4WGpDbHhKMkQxT1Fid2FaVFpBMkhYbmhRSzBtc3M3X1l1ZC1IRU13anVrYmFLWE1mZDV4WjZvVG9EaEs2Q3g4a3FUZ0dWZU4ySjEyVS1oRkN0ekhJbDdLeEpyS19v?oc=5",
+          "date": "2026-10-11",
+          "source": "서울뉴스통신"
+        },
+        {
+          "title": "김민석 첫 충청행보 세종… '행정수도 설계자' 이해찬 정치 유산 잇는다 - 중도일보",
+          "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1ydzg2LUlRdnRfYlMwUzNSSFJiVmx4cHpTQUtBQWRfTVoydDVnR1hLWXVRcUlWUWdiYXBYSmpMcmt6VnE3R1ZQY1FmN2dKQUV3dkx2UDg2Y21yTl9DSHM2MGY2WEI?oc=5",
+          "date": "2026-08-20",
+          "source": "중도일보"
+        }
+      ]
+    },
+    {
+      "t": "계파",
+      "cat": "정치구조",
+      "d": "같은 정당 안의 파벌. 보통 특정 인물 중심(친박·친명)이나 출신 지역(TK·PK·호남), 계보(YS·DJ)로 묶임. 정당 공천과 당권 경쟁의 기본 단위.",
+      "q": "정당 계파 갈등",
+      "news": [
+        {
+          "title": "김민석 “신천지 집단가입·조직적 개입 증언확보”… 與계파갈등 재점화 - 문화일보",
+          "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE13WDF5Ty1xMDYyeG1BQktRWmZmTVRDZC1RRnBEQThtbzlyX0FCdnYtQW9oVDFxaEQ1OWhIRG5QOGswY3JBZldCdVV1LTEwWklS?oc=5",
+          "date": "2026-10-14",
+          "source": "문화일보"
+        },
+        {
+          "title": "與 신천지發 계파 갈등 차단 선제 조치…야간 최고위 개최 - 매일일보",
+          "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBZYW5VMmdoLU81WVdqbkJxZTZObnA0ZVdFb1Voc2hYVFNJSklMaDhhMldvTk10WjZSc2w0eFVGNkdXQ3Etc2NOckY2ajRzakpsR3FwT2lBbFRORFF4ZENmaUFYdFQ?oc=5",
+          "date": "2026-10-15",
+          "source": "매일일보"
+        },
+        {
+          "title": "민주당 ‘신천지 개입��’ 사실로...계파갈등 재점화 신호? - 투데이신문",
+          "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE4yTm16THZ2NW1hLW93SFNsbVBhR0ZUQk9rWDVFWnBYV1ZOMTh0VndRM1dlRDhrdEZPNDBTUlVJOVRCSXdCT3ZIeEVrWTY4UDRsU3JSWW95NDY0b2VxV0FWVVh2NHQya0IzQThV0gFvQVVfeXFMTTRCV0hTUHl3X0U3UHo3aXM3ZjZkRlYzQU5LWnNJNmtrTklDVEM1djVGdzBzSmk0SlhqSkFPLW5Gd2gxMFBiMkRYSnR2UndYOV9yclpXaEtFWURoNW94SnZfMmYtNDhJZDdONVNSaDRr?oc=5",
+          "date": "2026-10-13",
+          "source": "투데이신문"
+        }
+      ]
+    },
+    {
+      "t": "친명 / 비명",
+      "cat": "계파",
+      "d": "더불어민주당 내 이재명 지지 세력(친명)과 반대 세력(비명). '~명'은 대표 이름의 마지막 글자를 따는 관용 표기.",
+      "q": "친명 비명 민주당",
+      "news": [
+        {
+          "title": "민주당 이번엔 ‘신천지 당원’으로 친명·비명 다시 전면전 조짐 - 에너지경제신문",
+          "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9DTEsyZDBrdmhhVm9KaFE3UEg1QkJxXzRrYUxCNGNIM3VoUFY1MGUwRnRha25QQ29sLTNqTHE2aG90MkNodUZzU2lORWdGV2FLVU1PQ1VESURkTFE?oc=5",
+          "date": "2026-10-14",
+          "source": "에너지경제신문"
+        },
+        {
+          "title": "친명은 갈라지고 친문은 귀환…민주당 당권 ‘4인 4색’ - 더퍼블릭",
+          "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1mTVN4cHFuaG1oVHhiT3BDTHBkM200eHJnb2JqbUtQRkQtbFRoSGtKZEF3R1BOaHc3bi1SaDN4Zk1aODNtMzhHaUE3aGhMU1pqdTFFcnNXMWZJWlZpWVJub1BDdms0UzlVN0xn0gFvQVVfeXFMUDV0WFh6QllLVTVQWk1nYWtfZl9GSndONGVmZG5DaVktV08yYVBKbkFzQXlSTk5HRkxZZzBFVWdtcTJSVkRiNzVvSFBfYUVZSkxFenpSXzRxS0xPOTFhRVJrT0t4RnRqRFJzTzRUdmhR?oc=5",
+          "date": "2026-07-12",
+          "source": "더퍼블릭"
+        },
+        {
+          "title": "친명·비명 싸움판에 등장한 ‘일베’ 단어…김영호 분통 터뜨린 최민희의 ‘황당 사과법’ - 서울Pn",
+          "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQUkduLXpfUElrdWNpU2NZaVdxcGUyWTlKUGxocElyRmNMMi0yYnkzN1BpRUs3c1d1Yld4TmJKRWdSS0JVaEhlbEo3NV9pakVXNVdnUHZtamJkWU9XVmZCMzZXYkt3aUVlZHRsUXBpNGE5STZSdXkwS1BRV08wR0VzOTcybWl4QQ?oc=5",
+          "date": "2026-08-04",
+          "source": "서울Pn"
+        }
+      ]
+    },
+    {
+      "t": "친박 / 비박",
+      "cat": "계파",
+      "d": "새누리당(현 국민의힘 전신) 시절 박근혜 지지 세력(친박)과 반대 세력(비박). 2016년 박근혜 탄핵 국면에서 당이 갈라지는 데 결정적.",
+      "q": "친박 비박",
+      "news": [
+        {
+          "title": "원박, 탈박, 친박, 비박의 역사를 아십니까 - 한겨레",
+          "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5lVkNvZzAwWlk4Z0cxaHpuY2gxZUNjUGlKaXpGREVWOUtjM3dxdnBRX2NwTmw0WmE0ODVkcEFtSElYME9LUTFsR0VTaXp6YTg5dmdGWDZxcmlMWUdNZEZZdUY2MFVuVWZaUlVoTEVFY244MVk?oc=5",
+          "date": "2015-02-06",
+          "source": "한겨레"
+        },
+        {
+          "title": "갈등 폭발 새누리... 친박 vs 비박 '막말혈전' - YTN",
+          "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1YZ3VBMlF2QUlRNDdpZ0tPbXBnTXVLRTJXd2ZYa2pwZUdBQkcwVUd3ckJ1NXMyUnBieVl1dnJYZ0FRUlBHRlNSd2ZJTHB5MzNUSW9JYVdLUHo4ZUp3UHc?oc=5",
+          "date": "2016-12-12",
+          "source": "YTN"
+        },
+        {
+          "title": "'진박 감별사' 별칭 붙었던 친박 핵심…조원진 최고위원(종합) - 연합뉴스",
+          "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBrVDlOX1JaeVJMbW1za1FfVWdUcmQ1WExJZHNxdmVEYjlXM1NMQmFoZjdIYXljbzBZbDB2ZktSTTdicVlXQktsVi1TdGZXa0JSenVIR3lQSWlhVTjSAWBBVV95cUxQRXV0NnNSdngwbW1Lc0FnY2ZuNDJ5VWxYek9qM25nMllOcmJiQzJBejNZYzQ1Tk9MZDlpS3dzcWVndG15MHFuT294OXBJSGQ2UjdPeWdKNlBKWElneHgyT1M?oc=5",
+          "date": "2016-08-09",
+          "source": "연합뉴스"
+        }
+      ]
+    },
+    {
+      "t": "YS",
+      "cat": "인물 약칭",
+      "d": "김영삼(Young-Sam)의 이니셜. 90년대 언론이 붙인 별칭. 'YS 키즈'=YS 계보에서 성장한 정치인(홍준표 등).",
+      "q": "김영삼 YS 계보",
+      "news": [
+        {
+          "title": "박근혜의 귀환, YS적통 김현철의 선택…보수 양대 계보 충돌 - 일요서울i",
+          "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5wcHVTR2ZOQldMVEVRbnUxMEE5YXhScHV2YXBNNzROTUw1bEc2d0tob2lUR3dkZjc4cVZTd29vRU41QWgycXZ4MXE2cC1ySHdCODVzam5iNEw2SElTbUtlcjd3d2pjM3RsZ3dIeElWMA?oc=5",
+          "date": "2026-05-30",
+          "source": "일요서울i"
+        },
+        {
+          "title": "첫 문민 대통령 YS의 '말말말' - YTN",
+          "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE56ZnR3SWNGNFhGTXF5UXpLWmxYRThzNTg5d3o0QWpBX2w3YU05aEZMdW92aXhBR3d5UlI0c1lWUkc3d3cwbmlZVXFKeUZyeGFuRFZieDZCWlNyblNTU1E?oc=5",
+          "date": "2015-11-24",
+          "source": "YTN"
+        },
+        {
+          "title": "故이기택 전 총재의 40년 정치역정...'YS·DJ·盧·昌'과 정치인연 - 헤드라인제주",
+          "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBCQUlJY0RfZVd5LWFObmV3bURlX201REhNemFQc0xIUmJDUWlqYnlhODNqbVNqVm1lNTFyLUU0Q0NmLTBFZDU2Q1g0YUxZaTVvc24yb3dyN3hQLTItWlpRRXZwb3FEVDh0V3FHNndoMnk3Y28?oc=5",
+          "date": "2016-02-20",
+          "source": "헤드라인제주"
+        }
+      ]
+    },
+    {
+      "t": "DJ",
+      "cat": "인물 약칭",
+      "d": "김대중(Dae-Jung)의 이니셜. DJ 계보의 정치적 후계 세력(노무현·이낙연·박지원 등)을 지칭할 때도 씀.",
+      "q": "김대중 DJ 계보",
+      "news": [
+        {
+          "title": "정청래 대표는 노사모, 김민석 총리는 DJ계…'계보 싸움' 된 전당대회 - 한국경제",
+          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5mQVp1RzF3MVRNNGwxUWNIWUV3SWxHSTA0TWoxcTJCSm52d25GTWNyWU5PTXpaUFVGNHBHcHJmV0tnX3EyZ3phVUhvdHhwaGJGZzFzeGY3MzdFZw?oc=5",
+          "date": "2026-06-16",
+          "source": "한국경제"
+        },
+        {
+          "title": "또 호남 간 김민석 “난 DJ 키즈이자 당원주권론자”…전대 겨냥 민주당 ‘적통성’ 강조 - 경향신문",
+          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5Vem5lLXNzSzdyb0dWcXZpUHgwdFNrdGpoRG1COE9RbFI4cXVXY2Y0WURQWHFmNUN2Skx3dkdXRXFWU2lZZnZ6TXA3M0N4QTlWRHpWYlRIcTlSZ9IBX0FVX3lxTE9xT0ktRVpjWktXZ0ZMQkVNME9YUlRxV0VxekVCWWMwenRGOUx5LVkwZXRRaUR4TDRVU2dGQVNCOTllbmhnQWpNaHRnNzJPeXB3c2t5bVRtQmk0dFVFZDNn?oc=5",
+          "date": "2026-06-26",
+          "source": "경향신문"
+        },
+        {
+          "title": "김원기 “DJ 국민회의 창당, 이기택 불신 컸기 때문” [통추되짚기③] - 시사오늘",
+          "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE93V0g5bldfX1FLVld0d2tUMUtFNTk5THlKQy1yZGtGMmQ2TGVaYmwzLXJEZ3RNcXpuOGNSbTE1V0pucjI0U2djZm5XQnd6XzZnc3ZZQmdjM1B4RnlKZnVoQzZtal9IdkEwYWNz?oc=5",
+          "date": "2024-09-17",
+          "source": "시사오늘"
+        }
+      ]
+    },
+    {
+      "t": "JP",
+      "cat": "인물 약칭",
+      "d": "김종필(Jong-Pil)의 이니셜. 박정희와 5·16을 함께했고, 3당 합당과 DJP 연합의 축. 보수 우파 정치의 또 다른 계보.",
+      "q": "김종필 JP",
+      "news": [
+        {
+          "title": "JP 8주기 추도식…\"정치 각박한 시절에 그리운 큰 어른\"(종합) - 연합뉴스",
+          "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFB3dkVJYlVEMkIxRFlDMlBPMXA2RVdWamFiR0lzVFhaWllpVUhfTXJXT2hhZDNWZjZ4LWo3aDEwZFBQMGRDRUVkYmxRX194bEx3WlYxYkVJTjVEMEXSAWBBVV95cUxNYzZHSXhBTmFIcE96RjcwbTlULXhoTDBIU3loYjRjRXRQd1o1Y2tvQlZjaEc5UFJNRUlDR2QtZDlmNHJ4YVVuU2I4amIzUzZDYkp5Mk1RZk9NdlpOa0dOLXo?oc=5",
+          "date": "2026-06-23",
+          "source": "연합뉴스"
+        },
+        {
+          "title": "80년 계엄 때 불법구금·재산헌납 김종필…法 “장녀에 1억4500만원 국가배상” - 중앙일보",
+          "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE0yaS1WU1ZaVFo3R1FXQzRGb0kzalMxWHNoNl9FVng2WVNfNHFZbzlPdklaZjBadTFvMFhKal92LWk0OFR3RXg3Qm0zTU5rdnJVcTlQQ1RR?oc=5",
+          "date": "2026-06-27",
+          "source": "중앙일보"
+        },
+        {
+          "title": "김종필 탄생 100년…“사랑에는 후회 없다” [현장에서] - 시사오늘",
+          "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFB1aVRnU3Zjdjk2U1gzZHdudXBPZ29BcFJJRVItOUJyUWdudFo3Y21CYmR6NHlGbXBOd3NJaVZ6eXk5MXJhTnVhcXZKeWU0dmJLcGNvS2RhZWNLNVgwYzFPWmxyN2c0VzhCV1Bn?oc=5",
+          "date": "2026-06-23",
+          "source": "시사오늘"
+        }
+      ]
+    },
+    {
+      "t": "상도동",
+      "cat": "계보",
+      "d": "서울 상도동에 있던 김영삼 사무소 이름. '상도동계'=YS 계파를 뜻하는 말.",
+      "q": "상도동 김영삼",
+      "news": [
+        {
+          "title": "상도동 다시 깨어난 민주주의 ‘김영삼 사색길’ [옛날신문보기] - 시사오늘",
+          "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1GQVQ5MUM2TFZRS3loVVZpbzA5bHpibTNib2ltQnJCeGlISXdmNVU4ZWlFZGNyRjBRTE56bDFqZDVNVkcxZFdiTHdEN3FnbGtEcE9lOWk3RWF5bUtZWDFSUGVVZVR3VTlwalVR?oc=5",
+          "date": "2026-04-20",
+          "source": "시사오늘"
+        },
+        {
+          "title": "김영삼 전 대통령 상도동 자택 '국가문화유산' 등록 추진 - 한국부동산뉴스",
+          "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBKdW5zWmtlTHVOaktwNVlHNHlTTjNOZVlKbEZhODVmZVVaajlNY3RpRnN1NU5sLXFpVDNyQXJzU1VBNzhyVHpWdFdqNGw1M29YS2JUc1Z0R3lWcmg0M1JZZG1KNnFfQVg4RG5Z?oc=5",
+          "date": "2025-03-06",
+          "source": "한국부동산뉴스"
+        },
+        {
+          "title": "김영삼 서거...\"상도동 자택 적막\" - YTN",
+          "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE4zenVFOW1mMDQ4TTF3WXhHOW1vMmFIY09qRnVaYnkxb1RTQTBVa1JqUTlFak9TcktGMGxETklnSEp5WHd1SkFqTDFZaC0wUFdDX01pRTBsY1RjY2ZVUEE?oc=5",
+          "date": "2015-11-22",
+          "source": "YTN"
+        }
+      ]
+    },
+    {
+      "t": "동교동",
+      "cat": "계보",
+      "d": "서울 동교동에 있던 김대중 사무소 이름. '동교동계'=DJ 계파. 평화민주당 창당(1987)의 산실.",
+      "q": "동교동 김대중",
+      "news": [
+        {
+          "title": "도쿄 한복판서 사라진 김대중…중정의 납치공작 [중앙정보부 정치개입史②] - 시사오늘",
+          "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9XZ3hUUE5DdkVzMzVzTk8yUnUzUDRFZzdLa0N6NFRWZGpheHFyTHlsNkJaYTZFbzRjLXJlYWFHYWlFZVpCbmNzckdwU3h5dzdTZGRoYjYyN05XVlBKNWFqekVuNVVuR21SQWZZ?oc=5",
+          "date": "2026-10-27",
+          "source": "시사오늘"
+        },
+        {
+          "title": "박지원 “DJ, 노무현 위해 동교동계 해체…엉킨 실타래 푸는 오찬 되길” - 한겨레",
+          "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1FWm1Sb200bFVoVEJFd3UtdXZQakZwVjB3Mkw3V01DUnYxMElXSV9ubW1uLXpqX21scEdmOE1IR2lyMWtGdmVMT2ZGb0EyUk5jeDRtSkVwU2NvOUlpRzA1ZDliMlZfM2R3NU9XNGZCaHNKUUhE?oc=5",
+          "date": "2026-07-01",
+          "source": "한겨레"
+        },
+        {
+          "title": "2008년 7월 동교동 자택 응접실에서 김대중 대통령 - OhmyNews",
+          "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE92RzRwMGxRUy1kQ0ZSdTlKUEFXVlJJam5HVVBMTVBMSV83alhOX3lLblc4dlpqY2FCVWRfY215aEF0SW1pYXlYNlRMWDQyUk9Eb2pnNl9zOWxGaXVacDFTRjZqUlVEbDVzaGgzSHJsUldHQURiaEhoWQ?oc=5",
+          "date": "2026-05-14",
+          "source": "OhmyNews"
+        }
+      ]
+    },
+    {
+      "t": "3당 합당",
+      "cat": "역사",
+      "d": "1990년 민주정의당(노태우)·통일민주당(김영삼)·신민주공화당(김종필)이 합쳐 민주자유당을 만든 사건. 보수 진영 대통합으로 여야 구도가 재편됨 — 관계도에서 확인 가능.",
+      "q": "3당 합당",
+      "news": [
+        {
+          "title": "양경규, “진보 3당 합당으론 안 돼…새 판부터 만들겠다” - 참세상",
+          "link": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE9JQ1FwWGw4NWRIZ0xTcDBtcy1xTmNfcEwxR282dlM3VElRNWFCSVo0OFRuajhXYWlfVnZRZEEwMDBKdw?oc=5",
+          "date": "2026-09-17",
+          "source": "참세상"
+        },
+        {
+          "title": "“피 없이 연 민주화 시대, 3당 합당 덕분” - 중앙일보",
+          "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9pS3RJMURadDdmcWVlX0VTSHlyNEpFb1BIWkFMWENNUzBlUDl4YjE1dURvTzJpV0tpQ0JYV3hLWVlvamFibzFfamJMNGwxQl8yTk1oR0VR?oc=5",
+          "date": "2026-06-25",
+          "source": "중앙일보"
+        },
+        {
+          "title": "\"3당 합당, 피 흘리지 않고 빨리 민주화 이룩한 길\" - 조선일보",
+          "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOS3B1Qi1pTmw2VlZVOGsydUItbUY4ZTBZMHVVTnB3ajFjSUU5U0VNYXJhRDVfTGNGcG05SHN4VjFob0p5TlBGdTVtazVwWUUtWmMzenl0aWJ6OUFHOWFNa05GN0FVWTlpa0hqVDhCZDEzSlcwS0JtNG9OU0VsQ0xlRVZQXzNlTGVSUmJjNFZLclc?oc=5",
+          "date": "2026-06-24",
+          "source": "조선일보"
+        }
+      ]
+    },
+    {
+      "t": "DJP 연합",
+      "cat": "역사",
+      "d": "1997년 대선에서 김대중(D)과 김종필(JP)이 손잡은 연합. 이낙연 등 JP 계열 인사가 민주당으로 이동하는 계기.",
+      "q": "DJP 연합",
+      "news": [
+        {
+          "title": "[속보]용혜인“野의원 지명이 DJP연합후 처음…관례 평가 어려워” - 문화일보",
+          "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBlZ0dOYmZlOW93QmJocV8yUXh5VGN2ZGdnekIxOTJ1a2RqeTBkWFBWb2tjUXdmZExETUJORmZ2STgtaDJtdjBtTWdkNFFOWmk0?oc=5",
+          "date": "2026-09-10",
+          "source": "문화일보"
+        },
+        {
+          "title": "용혜인 \"난 DJP 이후 처음\" 비례연합으로 당선됐는데… - JTBC",
+          "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9ISjRoZTQ0T3Zpa21XaUNycE5JdUk3RlczQjJxeHMwa3NXbDlYQTdEWkZ4M05EaVZnc2czWjRUcXc0NElHWXlFby1VSW9DSWpLd05zWA?oc=5",
+          "date": "2026-09-10",
+          "source": "JTBC"
+        },
+        {
+          "title": "2030년 대선, 보수지도자 집권-수권(授權) 시나리오...“'역(逆) DJP 연합'” - 브레이크뉴스",
+          "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5nNkphLWxOTktzY1hFRHZQVURzUXhWeTBoM2lXUXpMVmpVQk5Hbm5QbnkybHZ0dlMtQlIyVHl2R1hLbERoRlNXTA?oc=5",
+          "date": "2026-09-20",
+          "source": "브레이크뉴스"
+        }
+      ]
+    },
+    {
+      "t": "박근혜 키즈",
+      "cat": "계보",
+      "d": "박근혜와 정치 인연을 시작한 젊은 보수 정치인들의 언론 별칭. 이준석 등이 이에 속한다고 불림.",
+      "q": "박근혜 키즈",
+      "news": [
+        {
+          "title": "'박근혜 키즈' 손수조 대변인, 달성 찾아 이진숙 후보 지지호소 [TF사진관] - 더팩트",
+          "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBEWndlY1pQR0J3Q0EwMnVTY0pSdHF4NXVpOEg1eVJpTlJ2SGNqdHRqd1RaekNvREhhcmpPZXBOUGFWZEs4LUdvZTdMMGcxQnZEalVWa1pFdDdHb0xoeWfSAVhBVV95cUxNLWlDaEVaZVlfUUtraDFtTDU3ckRPNE4zRm9HVU9MZ3ZKaWtwamlObXhXb0lrRWZUbTZ3Ni14WUtsMVI5MnVCN2NJWDhWTTlrcm9OUWwwSi1z?oc=5",
+          "date": "2026-05-30",
+          "source": "더팩트"
+        },
+        {
+          "title": "‘박근혜 키즈’ 이준석·손수조…같은 출발, 다른 현재 [이윤혁의 인물탐史] - 시사오늘",
+          "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE03NEpycDBiYW4tSmJuNnVZQXhfZWFlTFpUVEYycVhpNEVTU3UtVWFBMndPVTRhU09jdnQ3MHdid0h5UDlFNVF5dThtaWh2SktQOXFteWs0YmhMdVc1Tm93TV9jak96a2s4eHZF?oc=5",
+          "date": "2026-02-11",
+          "source": "시사오늘"
+        },
+        {
+          "title": "이준석, ‘박근혜 키즈’에서 거대정당 첫 30대 대표로 - 한겨레",
+          "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBJd3ZIclJPRnB6anBkREhyWU9HeDZWMGw1VVlkdERlV0ROcEhuTWZVQkRGNGk1QVNQUERQMTUzNGJXM21SUXd5bDM5UVExdm5nZzlONGVndFBWTTZ6bjVFbmM4elNKUnM0?oc=5",
+          "date": "2021-06-11",
+          "source": "한겨레"
+        }
+      ]
+    },
+    {
+      "t": "지역구 / 비례대표",
+      "cat": "선거",
+      "d": "국회의원 두 가지 입법 방식. 지역구는 특정 지역 선거에서 당선, 비례대표는 정당 득표율에 따라 배정. 이준석은 비례대표로 당선된 사례.",
+      "q": "지역구 비례대표 국회의원",
+      "news": [
+        {
+          "title": "龍이 쏜 위성정당 논란…’준연동형 비례대표제’ 손볼까 - 연합뉴스TV",
+          "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5rSmZNNm9kVmtPTE5YeDhGVENYOVRuS3diZWhKTXJiU3BGRlhSYVBHRUlzc2tXRy1pclNpcWhmR1gyYnhSbktXUWV5Z3FreWZIS1p0ZWdqNHVSdmlhU1R6YWN2cngzMFk?oc=5",
+          "date": "2026-09-24",
+          "source": "연합뉴스TV"
+        },
+        {
+          "title": "6.3 전국동시지방선거: 평균 7장의 투표 용지, 어떻게 투표하나 - BBC",
+          "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE0tbThzLUo2YXM0THBadm9mV2hXdk1qRVVuU3F0cnZUZ28zdXliX1M1dlNYR3BZNnlsWHdOZ2d0RmRUQnB1dHlTdU1sRkNicjRXem1tSHZpUV9faHFq0gFiQVVfeXFMTVF0OGRCaVJ4MGVidXdRb3o0Rk13LTFTNi1uVDRRTkNsckR3OGlIYlBub2tnZEUyTHE4bWRUMWhFYVluZjNhNW9kNlUxMXpEX2didVAyN3hiN0sxRXBtV1diUVE?oc=5",
+          "date": "2026-05-27",
+          "source": "BBC"
+        },
+        {
+          "title": "용혜인 사퇴 하루 만에…기본소득당 “지역·비례 모두 장관 겸직 못하게 하자” - 경기일보",
+          "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9uNHBtMWZxaUlGNzRvZkxLU0lnUjZvVjJJN1hyZG9mSXZlblRacHR2RDZDT1NEd0RNWDZvc0k0WmEtU2JNSVFHSm5aa3ozU3ZjZkdta3dhc0hCLUk?oc=5",
+          "date": "2026-09-14",
+          "source": "경기일보"
+        }
+      ]
+    },
+    {
+      "t": "교섭단체",
+      "cat": "정치구조",
+      "d": "원내교섭단체의 줄말. 국회에서 20석 이상을 가진 정당(또는 연합)만 만들 수 있고, 교섭단체여야 상임위원회 배정·법안 발의권 등 실질적 권한을 가짐. 소수 정당들이 연합하는 이유.",
+      "q": "원내교섭단체 국회",
+      "news": [
+        {
+          "title": "조국혁신당 \"11월에 제3교섭단체 출범해야\"…민주당에 결단 촉구 - 뉴스1",
+          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5xeDdvTGhhSTQ2bDJhYTJqR1VxVG5yWjllTVVORDFjWWlUVXFrVXRxMjhOZGpWZTBvdU5oX1dSZzNteHU5ZWU0MDAwNkhUMEtfeGZ4dW44b1dJZw?oc=5",
+          "date": "2026-10-28",
+          "source": "뉴스1"
+        },
+        {
+          "title": "강원특별자치도의회 원내대표단(원내대표 남상규), ‘지방의회법’ 연내 제정 공동 대응 총력… - 누리일보",
+          "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE0wZFRJV0M3US1XdktyMmNLbmNvWEhYUnJKSWRkYWlVQ3dHU3VTTUFMWVo0Tl9mX2ZuMEM1X3JwbjZsbllKbVVReWgwV2tiM1BIVVg0aWFMOW5QeFFzS3hR?oc=5",
+          "date": "2026-10-28",
+          "source": "누리일보"
+        },
+        {
+          "title": "민주당 전국광역의회의원협의회, 지방의회법 연내 제정 촉구 - 뉴시스",
+          "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5yMG1YX3F5cnozeEpObW1FSm9UQjl6SG4tWWxrZlZEQXpKUEl1YzVhM001VVRqdEN6cExUaHZaakNsNVAzWDlwVWNrZEpaVWVnTzJETjFJcENPYW5TbUJsNNIBeEFVX3lxTE4xWU9IV3dSVW82V2M3ME1TVVRNcjFNOEp1OHVHRGQyVzlYLXpEVTlZR2F6MlRTcUZTX0ZTOFpSbU5YMUQwejBZdEVrd0llaGVMM2ZTX0s0Q3JScXBIQ0NKRTZXcS1Ka2NFNzNHUjJtRUhWenVDMEVEcA?oc=5",
+          "date": "2026-10-28",
+          "source": "뉴시스"
+        }
+      ]
+    },
+    {
+      "t": "여야",
+      "cat": "정치구조",
+      "d": "여당(집권 정당)과 야당의 통칭. '여야 대치'는 국회에서 법안 처리를 두고 정부·여당과 야당이 맞서는 상태를 뜻함.",
+      "q": "여야 국회",
+      "news": [
+        {
+          "title": "'행정수도특별법' 국회 법안소위 논의 물꼬... 여야 온도차 속 축조심사 확정 - OhmyNews",
+          "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE15OVlqcGh0RTVoZ3NLUXd0WkdxNEVJODhXS3ExSnlVUWdkQWY1NTBsNFJtYVZMZ0l6LUpkYTJkaDRsd0tpQndiZkt0ZnkyWUhvMjhrRXg1b1F0enBuQjB6MldWMG1UczJMUi1uNzZRcmRIdnNfWUZv?oc=5",
+          "date": "2026-10-28",
+          "source": "OhmyNews"
+        },
+        {
+          "title": "여야, 용산공원 환경안전 해법 모색…29일 국회 정책세미나 개최 - 에너지경제신문",
+          "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9lOG9LVkpVU2V4Zm13bGx5MHhxRFpEQ1Y1QnltZGF0WWRUT3l4eG9sdWxMT0RodUxYMXVRVjV1MDJoTjQzSHl4QlpzYnFEQXd3WmFUejRnWmVjcE91aVNZNEFsOA?oc=5",
+          "date": "2026-10-28",
+          "source": "에너지경제신문"
+        },
+        {
+          "title": "[뉴스 분석] 종교인·언론사주가 국회 권위 훼손…도덕성 논란까지 - 국제신문",
+          "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxONGM4eF9nb3ZKaFVONUZhelRPZkZBRmZSNUVlb2hnUjhBdmRZcWY2RzdUU0thMHVhc3JxWUFPQ3IzbG15OGdFNFZvOHVwZjdrdkZWYkEzaG9GZEVfX2ZaNXI3WFg1Rk1vNmRrTmVIcDRPT3laX0FkTTFYQWhrTV9aMU5YU2ExRFV2ZWVXWQ?oc=5",
+          "date": "2026-10-28",
+          "source": "국제신문"
+        }
+      ]
+    },
+    {
+      "t": "상임위원회",
+      "cat": "제도",
+      "d": "국회에서 법안을 분야별로 심사하는 상설 위원회(법사위·국방위·행안위 등). 소속 의원 수는 교섭단체 비율로 배분 — 국회 '몸싸움'이 벌어지는 실제 무대.",
+      "q": "국회 상임위원회",
+      "news": [
+        {
+          "title": "[오늘의 국회일정] 국회의장·상임위·세미나·기자회견·주요 정당 - 10월 28일 - 뉴스핌",
+          "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5EZ2RvRE5tcjVkU1hRSzNBRHJydzFUc0FaLTRWMzBiSWtPWVFJMXRVSGlETTNVdU1PYnRtZ2V5OXZIMHV6ZUJPaWpTY3NpTUpRdnF0TjRpaEVTc2FP?oc=5",
+          "date": "2026-10-27",
+          "source": "뉴스핌"
+        },
+        {
+          "title": "국감 끝…강원 의원들 ‘예산국회’ 정조준 - 강원일보",
+          "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1DSFZxTkFZSlRhTmlkSkxQbWZMemNLeTc1S2pmLU9oVzJ4a0hkS3cxX0ZBdy16X25QeDFhM2JMa3ZzcTlHYmlsd1FjRGJ2elQwYmRrd2dRMnBkMVE?oc=5",
+          "date": "2026-10-27",
+          "source": "강원일보"
+        },
+        {
+          "title": "총리는 유권자 청원에 대한 긴급 검토 및 처리를 요청했으며, 청원의 질을 보장하고 예정된 일정을 준수할 것을 당부했습니다. - Vietnam.vn",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOOUdOX0VBdkVHcWRhTE8tSEpSR2JaTVpwZUM5XzJneENaR0p4NDdWVUl6enh5T0wxNmdxR2p5TGtPSTVzNHQxWVo5aWdMZENtYWZBRXZOb1FDTmtRTkh4TkJoeHZMdXkxaC1Yc0FSZjk0RGtKMUV5VVhRODlabTExc05rY2huWGRIbnE5bklfSC1FUURQWWNMeGpQNmNNUlY0T3FsT0xTY2pCNGdLb190TTcyLUwzaWJfT1lySkM3OXB0eUU2SmRNMjhUeEM?oc=5",
+          "date": "2026-10-28",
+          "source": "Vietnam.vn"
+        }
+      ]
+    },
+    {
+      "t": "공천",
+      "cat": "선거",
+      "d": "정당이 선거에 내보낼 후보자를 선정하는 것. '공천 반란'·'공천 배제' 등 당내 갈등의 핵심 단어. 계파 정치의 실익이 사실상 공천권에서 나옴.",
+      "q": "공천 당내경선",
+      "news": [
+        {
+          "title": "[현장영상+] \"당내 경선 결과, 서울시장 후보에 오세훈 결정\" - YTN",
+          "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE52Z3E0SUR2dGhBVDh4a19tN1lkMVIwQzdkTHNUMmcxT0JSeHEtVmY1cnhibDhjaC1SZlFUT1hZV0RJMWpma0Q1YnZQcld1bk5ESVRxZU1FZFNUT1I3enc?oc=5",
+          "date": "2026-04-18",
+          "source": "YTN"
+        },
+        {
+          "title": "국민의힘 \"부산시장 후보 경선 진행\"... 당내 반발에 공관위 입장 변경 - 조선일보",
+          "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPTDRzcG9vcmgxcEJ2bnlWOGV4V2hGRmNwZmFmbXU0Z3Y5bElqQXZOaFRtS2dGWW5qREg4bEc0enJmSm92bnc5dV9qQjF6TXI3ekx0V1c2aUYtNDNMX2lSR3lOUFUwMzR4eXBXbGdscmI0NndQTTlyc1VZMGtacEMxWUJJM2ZXdw?oc=5",
+          "date": "2026-03-17",
+          "source": "조선일보"
+        },
+        {
+          "title": "[팩트체크] 주요국 중 여론조사 경선은 한국이 유일? - 연합뉴스",
+          "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE94eklMaFBYWXB4cmU2dDc2T29mQTgtRlNfdnpXdEktOHIwZmhPOHhRX1VwVU1WeTRqRXJHY0Z3VUtvSjFYYy0xWTdSYVV4LTlZb0h1eTFQNERJVWfSAWBBVV95cUxQajJ6QnF3bjRTR2tET0hUcE44NjVyR2EtamJCUS1JLWk0ZFNTenFJMWdjU2diYkgxVUh6dk5vTFE1Zlkyb3BDWjN1eHZOSDhobkdCOUNGdXRxb0JDeUdwaGw?oc=5",
+          "date": "2025-05-08",
+          "source": "연합뉴스"
+        }
+      ]
+    },
+    {
+      "t": "위성정당",
+      "cat": "선거",
+      "d": "비례대표 의석을 늘리기 위해 주요 정당이 만드는 명목상 별개 정당(예: 더불어시민당, 국민의미래). 2024년 22대 총선부터 권역 연동형 비례제로 제도가 바뀌며 존재 이유가 축소됨.",
+      "q": "위성정당 비례대표",
+      "news": [
+        {
+          "title": "개혁신당, 前지도부 비례대표 출마·위성정당 창당 금지 의결 - 연합뉴스",
+          "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE13NW1RWjZkTlVsdmxnTFQ5ZzRuSzNHR0dobkloYzRpQUhUSjdFNnM5SE5qenRYbUlDY2JITktFdnF3OHFMYlU4cnk1OUhtbnU3akhYV0QtZkNfYTjSAWBBVV95cUxNSU4yS3BEWEN2NFdROC1Edno4X2JhNFU0bkJKQ1k5YUtXTmgySmcza3FnY2Rsa3hhSXdQR2VYTkFqSjlReXp5ODE2d1BPN3Fpcm15aUdOYmNsaWZ3ZXlxa3I?oc=5",
+          "date": "2026-10-15",
+          "source": "연합뉴스"
+        },
+        {
+          "title": "개혁신당 “지도부 비례대표 출마 금지”…위성정당도 안 만든다 - 주간조선",
+          "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE53VU0zalppMXNwNEhVWVZadDFrSHlIeEN1dnpCLTI0Z2NxdnBiaXU0QVdESWtZTnE3eGxaU1B0TkFDNWZqU0Z3MTFSVGlWTTRkcWR1VjJVcU8zSlY3QkczRVRTYU9penNVYlHSAW5BVV95cUxOd19zNWh3bDNyOThtaFBjS3Znay1lSWlJUDVCQ3JnV3ZrRXZyYU9oTDROejB1Z1diZTJGdklOanZ3NTJjT3lHUTdEcU1RbjQzNEF1dEp3dHVFRGVkUk9FTTZ3WkRaaXhZVEFtZEE4UQ?oc=5",
+          "date": "2026-10-15",
+          "source": "주간조선"
+        },
+        {
+          "title": "연동형 비례대표제와 위성정당 후유증[한국의 창(窓)] - 한국일보",
+          "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE41b0NwZjVyLVNlQzBGTFZ1UTVlTHBETWRjWWRLSEdJR0YwYjhaMTBvSloyY2JBRnVvRGh5aWxOSjYzVlVqYlBLWmEtRUZfeXBKWFRpV2h0RlppNGU1SkpwbXV1T0NEMmRZbVA4aXhn0gFzQVVfeXFMTW1jQU5HbHhKUENUVWZvMV9JUldQaHpRZWhVNFl1VEx4SUVOUXVUZUN5ZnE1MUNieE93RzBWR2NtMjN5ajQxMG11aHlkQ21BcUxjS2hRQjFxSmJMWTdPdlJkajBIMHR4LUlBVW1nemVleGgyYw?oc=5",
+          "date": "2026-10-07",
+          "source": "한국일보"
+        }
+      ]
+    },
+    {
+      "t": "보궐선거",
+      "cat": "선거",
+      "d": "당선자의 사망·사퇴·당선무효 등으로 비어 있는 자리를 채우는 선거. 임기가 짧고 결과가 다음 선거의 판도 지표가 되곤 함('보궐 승리 = 흥행' 논리).",
+      "q": "보궐선거",
+      "news": [
+        {
+          "title": "이은경 강릉아산병원 노조위원장, 민주당 의원들에 강릉 보궐선거 연대 요청 - 강원일보",
+          "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5RY2Z1a2lhTmFzTHAwWDZsc0tZcWpudTJFLTNQX2JqNmh0c3ZOMkFiTF8tbi1kS3pLX1JpWm9WWHlkNXBmVE0xR2UzSnFnVFAzTzVZZFpPTk1OME0?oc=5",
+          "date": "2026-10-28",
+          "source": "강원일보"
+        },
+        {
+          "title": "與, 공개적으론 ‘吳 무죄’ 반발… 속으론 “보궐선거 안하게 돼 다행” - 조선일보",
+          "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQTlRRZS1aVFRqME5EQVRNd3o5LUdFSThwd050eF81dHhTczAxLUdHODRXOVZHU2kwVjFzRWRjQUNQblh6QW5Pc1ZmMk84RUJhR2xnUDVLeEp1ejN4MTdwYmJucDVCLS1GVTRWVmxGQXBhbklOUUlFbkJLUXQ0TTNlVXQ2b1V2dw?oc=5",
+          "date": "2026-10-23",
+          "source": "조선일보"
+        },
+        {
+          "title": "오세훈 무죄가 땡큐? 보궐선거 부담 던 민주당 - 문화일보",
+          "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE0xZk51RkRCd29wdVFTSkNhS3ppZUE5dEo5U0RDV0FOblpyNmRYVW14SjV6XzNUVDJERzBCMU4zRVJOV2NaRm00U0s5OGNHRU1u?oc=5",
+          "date": "2026-10-23",
+          "source": "문화일보"
+        }
+      ]
+    },
+    {
+      "t": "국정감사",
+      "cat": "제도",
+      "d": "국회가 매년 가을 정부 부처를 상대로 정책·예산 집행을 검사하는 활동. 국감 청문회에서 터지는 논란이 정치 일정을 바꾸는 경우가 많음.",
+      "q": "국정감사 국회",
+      "news": [
+        {
+          "title": "[포토] 성평등가족부 국정감사... 주요 정책·현안 점검 - 여성신문",
+          "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9HMGRQVDZOUUF5ajZlNHl1NW05WjkxZlZHaWVMZU1ZQlBoYkdaeWRNSEJsXy1zWm5OSXdxZlZ3ZU9RSjhhMjUtSUgwRHZpVVdWRkFXQjZGZ3V3aDQxOTNQTmk0WER2NlY1LVU3TGJER0RpYlHSAXNBVV95cUxPRzBkUFQ2TlFBeWo2ZTR5dTVtOVo5MWZWR2llTGVNWUJQaGJHWnlkTUhCbF8tc1puTkl3cWZWd2VPUUo4YTI1LUlIMER2aVVXVkZBV0I2Rmd1d2g0MTkzUE5pNFhEdjZWNS1VN0xiREdEaWJR?oc=5",
+          "date": "2026-10-28",
+          "source": "여성신문"
+        },
+        {
+          "title": "국회 정보위, 국방정보본부 국정감사 실시 - 뉴스핌",
+          "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9WaXB0ZnJvT0lBNE52LWZtWjk5c092VF9MSldPUVdmN1ZZRV90bk9HVGplVFNKdkxhdGIzSG16T0RWUHBmcENxd0pDZjEzNWJUSWpNUmNRcWd2bDEt?oc=5",
+          "date": "2026-10-28",
+          "source": "뉴스핌"
+        },
+        {
+          "title": "[포토] 국회 정보위, 국방정보본부 등 국정감사 - 천지일보",
+          "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5qZzBobG5qSjB5Nm12NEtXbnhVQ3NaQkJpRkFQVTl5VllNb1F3cGlTR0JJZ2V1NncxQk4wU2JBRDVsMmNuc0FkMGVUWFpPQzFjd0dtS1VtNXB4eDl2blg5UEc4amg3bl93S1E?oc=5",
+          "date": "2026-10-28",
+          "source": "천지일보"
+        }
+      ]
+    },
+    {
+      "t": "필리버스터",
+      "cat": "제도",
+      "d": "무제한 연설로 표결을 막는 필리방해. 2016년 테러방지법 반대 필리버스터(38시간)가 유명. 다수결의 횡포를 막는 장치이자 표류 도구.",
+      "q": "필리버스터 국회",
+      "news": [
+        {
+          "title": "與 \"도시정비법 최대한 빨리 처리…국힘 필리버스터 안 할 듯\" - 조선일보",
+          "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPSm5qV0p3T0dCUTZONEtaMG1JUzhrRTJadExQZnI4QTNsYktmSlNsdzc2NDYyVkZyc2U0Y3lHOW54VzY2Y054Nms0dWVqbGhpaWtLR01xdy1GcEN3amY5T1hhRnVIemFFMTdhZmNWT2tMTk8xYndWSGdqRWwzMlVtWEhKNHBpUQ?oc=5",
+          "date": "2026-10-28",
+          "source": "조선일보"
+        },
+        {
+          "title": "[초유의 대법원장 국정조사] 국힘 \"李, 일진처럼 대법원장 모욕 줘\" - 매일신문",
+          "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5lTzYtbmhlcDdHZkRDdFgxQ2s0dExOSmg2LVEzNnRLSmt1dE9pbjdZVDVhS3VrUlhEUUxkblQ2a0p0S0RMUXU1ZzRyV2RpQUgxM1BxYTNjUlJPYVFUY1h4cUZR?oc=5",
+          "date": "2026-10-28",
+          "source": "매일신문"
+        },
+        {
+          "title": "34개 쏟아졌던 필리버스터…김민석 체제에선 0개 됐다, 왜? - 중앙일보",
+          "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBOMnZVanpIeGVWbDVtQkh0V2R0RDFrQU1IU2k2MHF6WFZENTZRVTFpdXBaN21XMi05QklHNEI5S1lVUDdLcC0zWEhmaG1MdkV2RExKU3RR?oc=5",
+          "date": "2026-10-02",
+          "source": "중앙일보"
+        }
+      ]
+    },
+    {
+      "t": "국무총리",
+      "cat": "제도",
+      "d": "대통령을 보좌하는 행정부 2인자. 국회 동의를 얻어 대통령이 임명. 실권은 대통령에게 있으나, 대통령 직무 공백 시 권한대행을 맡음(황교안·한덕수 사례 — 관계도·타임라인 참조).",
+      "q": "국무총리 청문회",
+      "news": [
+        {
+          "title": "오늘부터 한성숙 국무총리 후보자 인사청문회 - 연합뉴스TV",
+          "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1DNjV1bnhyS3ozSmY0QXFEcDdJRjd6NTMzanhxVnU3YTNNNFAxb1ZlYlI2bVJ2bXNXWTVpeEZpUHc5ejJRWXVXX2ZxU1Y5dlMwYmFDeXRrT19GYmdBTTNpZDFBRWRfT1U?oc=5",
+          "date": "2026-06-25",
+          "source": "연합뉴스TV"
+        },
+        {
+          "title": "한성숙 국무총리 후보자 인사청문회 25∼26일 개최 - 연합뉴스",
+          "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1SYWdJNGY3TGx3STdPQVExdGxrYkRyX0phdk5nZDE3M0FKMXVROXhPR2toalJ6WmhPSnVwWHVNTV8yNzZEaU9OeTBVTTJYdmQta3U2dFk0SkF5MGvSAWBBVV95cUxOWGpEVjFrajFCZ2c4WHVDcF9OSTB6MmlkRlBsZ0dGRDF0dFpIX1ExTjRrU2FucDBqLWxtSzF0MEdYaWxSa19QS19hZmRBckxCaTJOSVpvakx1RmVZVS1FdHI?oc=5",
+          "date": "2026-06-18",
+          "source": "연합뉴스"
+        },
+        {
+          "title": "국회, 한성숙 총리 후보자 청문보고서 민주당 주도 채택…본회의서 인준 수순 - KBS 뉴스",
+          "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE8wMkx5NVZTRFRhVFRObDRldElCRWlyQlNGMWhMbExxZnRkUk0yaUdMOHp2VGY4NEFFMm9JYzdwbEM3OWo0T1YzLWZXU2VMWHQ0amZBZlF1dXBYRzQ?oc=5",
+          "date": "2026-06-30",
+          "source": "KBS 뉴스"
+        }
+      ]
+    },
+    {
+      "t": "광역·기초자치단체",
+      "cat": "제도",
+      "d": "지방선거에서 뽑는 두 층위 — 광역(시·도지사)과 기초(시장·군수·구청장). 지방의회 의원도 함께 선출. 광역 단체장의 예산·인사 권한이 커 '제왕적 지사'라는 말도 있음.",
+      "q": "지방선거 단체장",
+      "news": [
+        {
+          "title": "당선 뒤에도 고발…전남광주 6·3 지방선거 38명 수사기관행 - 뉴스웍스",
+          "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFB1TTBQRlU4R3FrbVh6a1pmVktHQnlkMWNjRk9oRk1kdHpnekIwM0Fla1QyT2pPY25aakZjVzdlTUFJY1dndXJ4dDNkV1p2VmNHZVNkYkZIcG5lNUZKYkFsMTNqdUh4Qm1sU3h2b1EwWdIBc0FVX3lxTFBnTUFHRndVdVR3akt1dHNQLXZvRUowNk4wZUdmTGdEaUp0TUR6c3RFTEZMMmxOTVYzVUM2RmVfZFoxYUM1cldicmVuQ1IzQmtXMF9iOWI2YmJwWDRFenpGMjBiLTRwV3d2VVpRNHpWNU1Tcmc?oc=5",
+          "date": "2026-10-27",
+          "source": "뉴스웍스"
+        },
+        {
+          "title": "선거법 위반 혐의 충북 자치단체장 '가슴이 조마조마' - 연합뉴스",
+          "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9mWHJnTXBmeXdZWlpCaW5paGNtbFRCb0Jsb1ZYTVd0bW14OWZSRU5XSTR3ckE3eHFCdWMtTkdrRmVtSFB2ZEpZU0M4a2stdThOSE1FVDc3WVRTQ0nSAWBBVV95cUxPampZOERlbHdaYTUtMEJLdG9TY3lpdXgyc1F0OXZiNUtMTHVGZEx2cGE4Vkh3UzdOOUJkYkdVTEtndDJ1U0VjbENMbjBQaGpXSVMxQXpOV3VJVlQ5b2VYSW4?oc=5",
+          "date": "2026-10-16",
+          "source": "연합뉴스"
+        },
+        {
+          "title": "6.3지방선거 공소시효 40여일 앞, 전남광주 단체장 수사 방향은? - 폴리뉴스 Polinews",
+          "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE01VmwtMFRhSDJhci03ZmJVTTRmMDNMWXpOWEd3RlFGOTBSa0U0RWxpQ1Q1QmJqc21lT3JJRFVuM2JzVEJRVnVzV1NXSnp0Zjdub2N3bVZCckZhNXpuTTkwYXpUR0RkRUo0REx5M3F3?oc=5",
+          "date": "2026-10-22",
+          "source": "폴리뉴스 Polinews"
+        }
+      ]
+    },
+    {
+      "t": "진보·보수 스펙트럼",
+      "cat": "정치구조",
+      "d": "이념 좌표. 한국에서 보수(국민의힘 계열)는 자유민주주의·시장경제·한미동맹 강조, 진보(민주당·진보당 계열)은 분배·평화협상·제도개혁 강조로 묶이나, 실제로는 지역·계파 정치가 이념보다 결정적인 경우가 많음.",
+      "q": "보수 진보 이념 정치",
+      "news": [
+        {
+          "title": "진보-보수 넘어 새로운 '시간 감각'의 정치를 발명해야 - 세상을 바꾸는 시민언론 민들레",
+          "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5LalE2c0FpUHlaNi1ZYkZYeGc3YlJuUC1kNTJsbkNMOHprS3lIZDlWcm5BZWJ0UHk2cEd6bG5wVVc2UXlQR0d1VllVVk1hU2tCcHJoY1pBS3hqNTVMdzBRdTdiU2l6RTlWU0xWYg?oc=5",
+          "date": "2026-06-21",
+          "source": "세상을 바꾸는 시민언론 민들레"
+        },
+        {
+          "title": "“국민 92%, 진보-보수 정치갈등 심각…70% ‘달라도 대화 의향’ 있어” - 한겨레",
+          "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5OdmJfUVJtZGV1bndMVTk0WGlFODdzOE1FY0s4M2pCVi1CdmxtbDdnbHhMM1pYVzJyRlFHamFyMlFFOENhaTZVRC1uSG1ydVRYdmozdXUwRTdkZk92ekl0eHlSd1labXFJdC1n?oc=5",
+          "date": "2026-02-11",
+          "source": "한겨레"
+        },
+        {
+          "title": "10명 중 9명 \"보수·진보 간 갈등 심각\"…이석연 \"尹 세력과는 같이 못 가\" - 중앙일보",
+          "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBDU0FKWlJiLUtIVjVlcG5hc00tYTR6Ui1nNjFGNTVkN0gzR1RWdEdrVHNscnhTNUNJblhpMkE5c0N4RWhiWWs3b0xweDcxT0E0dVNNeG1R?oc=5",
+          "date": "2026-02-10",
+          "source": "중앙일보"
+        }
+      ]
+    },
+    {
+      "t": "단일화",
+      "cat": "선거",
+      "d": "야권/경쟁 후보들이 1:1 대결 구도를 만들기 위해 한 후보로 통합하는 것. 2017·2022 대선 모두 결정적 변수였음.",
+      "q": "후보 단일화",
+      "news": [
+        {
+          "title": "김민석 “2002년 후보 단일화 과정 다시 깊이 사과”…봉하마을 참배 - 경향신문",
+          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9oN0NQemFLRVNzUXRXaWdKQXdtUklTTFhaMVZGazNxNE9Zc0Z6Q1o0YmNnX1BodVpLQ3FuWDllQXR5Rnh0VUE1MnJZTjVFRDFINi1NblhaZEhNd9IBX0FVX3lxTFBEZ0RWVGZtNmx2emdWc0ZibVgzQjd5ZVJJZXZZeDhQdnFTOC1DNk96eWdGRVFyZ192RzJhc3E4VVo5Qm5uTnZTcmdENzFORkZHNWZaSmNaV1MxZGVwazBR?oc=5",
+          "date": "2026-07-17",
+          "source": "경향신문"
+        },
+        {
+          "title": "‘후보 단일화 대가 고위직 약속’ 의혹 천호성 전북교육감·유성동 전 예비후보 불송치 - 전북도민일보",
+          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPM3Q1Y0swdUl4UmxncHRna040eEpuSjVJcUQtYW5idzFfdmc0RmdkaDRoQU9ZeHNNeGxvVU5oZV9VS3V5M0hmRmFCWUwzY29YQTBSNHVaejNMeUtVN1lpcC1QSU51aFpaVzk4VlU0QVNXNjFVZzhaOGN6R0IydE05UjByNDBmak0?oc=5",
+          "date": "2026-09-28",
+          "source": "전북도민일보"
+        },
+        {
+          "title": "정념 스님 “공감 정책 있다면 후보 단일화 가능” - 현대불교",
+          "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5OMXQxSk81d3dGMlhmOV8zTHhTNUxJbGh5T1ZjaFlORmhBVmJ5bUJVdE94MDdkUzVtYkdWa1FNNnR4OUdKQng2c012VV8taG96b2hrMFJqenVVbnBZYnlLRlpPXzM3WGFDa05UY3lWOA?oc=5",
+          "date": "2026-08-06",
+          "source": "현대불교"
+        }
+      ]
+    },
+    {
+      "t": "탄핵",
+      "cat": "제도",
+      "d": "국회 소추 + 헌법재판소 심판으로 대통령을 파면하는 절차. 박근혜(2017 파면), 윤석열(2025 파면), 노무현(2004 소추 후 기각) — 타임라인의 ⚑로 표시.",
+      "q": "대통령 탄핵 헌법재판소",
+      "news": [
+        {
+          "title": "국힘, 與 '조희대 국정조사' 추진에 \"李대통령 탄핵 사유…총력 저지\"(종합) - 뉴시스",
+          "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5QRDM3cDgyOHNyQ0NjZTBVcXJETzJYSG80MzlMbjRQOEs2ZnFRTHE5eVFxMUJQZklVU2NyRm5tSUozWEwtM3FzOC10amxwZktzQ3ZXbk44S1k0Mm1GY1R3SNIBeEFVX3lxTFBZREdsZ3ZzT0tDMENpb09VcndodkkwU0tDRkNQVnZmbmFrSzY1S2lVcl9GeWNIMkQ0RDZIaGN0eVNNMlRZQzRVemhLN0I3cGs4dGY5QktQbkUtVmpZc2prNHQtQkN6RDlDVU9PNy0xNGlrMGw1YWlTRg?oc=5",
+          "date": "2026-10-27",
+          "source": "뉴시스"
+        },
+        {
+          "title": "조희대 대법원장 탄핵하겠다는 與…헌재 절차·판단 기준은(종합) - 연합뉴스",
+          "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE52VUoyTGhkSy1Uc0VaUnNtR2xVc1VjMTFjRVpCbExRU3UtRzNSUzVfeEt6SWVuZWNnOXh6MG1VVXN4ZlROLWcwcEVNb0F4Q1cxcXA0RmRJT2p3bGvSAWBBVV95cUxQenpqV2NZRG1pRjlNdld3YmlPWUZsUjF1bmMyMjdCUFBRTE1VLVM4bll6VC1DZUVlbHA3dDlURnFHNzBzVDVxVlJZZ21ORjMyMDVZV0hvZEthMlU5V3M3NzA?oc=5",
+          "date": "2026-10-18",
+          "source": "연합뉴스"
+        },
+        {
+          "title": "“조희대, 결자해지 하라” vs \"대통령 탄핵 사유\" [시사정각] - YTN",
+          "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5IcWlqWWFIdHZ6UVUzaEktNjhlWkMxemstbFV0WTRCQ0NlUXNsMUhqeEFSVWp3dWg5SmVlWEZDOXlDdE5GVDJ6XzA2NFRPazhoaGNHb2lCbG10V2NFU1E?oc=5",
+          "date": "2026-08-20",
+          "source": "YTN"
+        }
+      ]
+    },
+    {
+      "t": "권한대행",
+      "cat": "제도",
+      "d": "대통령 직무 공백 시 국무총리가 대행. 윤보선 사임 후 박정희(국가재건최고회 의장, 633일)가, 윤석열 파면 후 한덕수 등이 대행한 사례가 있음.",
+      "q": "대통령 권한대행",
+      "news": [
+        {
+          "title": "최상목 대통령 권한대행 부총리 겸 기재부 장관, 싱가포르 국회의장 접견 - 서울Pn",
+          "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9RNV9pN0xPUWJJc2RDWGVVMzVoZjRrS3VzeDJSNzItT0plQWFFNlltaXRDSnVrWGlfNG9ianc4VDZnWmNHRWNjdEJNLXJqeHpFcFBvSlpSS2ZrM3RkYWlpNHhSejF6YW4xcXc3UDdxbVpEdHRrVWR2TVBhNA?oc=5",
+          "date": "2026-10-22",
+          "source": "서울Pn"
+        },
+        {
+          "title": "\"아프리카 민주화 이후 첫 백인 수반\" 가이 스콧 전 잠비아 대통령 권한대행 별세 - 연합뉴스TV",
+          "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBPZExuVzY5YVE3ZlRVaXI5enJheGdlNUxRVHFSSGY5TUFWSEE4RTZ4MlJwQzRGTW9lZnE2eTNSNFpyV2VsT3ozdmIzM2s2em15TjJVdDctREsyNDg0RzlwSzdtRGJzSTQ?oc=5",
+          "date": "2026-07-17",
+          "source": "연합뉴스TV"
+        },
+        {
+          "title": "문형배 전 헌재소장 권한대행 \"대법관 제청 갈등…대통령·대법원장 만나야\" - 대전일보",
+          "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBpd2FGZHdfNG91d1RDRGpFT19ESFBJVjNpSkFJbTRWNHZsb05XT2JwYVRrZy1PcXpYbkdqOFMwWEhrQU95di1seWk2cFk4WEtwa0FBY2RIc05Ka0pWT1JZbTVTM1RXYnlsdjIxeFdaNA?oc=5",
+          "date": "2026-08-31",
+          "source": "대전일보"
+        }
+      ]
+    },
+    {
+      "t": "삼김",
+      "cat": "인물 약칭",
+      "d": "김영삼(YS)·김대중(DJ)·김종필(JP) — 80년대~90년대 한국 정치를 주름잡은 세 거물. 87년 대선 분열로 직선제 첫 선거를 노태우에게 내준 뒤, 90년 3당 합당·97년 DJP 연합으로 정치 지형이 재편되는 축이 됨.",
+      "q": "삼김 정치",
+      "news": [
+        {
+          "title": "CU, '연수(軟水)' 품은 삼각김밥 출시 - 씨원뉴스",
+          "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5BV1RlWWo5Ym9fQS1GbUVOOW8yR0x4RzVhZF9tUE9fU043cThSSm1vOE1jb2VPS252Rlo1d3JDUDdNZ3NFOVpaMThTU3BGX1FGVi1Cd2dPblBBSzRxbE1mWDc5UDVCeFk?oc=5",
+          "date": "2026-09-18",
+          "source": "씨원뉴스"
+        },
+        {
+          "title": "9화ㅣ우리나라 정치 역사 ‘삼김’이 한 획 그은 사연 | 김영삼 편 - 뉴닉",
+          "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5JMTYtVllrRWM1MUdRUDItaV9nTXo5b0NralJPX00wdlNjOGZRUEFkOGNzY0hpSDJaX0IxWW43S2w4UWczR0llN1QtUElFTUM5?oc=5",
+          "date": "2025-09-16",
+          "source": "뉴닉"
+        },
+        {
+          "title": "홍준표 \"정치 초보 윤 뽑고 '삼김 정치' 해달라는 건 난센스\" - 중앙일보",
+          "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1aaVE4bnZsbVFYUkpsQU9USVlGRXZ1WE9RM0RJTWcxclBkQTh6ZzdUMmVCR05RZldlQ2dCaFNnME5XR0RWajZDUzNvYURUWU1Ta0JSSkZ3?oc=5",
+          "date": "2023-04-09",
+          "source": "중앙일보"
+        }
+      ]
+    },
+    {
+      "t": "여소야대",
+      "cat": "정치구조",
+      "d": "여당 의석이 야당보다 적은 국면. 국정 운영이 교착되고 협상 정치가 강제됨 — 88년 노태우 정부(역대 첫), 22대 총선 이후 윤석열 정부가 대표적 사례.",
+      "q": "여소야대 국회",
+      "news": [
+        {
+          "title": "여소야대란 무엇일까 [정치용어번역기⑮] - 쿠키뉴스",
+          "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE02M2hSZm5paUE5NDhmakhJX2o5c3dnaE9KckhRUUNONjFoZFM5LS1NalctUDRiTjd0eXh0MmlZNERMOHFpNmc2SlhLNUZOY1cwczV0YU13bFozVzFWWVZzcWk4WQ?oc=5",
+          "date": "2026-10-24",
+          "source": "쿠키뉴스"
+        },
+        {
+          "title": "'여소야대' 국회··· 권력 재편 한창 - 연합뉴스",
+          "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOS0Y3S3g2YU9VblliY3pxSmlaUnI0T1o1TjlLWlNvMDdhakhCTDgtTFhxNVBlaWpWVjhQdWhaNHVxT3Qyc1BMMFlrX0VIcWNJMWQwUW5BMl9RVWxCNG1zeEFRU0o1ZGY4b2dCcDAwS3JQbE50SXhRb3pMYXNYMVM1VnlVQzlleDFXYWhN?oc=5",
+          "date": "2026-09-28",
+          "source": "연합뉴스"
+        },
+        {
+          "title": "11화 학교 이야기로 이해하는 여소야대 - 브런치",
+          "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5VQWdQWmNldk9TQkREbXB0eVJnNV8zcHBQVGJ2V2pzcWgzUXdqczlQZElmQnFIOTFKUE1xc0VUcG9vR0VhYkF5TQ?oc=5",
+          "date": "2026-10-08",
+          "source": "브런치"
+        }
+      ]
+    },
+    {
+      "t": "87년 체제",
+      "cat": "역사",
+      "d": "6월 항쟁으로 만들어진 직선제·5년 단임 중심의 현행 헌정 질서. 1987년 개헌 이후 40년간 유지 — 대통령 개헌 논의 때마다 이 체제의 수정이 중심 쟁점이 됨.",
+      "q": "87년 체제 개헌",
+      "news": [
+        {
+          "title": "민주 \"87년 체제 마무리\"...국힘 \"김현지, 국감 증인으로\" - YTN",
+          "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE90SHdyWDd5Zkx6TTBGX2ZvcVRzUFVlZmxBUm5Ib294WG9qUzVWRkQ3ZV9GdzlnQVMwVjUxWDJnOXJCeFMxZllKb3VfTk5TaEpnOTFJODF1aEFONndNN1E?oc=5",
+          "date": "2026-09-21",
+          "source": "YTN"
+        },
+        {
+          "title": "\"李대통령, 내 임기 단축해서라도 '분권형 개헌'해야\" - 주간조선",
+          "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE93dVl5ck1LYmdlVVhhUzExdDhoMG1vQVM1QmFGUEZONFg4eGZjVWFLOENqUzlPbC0ybmFCZGVJekNVWm95Vm11V3FPeU96U254WkFkZ2ljMXB1V25uMkVhOGVvOXlnT1BfOEE?oc=5",
+          "date": "2026-08-14",
+          "source": "주간조선"
+        },
+        {
+          "title": "【모자이크 민주주의 저자 백왕순 인터��②】 87년 체제와 민주주의 위기 - 유교신문",
+          "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE95aXdzOVc4akdjb05za0hPNEFWQllodDNjLUxubmZOSS14MndzbjZ3NE9oU3FMY2RVQ2tBX2lzUFVPNzN4TUVsb2g4Z0RpcU12S3dJdklJSU1pSUdaMWRoZQ?oc=5",
+          "date": "2026-09-29",
+          "source": "유교신문"
+        }
+      ]
+    },
+    {
+      "t": "지역주의",
+      "cat": "정치구조",
+      "d": "정당 지지가 정강보다 출신 지역으로 갈리는 현상 — TK·PK vs 호남 구도가 대표적. 후보 인물보다 지역 색깔이 당락을 결정하는 한국 선거의 오랜 특징이자 비판 대상.",
+      "q": "지역주의 선거",
+      "news": [
+        {
+          "title": "[김주호 칼럼]지역주의의 문제가 아니다 - 단디뉴스",
+          "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9BQjVHcEgxcFpOQVJueFN3NEtodE9MZVFhSVR0NEhCVm9SQTlQMGFLenlVMEdaOFVLZzl4Q2pxVVg5cmVnTUhCRGtZUDI4OTQ5d1VjRlIyQW4zQktpa2tBUUEyUnM0eUtWa19n?oc=5",
+          "date": "2026-06-10",
+          "source": "단디뉴스"
+        },
+        {
+          "title": "김부겸 떨어뜨린 대구 지역주의에 대하여 - 시사IN",
+          "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5qak5hRHc2REtBNFI0N0xWVjRZOUJxYXBQbTJyZHhLNFl1ZkZOM1NYRDNTZGFnNmtsVVlqenpNQzRnWGNmeTliNUVOX2xlcWF4WlRyWm1PbUkwZmRrX1FZMzRNUXU5MG15Zmc?oc=5",
+          "date": "2026-06-05",
+          "source": "시사IN"
+        },
+        {
+          "title": "TK 지방선거, 지역주의 넘은 ���택…양당 경쟁구도에 희망 봤다 - 경북일보",
+          "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1MN012VmpEZUs5V3JnM2ZYWlBkdWtmYnF6NG9CTkpGdjFCb3pqV0hwNG1NYUx1a0xGRWRsT21vdURyYXBQbE14Z3R1R1E1NmxkazdFZ3dhVEpYUzdFZEUtWnREakcyZ0s0eWNUWU9ZMA?oc=5",
+          "date": "2026-06-07",
+          "source": "경북일보"
+        }
+      ]
+    },
+    {
+      "t": "개헌",
+      "cat": "제도",
+      "d": "헌법 고침 — 재적의원 2/3 찬성과 국민투표가 필요. 4년 중임제 전환, 국무총리제 도입 등 대통령 권한 분산 개헌이 주요 정치 쟁점. 지금 헌법은 1987년 만든 9차 개헌판.",
+      "q": "개헌 국민투표",
+      "news": [
+        {
+          "title": "부산시민단체 \"정치권, 내년 하반기 개헌 국민투표 추진해야\" - 연합뉴스",
+          "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE0zc3RWYlgxMDd1ZlE4ZmszVkRmN0JNWktKY2NscjFsREVuajRmS3BtallScUZUM1pkcncwQ0NqaHJhRTlaZ20zbjl2UzJYdW1BTUUzTUJuNGh5MWPSAWBBVV95cUxORENvUzNtRlFwaE5vOVgyWEdFb2RQeFM1aW10QmVXeldwb0gtV25zOWM1NXlublpDbjFVV25fMnhmNHVubkRfYU91YU5uR0FCd1BHZjNHd096V0ZSVklyWlk?oc=5",
+          "date": "2026-10-22",
+          "source": "연합뉴스"
+        },
+        {
+          "title": "˝개헌도 전자투표도 반대…종이투표 대체 안돼˝ 국민청원:동아경제신문 & daenews.co.kr - 동아경제",
+          "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9EeGdGeUJpQVl6cW1qTDdyM2NqRjFtUkZBS19OS3F1ZlhiektidnBlejFDUGkwY0FOTzJEVXpBWWllOFNSamNjUm56YklwMGpabHZwdUFfaVhiSFpKT0JYMzVR0gFiQVVfeXFMT0R4Z0Z5QmlBWXpxbWpMN3IzY2pGMW1SRkFLX05LcXVmWGJ6S2J2cGV6MUNQaTBjQU5PMkRVekFZaWU4U1JqY2NSbnpiSXAwalpsdnB1QV9pWGJIWkpPQlgzNVE?oc=5",
+          "date": "2026-10-26",
+          "source": "동아경제"
+        },
+        {
+          "title": "“정치권, 내년 개헌 국민투표 계획 제시해야” - KBS 뉴스",
+          "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBOS1h6aDFZX19kTEJ2eG9hSUZicDA1YWFSajlhTVkyQXlNZ3NaNmROYjBKbGFSdnE1QnVDZkpXdDhRZVJEMENpYkthM2l6WFFXcjJfcE9iRi1qRlU?oc=5",
+          "date": "2026-10-22",
+          "source": "KBS 뉴스"
+        }
+      ]
+    },
+    {
+      "t": "공수처",
+      "cat": "제도",
+      "d": "고위공직자범죄수사처의 준말. 검찰의 고위공직자 수사 독점을 깨기 위해 2021년 설치 — 검찰개혁의 상징이자 폐지 논쟁의 중심 (관계도·정책백과 참조).",
+      "q": "공수처 검찰",
+      "news": [
+        {
+          "title": "22개월간 수사 마무리 못짓고… 정부, ‘내란특수본’ 시동 - 문화일보",
+          "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE00WU8tU2tGS3hOMnFFclpidGVpd2E0aTZjcXhNTGRnVFUzSkNOM1dCMDFvM0FGa2I0ME12ZThCUkpLZzhDMVIwdTFBSUpaX0Q1?oc=5",
+          "date": "2026-10-28",
+          "source": "문화일보"
+        },
+        {
+          "title": "검찰 없애고 공수처 손보나···공수처를 ‘수사기관을 수사하는 기관’으로? - 경향신문",
+          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE4zeHV1bnNhbDdsVG9qVlM1ekpPWGU3bmlFUnJUcVczQ3pMdV9tQVpZWkdNNy1Rdk1ZX1RsY1JxR2RDdXVpRmVMNkxlWUx2RFZWRlRWdTUzZkpjd9IBX0FVX3lxTFA2VHladU1BVzllS2xlUnJrbld3NEFFeVlkcUp2dy1Dc0V5cE9HeG1QRTduT2tFQUltVl9IU0dKbDBWLW5YT00zME1VSnVqUnhwWVlnRFVPWkxNb1JfWU9V?oc=5",
+          "date": "2026-10-07",
+          "source": "경향신문"
+        },
+        {
+          "title": "정부 정책에 칼 빼든 공수처…국민연금·ETF 고발 건 결국 수사행 - 강원도민일보",
+          "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5jS1liclNLbXU4c1lLcjRrRUkwaXIyaC1pTnJsZkFSVlJKNFVSVzhMSEtsczlKUFBwbkVkSThFdDRzVFZaR1VOVnFiTlJHTzNobFJBdE1TMjRwZlliUklPbExZWFl1SGQ1?oc=5",
+          "date": "2026-10-27",
+          "source": "강원도민일보"
+        }
+      ]
+    },
+    {
+      "t": "검찰개혁",
+      "cat": "정치구조",
+      "d": "검찰의 수사·기소 독점을 제한해 권력 기관化를 막으려는 개혁. 공수처 설치·검경 수사권 조정이 핵심 — 문재인 정부에서 추진, 보수 진영은 '검찰 무장해제'라고 반발.",
+      "q": "검찰개혁 수사기소 분리",
+      "news": [
+        {
+          "title": "\"수사 못 한다더니 피의자 불러 문답\"…검찰개혁이 낳은 기형적 절차 - 이데일리",
+          "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQY0FPTjVfRWNvSGhtS09PNVdEWTY1c3Z6SVNpejlEMVVBT0dRMGE3a05fbVZLUDlLdXFCcmc2RlJwRlI5VUdnTDdLT3NhQVB5b3VtSGNlUzZfamtHWG12Z2s5N1hsRzFPOW1hMkRGNVhVOVBsdGlHTkJwMFZQTzY2WA?oc=5",
+          "date": "2026-10-28",
+          "source": "이데일리"
+        },
+        {
+          "title": "검사 수사권 뺏은 민주당, 특검 수사에 검사 190명 동원 - 동행미디어 시대",
+          "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBsSllSYXdCRjBQWXVncE1kYjh0LWF1a1JFZnFFdVZ5NERyWW9LQ1dFNGlla0M2VmV3VXZjajB3NTdvMGxqTG5wZlgxNEZtQlpFZUU1YVMxRTJSLVUwN3c?oc=5",
+          "date": "2026-10-28",
+          "source": "동행미디어 시대"
+        },
+        {
+          "title": "이 대통령, 조국·유시민 영상 공유하며 “보완수사 금지될 만큼 검찰개혁 완성” - 한겨레",
+          "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1vNDVRTUlsZ3FONGNFa1RkRlIySkdEbzVzQ1hMQzVsTU9IRkw3aHB1SllLSGwxN2plSVJ2emp3X1ZSVE43blV1SzNPVW9hWVNvZkpjSnk5NFE4cW1CajdFU095OHJNblZhY0Q0?oc=5",
+          "date": "2026-10-05",
+          "source": "한겨레"
+        }
+      ]
+    },
+    {
+      "t": "민주화운동",
+      "cat": "역사",
+      "d": "4·19, 광주 5·18, 6월 항쟁 등 독재에 맞선 시민 운동. 관련자 명예회복·보상이 국가 책무로 법제화(민주화운동관련자명예회복및보상에관한법률).",
+      "q": "민주화운동 명예회복",
+      "news": [
+        {
+          "title": "40년전 오늘 10·28 건대항쟁 40주년…국가폭력 진상규명과 피해자 명예회복 요구 확산 - 시사매거진",
+          "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE50STR3Um0wU2tRaXBPZEV2MUhkNlQxOXpqYXNOWXZ5NzU5Rkl1YUNfZTJRQjFRWUVMY1lzUWpkMmd2aDVCc0lzTjFTVTBCbzBzQm85cEhEd1N1UHh3WHV1Qkd3?oc=5",
+          "date": "2026-10-28",
+          "source": "시사매거진"
+        },
+        {
+          "title": "5·18 민주화운동 관련자 127명 명예회복···검찰 ‘죄 안됨’ 처분 - 경향신문",
+          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFB3SW9VOXUydFNOcXJoSWFWTmFUbUZzaDJXcjJuUTRsLTBCZlB5NTRlbmdKSG9JSGszTHplNmVZazFONFFVdUdZN0V4Q3YzY3I5THAzejVRSnl3QdIBX0FVX3lxTE83MEFFTUZlUl9ENjlDYkdlcEtfeWtUZ0ZPUG9OZ0p2SThqTER2ZURWV2k2Nkw1dlgwLWYtWlYweWhOMVhTeFlxNWpEdTc2ZHBCYmpTS01zM253MF9UMmJr?oc=5",
+          "date": "2026-07-28",
+          "source": "경향신문"
+        },
+        {
+          "title": "광주지검, 5·18 관련자 127명 명예회복…'죄 안됨' 처분 - 연합뉴스",
+          "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1FOVpJUXRNNzUzSjlNM0dvQk1vZEpURkhvbDlvU3UwMnBYeUNvZTNlVVQ2ODkzSFFkNU0zUkdQTzlhNXNUSlM2YkNmMzRuSldLUUhzYkhYZlB5Ym_SAWBBVV95cUxQYkFmN2V3MEkzNjFnTUlZWlZIUmp1cE5FeE5pRUhOTXo2TGdBLWUzVTdETG9hZ3lTcTFaNm1fYy10aDBrWjZLalM5NG5mMmltMjZ1RlJkUkZRTTdQSGNYakg?oc=5",
+          "date": "2026-07-28",
+          "source": "연합뉴스"
+        }
+      ]
+    },
+    {
+      "t": "촛불집회",
+      "cat": "역사",
+      "d": "촛불을 든 평화 시위의 상징 — 2008년 광우병 촛불, 2016~17년 박근혜 탄핵 촛불이 대표적. 탄핵 촛불은 헌정사 첫 대통령 파면으로 이어짐.",
+      "q": "촛불집회 탄핵",
+      "news": [
+        {
+          "title": "조희대탄핵, 드디어 눈앞에 왔다. - 통일뉴스",
+          "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE84c2UwX3dCZmw0eGhLWElkNV9aZ1FKSkx5bDZCNU9SaF9MY21TbjNad05BWHFjRi14b2M1bkFQazE1cHlNM0trTzVnSHpyNVNGRGd5T01rcFFmV3ZVNlZ0ck1uSUlnbUxIcGdUdmhR?oc=5",
+          "date": "2026-08-26",
+          "source": "통일뉴스"
+        },
+        {
+          "title": "“윤 탄핵 촛불은 ‘파시즘 세력’ 소수화한 빛의 혁명” - 한겨레",
+          "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5fYk8tb1kzQ2FrWGotZDNORkZZcDdxWWZuWlhXUm8wV2tPeHhHZFl1UXBJQlJ2enJWaXFRaWpndjFDYmw1NnBVekdYbUFpYnhLSkFKT3lUUGJqWS0xOF9WVWx3cw?oc=5",
+          "date": "2026-07-04",
+          "source": "한겨레"
+        },
+        {
+          "title": "202차 촛불대행진 '조��대 탄핵·사법개혁' 촉구…광복절 광주집회 총결집 선언 - 시민의소리",
+          "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1yTHdEakxjSjQtRGstZnlWUTBGZDlhS2M5dVBEVzFySzk5WjRKVTREQU1pUXAxV290Y3lqOXdpS0xmdnFSblc1dkJ0WnVTNkV0WU5FRDYwN2NzbEF3UzFtVm41R1pDb3BsaEM2VNIBcEFVX3lxTE82dTBLMlVWWmdHbF9LV2Q5c3gyYUZGcXoxQmpwVEdGMTJXU0pIX3N3U2FuSC02MlJPV19BejF5b3lUeHN2SzNxYVBWV2dINTNueXhQamtMZUsxMDkyaUNSZjFzZ0lYWXhIR3EzWWFQX3k?oc=5",
+          "date": "2026-08-02",
+          "source": "시민의소리"
+        }
+      ]
+    },
+    {
+      "t": "게이트",
+      "cat": "정치구조",
+      "d": "~-게이트 = 정치 스캔들의 관용 접미사(워터게이트에서 유래). 박근혜·최순실 게이트, 이재명 대장동 게이트 등 — 사건 파악의 출발점으로 정치 뉴스 빈출 표현.",
+      "q": "정치 게이트 특검",
+      "news": [
+        {
+          "title": "\"오세훈이 살려달라고 4번 울었다\" 명태균 게이트, 의혹부터 특검까지 - MBC 뉴스",
+          "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1yeGVQN2dNUFV0U1M5VHd1Ti1qUVM5a1NONVVKWlE1dDd3WWpOdXUxRllHUFZ1aEZ0Y1VTVDB4Tkd2ZFhXcHZJcFBxS1VIZzh6WnF6dUJMRGR5YUJ4ekdPcVlqR2ctZC03anpPejZTa19oRVFpZndvWA?oc=5",
+          "date": "2026-07-22",
+          "source": "MBC 뉴스"
+        },
+        {
+          "title": "장동혁 \"김용범 미래에셋 로비 의혹…ETF게이트 특검 추진\" - 매일일보",
+          "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBPdEZuZURrNlVuVW9ac2FKYXczMVdWRlZjNGlJNDYzaTVzTXA5WW83amhiNmJXemlxalpUV3V5OWlRVWNYWFJaQ25OQ2JIenZhandvVUtkWXRkSVMtQUdfaC1DTnQ?oc=5",
+          "date": "2026-09-02",
+          "source": "매일일보"
+        },
+        {
+          "title": "장동혁 \"ETF 게이트 특검·국정조사 추진…장미란 사건도 특검 불가피\" - 경인방송 뉴스",
+          "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBVcHNnY1RjZlh2QnlWQ1FvdDNFWGw1T0h4N0YyYlZ0aXhOcWdRWkd3SUIzbFBjQmozYVBqN1ljVUdTZVZOZkhTNkZtaDdkNnJaU0pIaWVGblAtOHRic19yckNSLWI?oc=5",
+          "date": "2026-09-02",
+          "source": "경인방송 뉴스"
+        }
+      ]
+    },
+    {
+      "t": "햇볕정책",
+      "cat": "역사",
+      "d": "김대중 정부의 대북 포용 정책(1998~2008) — 금강산 관광, 6·15 정상회담. 포용이 변화를 유도한다는 논리와 지원만 날랐다는 비판이 공존 (정책백과 상세).",
+      "q": "햇볕정책 남북",
+      "news": [
+        {
+          "title": "햇볕정책이 북핵을 고도화하였나? - 유코리아뉴스",
+          "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE45VkZoanBSTUVlUlJaUFJiZlJKRi01Rk9ocU9yTTBQVVd5SkVlX1psQkc3NEN3R1YyWURvU2JtVHh3ZTJzU3pfSHdYcU5TZmtGTmRGMjVmMlhpX2QwZXUxUkdHdDNEODNHSUVkOA?oc=5",
+          "date": "2026-04-06",
+          "source": "유코리아뉴스"
+        },
+        {
+          "title": "김대중 정부 ‘햇볕정책’, 노무현 정부 ‘평화번영’…이재명 정부 대북정책은 ‘한반도 평화공존’ - 경향신문",
+          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9jN29pSVBnb2NEN1laLW9NTXUtRnVqcHBLZnNHMlZQa1k0ZVdoUHBMWklDa1ZaY1l4c0xIRUpZamp1bXE3SVFqbkZNemdxVkRNQVV2Nm9OWVFLZ9IBX0FVX3lxTE5tamNLQVFjVklSbjItZ3lxQjcwWGp4RlgxN1BpREZFRk40OWszQWtQSjJKbDFEa2F2eVlZcUxMTXVzaW9HVWdoc1RiTWxoMjRtYjFBVlFiaEswLS16Q3I0?oc=5",
+          "date": "2026-02-03",
+          "source": "경향신문"
+        },
+        {
+          "title": "이 대통령, 문 전 대통령과 남북관계 개선 논의‥\"'햇볕정책' 이어갈 것\" - MBC 뉴스",
+          "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1GSmxRYW5sNXcyazVxc1R0SUJNMF9GUUxtUzIta3NMZzhuSElMZHBaSTdSNEdxcnlPaENISDVVX0lEcXF4bS1ia2pSVWJfWXlNeURPXzBDU3BTSjJEUjExNFFleVpHaWQ1WGthWlh4NWV2aHlreWJGRNIBeEFVX3lxTE0zQ2NkTDVmcHZua1pRRktQRmpTN1g1cmNBYWg1V1BLVlBiUFpHbHVqaHE2OVIyVmlWLVFnVlRHWDJTcmRzdE56VGZ4UENTMXlNVlprQ2NvcEpaOWZoNUNpTEE4NGlEUG1VVmpHTUpYOGdYMTdjbDFadA?oc=5",
+          "date": "2026-07-01",
+          "source": "MBC 뉴스"
+        }
+      ]
+    },
+    {
+      "t": "북방정책",
+      "cat": "역사",
+      "d": "노태우 정부의 소련·중국 수교 추진(1988~92) — 냉전 블록을 깨고 남북 UN 동시가입을 이끈 외교 전환점 (정책백과 상세).",
+      "q": "북방정책 수교",
+      "news": [
+        {
+          "title": "[기획] 한ㆍ러 수교 30주년, 신북방정책으로 더욱 긴밀해져 - 인천투데이",
+          "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9BdDV5RzNSLU9pVGJYeDBuTUotTkZUOGloOGcwUkdBM3JvUWVZTmxiZnJpSElOS1N0aUJGNUthYk56S1dXVEtJWU9RYjRHaEtCWFFXT1hUS3NmaHJ4c1I5TEx4TWRpS3R6MHV3ZEJyeUE?oc=5",
+          "date": "2019-12-02",
+          "source": "인천투데이"
+        },
+        {
+          "title": "‘북방정책’ 외교 성과에도…‘5·18 학살·부정축재’ 오점 남겨 - 경향신문",
+          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9sODNqaTJ3MkN0RTdTQUszUDNJYzFUUkZpbVJrd3dxUnM3UVBoQnFzMk0wajNEQTVKcUVXSlRxMVJCY2xKV0ZxenJkdUM5cWs5RXo5SFljMUlrUdIBX0FVX3lxTFBKZEVLMGhWLTU1am5VOHEtOVZQZmZ5UzEzWVRjX1phOTdlLXMwdlprU293SDI5Uy1SMnJzcXQ5Ukc5TGYtNnZBdzdVRGN5bHJnR212clpHb2ViMmxmcDBB?oc=5",
+          "date": "2021-10-26",
+          "source": "경향신문"
+        },
+        {
+          "title": "한러수교 33주년…북방정책으로 주변 4강 갈등 해소해야 - 한겨레",
+          "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9Ya1dadnM5VW9ITjBCUUYzdjVDSTFMLXpNMkw5N0E2eWViRFN2S01SSTlQN29HWlJiLWJHT1EyVzl1bEhDY0dNTGhRSGpmYVFJQURKRU1KNkJTSmYtcnFwc2I3cUwwaDA?oc=5",
+          "date": "2023-10-04",
+          "source": "한겨레"
+        }
+      ]
+    }
+  ],
+  "newsCollected": "2026-10-28"
+}

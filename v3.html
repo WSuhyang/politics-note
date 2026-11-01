@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>정리노트 v3 — 관계도 · 인물 노트 · 타임라인 · 정당 · 공약 · 용어사전</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="data.js?v=20261006b"></script>
+<style>
+  :root{
+    --bg:#fbf9f4; --ink:#1c1917; --muted:#78716c; --border:#e0dbd2; --card:#fff; --accent:#b45309;
+    --dem:#2563a8; --con:#c0563f; --mid:#7c7f6a;
+    --rel-family:#8a5a44; --rel-lineage:#b45309; --rel-faction:#6b705c; --rel-school:#5f7d8c; --rel-rival:#a04040;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html[data-theme="dark"]{
+    --bg:#141210; --ink:#ece7dc; --muted:#a29a8d; --border:#38332b; --card:#1e1b16; --accent:#e08c3f;
+    --dem:#5b8fd6; --con:#d97b62; --mid:#9aa07f;
+    --rel-family:#a0755f; --rel-lineage:#d99a4e; --rel-faction:#8b9078; --rel-school:#7fa3b5; --rel-rival:#c26a6a;
+  }
+  html[data-theme="dark"] .pbar,html[data-theme="dark"] .bar{background:#2c2820}
+  html[data-theme="dark"] .cmp-table th{background:#262219}
+  html[data-theme="dark"] #tooltip{background:#26221b;color:#ece7dc}
+  html[data-theme="dark"] #tooltip .t-sub{color:#bfb6a5}
+  html[data-theme="dark"] .st-kept{background:#243524;color:#8fce9b}
+  html[data-theme="dark"] .st-partial{background:#3a301a;color:#d9bd6a}
+  html[data-theme="dark"] .st-broken{background:#3b231d;color:#e0937d}
+  html[data-theme="dark"] .st-progress{background:#1f2e42;color:#8ab4e0}
+  html[data-theme="dark"] .n-badge{background:#33291c;color:#e0a868}
+  html[data-theme="dark"] .g-cat{background:#33291c!important}
+  html[data-theme="dark"] .tl-svg line{stroke:#2e2921!important}
+  body{background:var(--bg);color:var(--ink);font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif}
+  header{display:flex;align-items:baseline;gap:14px;padding:16px 24px 10px;border-bottom:1px solid var(--border);background:var(--card)}
+  header h1{font-size:19px;letter-spacing:-.02em}
+  header .tag{font-size:12px;color:var(--muted)}
+  nav{display:flex;gap:2px;padding:0 24px;background:var(--card);border-bottom:1px solid var(--border);flex-wrap:wrap}
+  nav button{border:none;background:none;padding:10px 14px;font-size:14px;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent}
+  nav button.active{color:var(--ink);border-bottom-color:var(--accent);font-weight:600}
+  main{padding:18px 24px 70px;max-width:1280px}
+  .page{display:none}.page.active{display:block}
+  .hint{font-size:13px;color:var(--muted);margin-bottom:10px}
+  .hint b{color:var(--ink)}
+  .toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px}
+  .toolbar input{padding:8px 12px;border:1px solid var(--border);border-radius:8px;font-size:14px;width:200px;background:var(--card)}
+  .toolbar select{padding:6px 8px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:var(--card)}
+  .legend{display:flex;gap:12px;font-size:12px;color:var(--muted);margin-left:auto;flex-wrap:wrap}
+  .legend span{display:inline-flex;align-items:center;gap:5px}
+  .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+  #graph{width:100%;height:600px;background:var(--card);border:1px solid var(--border);border-radius:12px;position:relative}
+  .link{stroke-opacity:.5}
+  .node circle{stroke:#fff;stroke-width:2px;cursor:pointer}
+  .node text{font-size:12px;pointer-events:none;paint-order:stroke;stroke:var(--card);stroke-width:3px}
+  .node.faded{opacity:.15}
+  #tooltip{position:absolute;pointer-events:none;background:var(--ink);color:#faf7f0;padding:10px 12px;border-radius:8px;font-size:12px;line-height:1.55;max-width:280px;opacity:0;transition:opacity .15s;z-index:5}
+  #tooltip .t-name{font-size:14px;font-weight:700;margin-bottom:3px}
+  #tooltip .t-sub{color:#d6cfc2}
+  #tooltip .t-src{margin-top:5px;color:#b9ac97;font-size:11px}
+  /* 인물 노트 모달 */
+  #note-overlay{display:none;position:fixed;inset:0;background:rgba(28,25,23,.45);z-index:20;align-items:center;justify-content:center}
+  #note-overlay.open{display:flex}
+  .note{background:var(--card);border-radius:14px;max-width:640px;width:92%;max-height:82vh;overflow-y:auto;padding:26px 30px;position:relative}
+  .note h2{font-size:22px;margin-bottom:2px}
+  .note .n-sub{color:var(--muted);font-size:13px;margin-bottom:14px}
+  .note h4{font-size:13px;color:var(--accent);margin:16px 0 6px;letter-spacing:.02em}
+  .note ul{padding-left:18px;font-size:13.5px;line-height:1.7}
+  .note .n-close{position:absolute;top:14px;right:16px;border:none;background:none;font-size:20px;cursor:pointer;color:var(--muted)}
+  .note .n-badge{display:inline-block;font-size:12px;padding:2px 10px;border-radius:999px;background:#f3ede2;color:var(--accent);margin-right:6px}
+  .note .n-src{margin-top:18px;padding-top:10px;border-top:1px solid var(--border);font-size:11.5px;color:var(--muted)}
+  .n-avatar{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:top;float:right;margin:0 0 10px 16px;border:3px solid var(--border)}
+  /* 타임라인 */
+  .tl-wrap{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;overflow-x:auto}
+  .tl-svg{min-width:1100px;display:block}
+  /* 정당 */
+  .party-row{display:grid;grid-template-columns:150px 1fr 210px;gap:12px;align-items:center;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 16px;margin-bottom:8px}
+  .party-row .pname{font-weight:700;font-size:15px}
+  .party-row .pleader{font-size:12px;color:var(--muted)}
+  .pbar{height:22px;border-radius:5px;background:#ede8de;position:relative;overflow:hidden}
+  .pbar>div{height:100%;border-radius:5px;display:flex;align-items:center;padding-left:8px;color:#fff;font-size:12px;font-weight:600}
+  .pseats{font-size:13px;text-align:right}
+  .pseats b{font-size:17px}
+  /* 공약 */
+  .pol-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+  .pol-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 20px}
+  .pol-card h3{font-size:16px;display:flex;justify-content:space-between;align-items:baseline}
+  .pol-card h3 .who{font-size:12px;color:var(--muted);font-weight:400}
+  .score-row{display:flex;align-items:baseline;gap:8px;margin:10px 0 4px}
+  .score{font-size:32px;font-weight:800;letter-spacing:-.03em}
+  .score small{font-size:13px;font-weight:400;color:var(--muted)}
+  .bar{height:8px;border-radius:4px;background:#ede8de;overflow:hidden;margin:6px 0 14px}
+  .bar>div{height:100%;border-radius:4px}
+  .st{font-size:11px;padding:2px 8px;border-radius:999px;white-space:nowrap}
+  .st-kept{background:#e3efe3;color:#2f6b3a}.st-partial{background:#f5ecd9;color:#8a6d1a}
+  .st-broken{background:#f3ded9;color:#a0432e}.st-progress{background:#e0e9f3;color:#35608e}
+  .evidence{margin-top:6px;color:var(--muted);font-size:12px}
+  .cite{font-size:11px;color:var(--accent);text-decoration:none;border-bottom:1px dotted var(--accent)}
+  .cmp-table{width:100%;border-collapse:collapse;font-size:13px;background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-top:20px}
+  .cmp-table th,.cmp-table td{padding:10px 14px;border-bottom:1px solid var(--border);text-align:left}
+  .cmp-table th{background:#f6f1e8;font-size:12px;color:var(--muted)}
+  /* 용어 사전 */
+  .glossary-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+  .g-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;cursor:pointer}
+  .g-card b{font-size:15px}
+  .g-card .g-cat{font-size:11px;color:var(--accent);background:#f6ecdc;padding:1px 8px;border-radius:999px;margin-left:6px;vertical-align:2px}
+  .g-card p{font-size:13px;color:#44403c;margin-top:6px;line-height:1.65}
+  html[data-theme="dark"] .g-card p{color:#c9c0b2}
+  .g-news{display:none;margin-top:10px;border-top:1px dashed var(--border);padding-top:8px}
+  .g-card.open .g-news{display:block}
+  .g-nt{font-size:11px;color:var(--accent);margin-bottom:6px}
+  .g-news a{display:block;font-size:12.5px;color:var(--ink);text-decoration:none;padding:5px 0;line-height:1.5;border-bottom:1px dotted var(--border)}
+  .g-news a:hover{color:var(--accent)}
+  .g-ns{color:var(--muted);font-size:11px}
+  .gterm{border-bottom:1px dotted var(--accent);cursor:help;color:var(--accent)}
+  footer{position:fixed;bottom:0;left:0;right:0;background:var(--card);border-top:1px solid var(--border);padding:8px 24px;font-size:12px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <h1>정리노트 <span style="color:var(--accent)">v3</span></h1>
+  <span class="tag">관계도 · 인물 노트 · 타임라인 · 정당 지도 · 공약(실데이터) · 용어 사전</span>
+  <button id="theme-toggle" title="다크/라이트 테마" style="margin-left:auto;border:1px solid var(--border);background:var(--card);border-radius:8px;padding:6px 10px;cursor:pointer;font-size:14px">🌙</button>
+</header>
+<script>try{document.documentElement.dataset.theme=localStorage.getItem("theme")||"light"}catch(e){}</script>
+<nav>
+  <button id="tab-rel" class="active">정치 관계도</button>
+  <button id="tab-tl">대통령 타임라인</button>
+  <button id="tab-party">정당 지도</button>
+  <button id="tab-prom">공약 이행도</button>
+  <button id="tab-gloss">용어 사전</button>
+</nav>
+<main>
+  <section id="page-rel" class="page active">
+    <p class="hint">💡 <b>둥근 사각형 = 대통령</b>, 12시(이승만)부터 시계방향 임기순 배치. 원 = 일반 인물(내부). <b>노드 클릭 → 인물 노트</b>. 라이벌은 점선. <b>데이터: 위키백과 기반(2026-10 수집)</b></p>
+    <div class="toolbar">
+      <input type="search" id="search" placeholder="인물 검색 (예: 이재명)">
+      <select id="rel-filter">
+        <option value="all">관계: 전체</option>
+        <option value="family">가족</option>
+        <option value="lineage">계보 (○○키즈)</option>
+        <option value="faction">계파/합당</option>
+        <option value="school">동문/동료</option>
+        <option value="rival">라이벌</option>
+      </select>
+      <div class="legend">
+        <span><i class="dot" style="background:var(--ink);border-radius:3px;width:11px;height:11px"></i>■ 대통령 (임기순·시계방향)</span>
+        <span><i class="dot" style="background:var(--dem)"></i>민주진영</span>
+        <span><i class="dot" style="background:var(--con)"></i>보수진영</span>
+        <span><i class="dot" style="background:var(--mid)"></i>제3지대</span>
+      </div>
+    </div>
+    <div id="graph"><svg width="100%" height="100%"></svg><div id="tooltip"></div></div>
+    <div style="margin-top:12px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 16px">
+      <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:6px">
+        <span id="year-label" style="font-weight:600;color:var(--accent)">전체 기간 (1948~현재)</span>
+        <span>📅 슬라이더를 움직이면 그 시점의 관계만 표시 (재임 대통령 + 이미 성립된 관계)</span>
+      </div>
+      <input type="range" id="year-slider" min="1948" max="2027" value="2027" step="1" style="width:100%;accent-color:var(--accent)">
+    </div>
+  </section>
+
+  <section id="page-tl" class="page">
+    <p class="hint">💡 1948년 정부 수립부터 현재까지 — 임기 막대 색은 진영, ⚑는 임기 중 주요 사건. <b>출처: 위키백과 '대한민국 대통령 목록'(2026-10)</b></p>
+    <div class="tl-wrap"><svg class="tl-svg" id="tl-svg" width="1100" height="560"></svg></div>
+  </section>
+
+  <section id="page-party" class="page">
+    <p class="hint">💡 제22대 국회 원내 정당 — 의석수와 이념 스펙트럼. <b>출처: 위키백과 '대한민국의 정당'(2026-09 기준)</b></p>
+    <div id="party-list"></div>
+  </section>
+
+  <section id="page-prom" class="page">
+    <p class="hint">💡 <b>실제 팩트체크 데이터 반영</b> — 대통령 공약은 뉴스톱(문재인미터·윤석열미터) 인용, 국회의원·지방은 예시 데이터(실데이터 수집 예정). 언론 검증 결과 <b>인용</b>이 이 프로젝트의 원칙입니다.</p>
+    <div class="toolbar" id="prom-filter" style="margin-bottom:14px"></div>
+    <div class="pol-grid" id="pol-grid"></div>
+    <table class="cmp-table" id="cmp-table"></table>
+  </section>
+
+  <section id="page-gloss" class="page">
+    <p class="hint">💡 뉴스에서 막 쓰다가 설명 안 해주는 말들 — <b>가나다순 사전</b>. 카드를 누르면 뜻 + 관련 최근 뉴스 3개가 펼쳐집니다.</p>
+    <div class="toolbar" style="margin-bottom:14px">
+      <input type="search" id="gloss-search" placeholder="용어 검색 (예: TK, 탄핵, 계파, 선거)" style="padding:8px 12px;border:1px solid var(--border);border-radius:8px;font-size:14px;width:300px;background:var(--card)">
+      <span id="gloss-count" style="font-size:12px;color:var(--muted)"></span>
+    </div>
+    <div id="gloss-dict"></div>
+  </section>
+</main>
+
+<div id="note-overlay"><div class="note" id="note-body"></div></div>
+<footer>v3 — 관계·타임라인·정당: 위키백과 기반(수집일 표기) / 공약: 뉴스톱 문재인미터·윤석열미터 인용(2026-10 검색) / 프로필 사진: 위키백과 (각 문서 라이선스: CC BY-SA·공공누리) — 실제 서비스는 모든 항목에 출처를 표기합니다.</footer>
+
+<script>
+const SRC_WIKI="위키백과 · 2026-10 수집";
+const SRC_NEWS="뉴스톱 팩트체크(문재인미터·윤석열미터) 인용 · 2026-10 검색";
+
+// ============ 용어 사전 ============
+const GLOSSARY = DB.glossary;
+
+const DATA = DB.graph;
+
+const NOTES = DB.notes;
+
+// ===== 탭 =====
+function showTab(t){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+  document.getElementById('page-'+t).classList.add('active');
+  document.getElementById('tab-'+t).classList.add('active');
+}
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>showTab(b.id.replace('tab-',''))));
+
+// ===== 테마 토글 =====
+(function(){
+  const btn=document.getElementById('theme-toggle');
+  const apply=t=>{document.documentElement.dataset.theme=t;btn.textContent=t==='dark'?'☀️':'🌙';try{localStorage.setItem('theme',t)}catch(e){}};
+  apply(document.documentElement.dataset.theme||'light');
+  btn.addEventListener('click',()=>apply(document.documentElement.dataset.theme==='dark'?'light':'dark'));
+})();
+
+// ===== 1) 관계도 =====
+const campColor={dem:"var(--dem)",con:"var(--con)",mid:"var(--mid)"};
+const typeColor={family:"var(--rel-family)",lineage:"var(--rel-lineage)",faction:"var(--rel-faction)",school:"var(--rel-school)",rival:"var(--rel-rival)"};
+const svg=d3.select("#graph svg");
+const gW=()=>document.getElementById("graph").clientWidth, gH=()=>document.getElementById("graph").clientHeight;
+const gLink=svg.append("g"), gNode=svg.append("g");
+const defs=svg.append("defs");
+const tooltip=d3.select("#tooltip");
+
+const nodes=DATA.nodes.map(d=>({...d}));
+const links=DATA.edges.map(d=>({...d}));
+
+// 대통령 임기순 원형 배치 — 12시(이승만)에서 시계방향, 임기순
+const presIdx={}; DB.presidents.forEach((p,i)=>presIdx[p.name]=i);
+const N_PRES=DB.presidents.length;
+function presPos(d){
+  if(!(d.id in presIdx)) return null;
+  const w=gW(),h=gH(),i=presIdx[d.id];
+  const a=-Math.PI/2+(i/N_PRES)*Math.PI*1.9; // 12시 출발 시계방향
+  return {x:w/2+(w/2-70)*Math.cos(a), y:h/2+(h/2-55)*Math.sin(a)};
+}
+
+const sim=d3.forceSimulation(nodes)
+  .force("link",d3.forceLink(links).id(d=>d.id).distance(l=>150-l.strength*25).strength(.45))
+  .force("charge",d3.forceManyBody().strength(-430))
+  .force("center",d3.forceCenter(gW()/2,gH()/2))
+  .force("collide",d3.forceCollide(40))
+  .force("x",d3.forceX(d=>{const p=presPos(d);return p?p.x:gW()/2}).strength(d=>d.president?.5:.03))
+  .force("y",d3.forceY(d=>{const p=presPos(d);return p?p.y:gH()/2}).strength(d=>d.president?.5:.05));
+
+let linkSel,nodeSel;
+function render(){
+  gLink.selectAll("*").remove(); gNode.selectAll("*").remove();
+  linkSel=gLink.selectAll("line").data(links).join("line")
+    .attr("class","link").attr("stroke",l=>typeColor[l.type]||"#999")
+    .attr("stroke-width",l=>1+l.strength*.9)
+    .attr("stroke-dasharray",l=>l.type==="rival"?"5,4":null);
+  nodeSel=gNode.selectAll("g").data(nodes).join("g").attr("class","node")
+    .call(d3.drag()
+      .on("start",(e,d)=>{if(!e.active)sim.alphaTarget(.25).restart();d.fx=d.x;d.fy=d.y})
+      .on("drag",(e,d)=>{d.fx=e.x;d.fy=e.y})
+      .on("end",(e,d)=>{if(!e.active)sim.alphaTarget(0);d.fx=null;d.fy=null}));
+  nodeSel.each(function(d){
+    const g=d3.select(this);
+    const r=d.president?21:13, S=r*2;
+    const clipId="clip-"+d.id.replace(/[^가-힣a-zA-Z0-9]/g,"");
+    if(d.president){
+      // 대통령 = 둥근 사각형 (임기순 원형 배치)
+      defs.append("clipPath").attr("id",clipId)
+        .append("rect").attr("x",-r).attr("y",-r).attr("width",S).attr("height",S).attr("rx",10);
+      if(d.photo){
+        g.append("image")
+          .attr("href",d.photo).attr("x",-r).attr("y",-r)
+          .attr("width",S).attr("height",S)
+          .attr("preserveAspectRatio","xMidYMid slice")
+          .attr("clip-path",`url(#${clipId})`)
+          .on("error",function(){
+            d3.select(this).remove();
+            g.insert("rect",":first-child").attr("x",-r).attr("y",-r).attr("width",S).attr("height",S).attr("rx",10)
+              .attr("fill",campColor[d.camp]);
+          });
+      } else {
+        g.append("rect").attr("x",-r).attr("y",-r).attr("width",S).attr("height",S).attr("rx",10)
+          .attr("fill",campColor[d.camp]);
+      }
+      g.append("rect").attr("x",-r).attr("y",-r).attr("width",S).attr("height",S).attr("rx",10)
+        .attr("fill","none").attr("stroke",campColor[d.camp]).attr("stroke-width",3.5)
+        .style("filter","drop-shadow(0 1px 2px rgba(0,0,0,.25))");
+    } else if(d.photo){
+      const rr=r;
+      defs.append("clipPath").attr("id",clipId).append("circle").attr("r",rr);
+      g.append("image")
+        .attr("href",d.photo).attr("x",-r).attr("y",-r)
+        .attr("width",S).attr("height",S)
+        .attr("preserveAspectRatio","xMidYMid slice")
+        .attr("clip-path",`url(#${clipId})`)
+        .on("error",function(){ // 로드 실패 시 색 원으로 자동 복귀
+          const s=d3.select(this); s.remove();
+          g.insert("circle",":first-child").attr("r",rr)
+            .attr("fill",campColor[d.camp]).attr("stroke-width",2);
+        });
+      g.append("circle").attr("r",rr).attr("fill","none")
+        .attr("stroke",campColor[d.camp]).attr("stroke-width",2);
+    } else {
+      g.append("circle").attr("r",r)
+        .attr("fill",campColor[d.camp]).attr("stroke-width",2);
+    }
+  });
+  nodeSel.append("text").attr("dy",d=>d.president?40:26).attr("text-anchor","middle")
+    .text(d=>d.id).style("font-weight",d=>d.president?700:400);
+  // 대통령 임기 라벨 (예: '21대')
+  nodeSel.filter(d=>d.president).append("text")
+    .attr("dy",52).attr("text-anchor","middle")
+    .style("font-size","10px").style("fill","var(--muted)").style("font-weight",600)
+    .text(d=>{const p=DB.presidents.find(q=>q.name===d.id);return p?p.n+"대 · "+Math.floor(p.from):""});
+  nodeSel.on("mouseenter",(e,d)=>{
+      tooltip.style("opacity",1)
+        .style("left",Math.min(e.offsetX+16,gW()-290)+"px").style("top",(e.offsetY+10)+"px")
+        .html(`<div class="t-name">${d.id}${d.president?` <span style="color:#e8c9a0">· ${d.president}</span>`:""}</div>
+          <div class="t-sub">${d.party||""}${d.born?` · ${d.born}${d.died?`–${d.died}`:""}`:""}</div>
+          <div class="t-sub">${d.edu||""}</div>
+          ${d.event?`<div class="t-sub" style="color:#e0a090">⚑ ${d.event}</div>`:""}
+          <div class="t-src">클릭하면 인물 노트 · ${SRC_WIKI}</div>`);
+    })
+    .on("mouseleave",()=>tooltip.style("opacity",0))
+    .on("click",(e,d)=>{e.stopPropagation();highlight(d.id);openNote(d)});
+}
+function highlight(id){
+  const conn=new Set([id]);
+  links.forEach(l=>{if(l.source.id===id)conn.add(l.target.id);if(l.target.id===id)conn.add(l.source.id)});
+  nodeSel.classed("faded",d=>!conn.has(d.id));
+  linkSel.attr("stroke-opacity",l=>(l.source.id===id||l.target.id===id)?1:.05);
+}
+svg.on("click",()=>{nodeSel.classed("faded",false);linkSel.attr("stroke-opacity",.5)});
+sim.on("tick",()=>{
+  if(!linkSel||!nodeSel)return;
+  linkSel.attr("x1",l=>l.source.x).attr("y1",l=>l.source.y).attr("x2",l=>l.target.x).attr("y2",l=>l.target.y);
+  nodeSel.attr("transform",d=>`translate(${d.x},${d.y})`);
+});
+render();
+document.getElementById("search").addEventListener("input",e=>{
+  const q=e.target.value.trim();
+  if(!q){nodeSel.classed("faded",false);return}
+  nodeSel.classed("faded",d=>!d.id.includes(q)&&!(d.party||"").includes(q));
+});
+document.getElementById("rel-filter").addEventListener("change",e=>{
+  const v=e.target.value;
+  linkSel.attr("stroke-opacity",l=>(v==="all"||l.type===v)?.5:.04);
+});
+
+// ===== 연도 슬라이더: 타임라인×관계도 통합 뷰 =====
+(function(){
+  const slider=document.getElementById("year-slider"), yl=document.getElementById("year-label");
+  function applyYear(){
+    const Y=+slider.value, all=Y>=2027;
+    const active=new Set();
+    DB.presidents.forEach(p=>{if(all||(p.from<=Y&&Y<p.to))active.add(p.name)});
+    const edgeOk=e=>all||e.since==null||e.since<=Y;
+    nodeSel.classed("faded",d=>{
+      if(d.president)return !active.has(d.id);
+      return !DATA.edges.some(e=>edgeOk(e)&&(e.source===d.id||e.target===d.id));
+    });
+    linkSel.attr("stroke-opacity",l=>(all||l.since==null||l.since<=Y)?.5:.03);
+    if(all){yl.textContent="전체 기간 (1948~현재)";return}
+    const inc=DB.presidents.filter(p=>p.from<=Y&&Y<p.to);
+    if(inc.length)yl.textContent=Y+"년 — "+inc.map(p=>p.n+"대 "+p.name+" 재임").join(", ");
+    else{
+      const prev=DB.presidents.filter(p=>p.to<=Y).pop();
+      yl.textContent=Y+"년 — "+(prev?prev.n+"대 "+prev.name+" 이후 (권한대행·공백기)":"");
+    }
+  }
+  slider.addEventListener("input",applyYear);
+  applyYear();
+})();
+
+// ===== 인물 노트 모달 =====
+function openNote(d){
+  const overlay=document.getElementById("note-overlay");
+  const body=document.getElementById("note-body");
+  const rels=DATA.edges.filter(l=>l.source===d.id||l.target===d.id)
+    .map(l=>`<li><b>${l.source===d.id?l.target:l.source}</b> — ${l.relation} <span style="color:var(--muted)">(${l.type})</span></li>`).join("");
+  const note=NOTES[d.id];
+  let html=`<button class="n-close" onclick="document.getElementById('note-overlay').classList.remove('open')">✕</button>
+    ${d.photo?`<img class="n-avatar" src="${d.photo}" alt="${d.id} 프로필" onerror="this.style.display='none'">`:""}
+    <h2>${d.id}</h2>
+    <div class="n-sub">${d.president?d.president+" · ":""}${d.party||""}${d.born?` · ${d.born}${d.died?`–${d.died}`:""}`:""}</div>
+    <div>${(d.president?'<span class="n-badge">대통령</span>':"")}${note?note.badges.map(b=>`<span class="n-badge">${b}</span>`).join(""):""}</div>`;
+  if(d.edu) html+=`<h4>학력·경력 요약</h4><ul><li>${d.edu}</li>${d.event?`<li>⚑ ${d.event}</li>`:""}</ul>`;
+  if(note) note.sections.forEach(s=>{
+    html+=`<h4>${s[0]}</h4><ul>${s[1].map(x=>`<li>${x}</li>`).join("")}</ul>`;
+  });
+  html+=`<h4>관계 (${rels?DATA.edges.filter(l=>l.source===d.id||l.target===d.id).length:0})</h4><ul>${rels||"<li>등록된 관계 없음</li>"}</ul>`;
+  html+=`<div class="n-src">출처: ${SRC_WIKI}${note?" · 인물 노트는 주요 인물에 한해 제공":""}</div>`;
+  body.innerHTML=html;
+  overlay.classList.add("open");
+}
+document.getElementById("note-overlay").addEventListener("click",e=>{
+  if(e.target.id==="note-overlay") e.target.classList.remove("open");
+});
+
+const PRESIDENTS = DB.presidents;
+(function(){
+  const W=1100,H=560,m={l:120,r:40,t:30,b:40};
+  const tsvg=d3.select("#tl-svg");
+  const x=d3.scaleLinear().domain([1948,2027]).range([m.l,W-m.r]);
+  const axis=d3.axisBottom(x).tickValues(d3.range(1950,2030,10)).tickFormat(d=>d+"년").tickSize(-H+m.t+m.b);
+  tsvg.append("g").attr("transform",`translate(0,${H-m.b})`).call(axis)
+    .call(g=>g.select(".domain").remove())
+    .call(g=>g.selectAll("line").attr("stroke","#e7e2d8"))
+    .call(g=>g.selectAll("text").attr("fill","var(--muted)").attr("font-size",11));
+  const rowH=(H-m.t-m.b)/PRESIDENTS.length;
+  const title=tsvg.append("text").attr("x",m.l).attr("y",16).attr("font-size",12).attr("fill","var(--muted)");
+  const T="대한민국 역대 대통령 — 임기와 진영 (1948~현재)";
+  PRESIDENTS.forEach((p,i)=>{
+    const y=m.t+i*rowH;
+    const g=tsvg.append("g");
+    g.append("rect").attr("x",x(p.from)).attr("y",y+4).attr("width",Math.max(x(p.to)-x(p.from),6))
+      .attr("height",rowH-12).attr("rx",5)
+      .attr("fill",p.camp==="dem"?"var(--dem)":"var(--con)").attr("opacity",.85).style("cursor","pointer")
+      .on("mouseenter",()=>title.text(`${p.n}대 ${p.name} (${Math.floor(p.from)}~${p.to>=2026.7?"현임":Math.floor(p.to)}) · ${p.party}`))
+      .on("mouseleave",()=>title.text(T));
+    g.append("text").attr("x",m.l-10).attr("y",y+rowH/2+2).attr("text-anchor","end")
+      .attr("class","tl-name").text(`${p.n}대 ${p.name}`);
+    g.append("text").attr("x",x(p.from)+6).attr("y",y+rowH/2+3)
+      .attr("fill","#fff").attr("font-size",10.5).attr("font-weight",600)
+      .text(`${Math.floor(p.from)}~${p.to>=2026.7?"":Math.floor(p.to)}`);
+    if(p.event){
+      g.append("text").attr("x",x(p.to)-4).attr("y",y+rowH/2+3).attr("text-anchor","end")
+        .attr("fill","#fff").attr("font-size",10.5).text(`⚑ ${p.event}`);
+    }
+  });
+  title.text(T);
+})();
+
+// ===== 3) 정당 지도 (시대별) =====
+(function(){
+  const total=300;
+  const wrap=document.getElementById("party-list");
+  const eras=DB.eras&&DB.eras.length?DB.eras:[{id:"now",label:"현재",note:"",parties:DB.parties}];
+  function renderEra(eraId){
+    const era=eras.find(e=>e.id===eraId)||eras[0];
+    wrap.innerHTML=`
+      <div class="toolbar" style="margin-bottom:12px">
+        ${eras.map(e=>`<button class="era-btn" data-id="${e.id}" style="padding:7px 12px;border:1px solid var(--border);background:${e.id===era.id?'var(--accent)':'var(--card)'};color:${e.id===era.id?'#fff':'var(--muted)'};border-radius:8px;cursor:pointer;font-size:13px">${e.label}</button>`).join("")}
+      </div>
+      ${era.note?`<p class="hint">📅 ${era.note}</p>`:""}
+      ` + era.parties.map(p=>`
+      <div class="party-row">
+        <div><div class="pname">${p.name}</div>${p.leader?`<div class="pleader">대표 ${p.leader}</div>`:""}</div>
+        <div class="pbar"><div style="width:${p.seats/total*100}%;background:${p.color}">${p.seats>=20?p.seats+"석":""}</div></div>
+        <div class="pseats"><b>${p.seats}</b>석 / 300${p.spectrum?`<br><span style="font-size:11px;color:var(--muted)">${p.spectrum}</span>`:""}</div>
+      </div>`).join("") +
+      `<p class="hint" style="margin-top:14px">💡 계보로 보면: <b>더불어민주당</b>(김대중→노무현→문재인 계열) vs <b>국민의힘</b>(민주정의당·김영삼·이명박·박근혜 계열 통합 후신) — 관계도 탭에서 계보 라인으로 확인할 수 있습니다.</p>`;
+    wrap.querySelectorAll(".era-btn").forEach(b=>b.addEventListener("click",()=>renderEra(b.dataset.id)));
+  }
+  renderEra(eras[0].id);
+})();
+
+// ===== 4) 공약 (실데이터 인용, 직급별 필터) =====
+const PLEDGES = DB.pledges;
+const OFFICE_TABS=[
+  {id:"all",label:"전체",match:()=>true},
+  {id:"president",label:"🏛 대통령(대선)",match:p=>p.office==="president"},
+  {id:"assembly",label:"📋 국회의원·정당(총선)",match:p=>p.office==="assembly"||p.office==="party"},
+  {id:"local",label:"🏙 지방선거",match:p=>p.office==="local"}
+];
+const stLabel={kept:"이행",partial:"부분",broken:"미이행",progress:"진행중"};
+function scoreOf(p){const c=p.kept+p.partial+p.broken;return c?Math.round((p.kept+p.partial*.5)/c*100):null}
+function renderPledges(tabId){
+  const tab=OFFICE_TABS.find(t=>t.id===tabId)||OFFICE_TABS[0];
+  const list=PLEDGES.filter(tab.match);
+  document.getElementById("prom-filter").innerHTML=OFFICE_TABS.map(t=>`
+    <button data-id="${t.id}" style="padding:7px 12px;border:1px solid var(--border);background:${t.id===tab.id?'var(--accent)':'var(--card)'};color:${t.id===tab.id?'#fff':'var(--muted)'};border-radius:8px;cursor:pointer;font-size:13px">${t.label}</button>`).join("");
+  document.querySelectorAll("#prom-filter button").forEach(b=>b.addEventListener("click",()=>renderPledges(b.dataset.id)));
+  document.getElementById("pol-grid").innerHTML=list.map(p=>{
+    const pct=p.real.rate;
+    const hasNow=pct!=null||p.real.rateLabel;
+    const color=pct==null?"var(--muted)":pct>=70?"#2f6b3a":pct>=50?"#8a6d1a":"#a0432e";
+    const scoreHtml = pct!=null
+      ? `<span class="score" style="color:${color}">${pct}<small>%</small></span>`
+      : `<span class="score" style="color:${color};font-size:22px">${p.real.rateLabel||"집계 전"}</span>`;
+    const realHtml = p.real.total ? `
+    <div class="score-row">${scoreHtml}
+    <span style="font-size:12px;color:var(--muted)">${p.real.total}개 공약 — 완전이행 ${p.real.kept}${p.real.broken?` · 미이행 ${p.real.broken}`:""}${p.real.na?` · 부분·후퇴 ${p.real.na}`:""}</span></div>
+    <div class="bar"><div style="width:${pct||0}%;background:${color}"></div></div>` : `
+    <div class="score-row">${scoreHtml}
+    <span style="font-size:12px;color:var(--muted)">${p.real.src}</span></div>
+    <div class="bar"><div style="width:0%"></div></div>`;
+    return `<div class="pol-card">
+    <h3>${p.politician}<span class="who">${p.meta}</span></h3>
+    ${realHtml}
+    <div style="font-size:12px;color:var(--muted);margin-bottom:10px">출처: <a class="cite" href="${p.real.url?"https://"+p.real.url:"#"}" ${p.real.url?"target=_blank":"onclick='return false'"}>${p.real.src}</a></div>
+    ${p.items.map(it=>`<details class="promise" style="border-top:1px dashed var(--border);padding:8px 0;font-size:13px">
+      <summary style="cursor:pointer;display:flex;gap:8px;align-items:center;list-style:none">
+      <span class="st st-${it.status}">${stLabel[it.status]}</span> ${it.title}</summary>
+      <div class="evidence">${it.note}</div></details>`).join("")}
+  </div>`}).join("");
+  // 역대 정부 비교표는 대통령 탭에서만
+  const cmp=document.getElementById("cmp-table");
+  if(tab.id==="all"||tab.id==="president"){
+    cmp.style.display="";
+    cmp.innerHTML='<tr><th>정부</th><th>집계 시점</th><th>이행률</th><th>비고</th></tr>'+
+      DB.comparison.map(r=>`<tr><td>${r.gov}</td><td>${r.point}</td><td><b>${r.rate}</b></td><td>${r.note}</td></tr>`).join("");
+  } else cmp.style.display="none";
+}
+renderPledges("all");
+
+// ===== 5) 용어 사전 (가나다 사전형 + 검색 + 뉴스) =====
+const CHO_LIST=["ㄱ","ㄲ","ㄴ","ㄷ","ㄸ","ㄹ","ㅁ","ㅂ","ㅃ","ㅅ","ㅆ","ㅇ","ㅈ","ㅉ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"];
+function choOf(s){const c=s.charCodeAt(0)-0xAC00;return (c>=0&&c<11172)?CHO_LIST[Math.floor(c/588)]:s[0].toUpperCase();}
+function glossCard(g,i){
+  return `<div class="g-card" onclick="this.classList.toggle('open')">
+    <b>${g.t}</b><span class="g-cat">${g.cat}</span><p>${g.d}</p>
+    <div class="g-news" onclick="event.stopPropagation()">
+      <div class="g-nt">📰 관련 최근 뉴스 ${DB.newsCollected?"("+DB.newsCollected+" 수집)":""} — 카드를 눌러 접기</div>
+      ${(g.news||[]).map(n=>`<a href="${n.link}" target="_blank" rel="noopener">${n.title}<br><span class="g-ns">${n.source} · ${n.date}</span></a>`).join("")||'<span class="g-ns">최근 뉴스 없음</span>'}
+    </div>
+  </div>`;
+}
+function renderGloss(q){
+  q=(q||"").trim().toLowerCase();
+  const list=GLOSSARY
+    .filter(g=>!q||g.t.toLowerCase().includes(q)||g.cat.includes(q)||g.d.toLowerCase().includes(q))
+    .slice().sort((a,b)=>a.t.localeCompare(b.t,"ko"));
+  const groups={};
+  list.forEach(g=>{const k=choOf(g.t);(groups[k]=groups[k]||[]).push(g)});
+  const keys=Object.keys(groups).sort((a,b)=>{
+    const ia=CHO_LIST.indexOf(a), ib=CHO_LIST.indexOf(b);
+    if(ia>=0&&ib>=0)return ia-ib;
+    if(ia>=0)return -1; if(ib>=0)return 1;
+    return a.localeCompare(b);
+  });
+  document.getElementById("gloss-count").textContent=list.length+"개 용어"+(q?" (검색: "+q+")":"");
+  document.getElementById("gloss-dict").innerHTML= keys.length
+    ? keys.map(k=>`
+      <div style="margin:22px 0 10px;display:flex;align-items:baseline;gap:10px;border-bottom:2px solid var(--border);padding-bottom:6px">
+        <span style="font-size:22px;font-weight:800;color:var(--accent)">${k}</span>
+        <span style="font-size:12px;color:var(--muted)">${groups[k].length}개</span>
+      </div>
+      <div class="glossary-grid">${groups[k].map(glossCard).join("")}</div>`).join("")
+    : '<p class="hint" style="margin-top:20px">검색 결과가 없습니다. 다른 용어로 검색해보세요.</p>';
+}
+document.getElementById("gloss-search").addEventListener("input",e=>renderGloss(e.target.value));
+renderGloss("");
+</script>
+</body>
+</html>
