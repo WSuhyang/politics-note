@@ -10,7 +10,7 @@
       "party": "자유당",
       "event": "4.19로 사임",
       "edu": "프린스턴대 박사",
-      "photo": "https://upload.wikimedia.org/wikipedia/commons/4/46/Rhee_Syng-Man_in_1948.jpg",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Rhee_Syng-Man_in_1948.jpg/500px-Rhee_Syng-Man_in_1948.jpg",
       "role": "대통령"
     },
     {
@@ -22,7 +22,7 @@
       "party": "무소속(장면 내각)",
       "event": "5.16으로 사임",
       "edu": "에딘버러대",
-      "photo": "https://upload.wikimedia.org/wikipedia/commons/9/94/%EC%9C%A4%EB%B3%B4%EC%84%A0_%EB%8C%80%ED%86%B5%EB%A0%B9_%EC%A1%B4%EC%98%812.jpg",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/%EC%9C%A4%EB%B3%B4%EC%84%A0_%EB%8C%80%ED%86%B5%EB%A0%B9_%EC%A1%B4%EC%98%812.jpg/500px-%EC%9C%A4%EB%B3%B4%EC%84%A0_%EB%8C%80%ED%86%B5%EB%A0%B9_%EC%A1%B4%EC%98%812.jpg",
       "role": "대통령"
     },
     {
@@ -34,7 +34,7 @@
       "party": "민주공화당",
       "event": "10.26 암살",
       "edu": "육군사관학교",
-      "photo": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Park_Chung_Hee_%28%EB%B0%95%EC%A0%95%ED%9D%AC%29_Presidential_Portrait.jpg",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Park_Chung_Hee_%28%EB%B0%95%EC%A0%95%ED%9D%AC%29_Presidential_Portrait.jpg/500px-Park_Chung_Hee_%28%EB%B0%95%EC%A0%95%ED%9D%AC%29_Presidential_Portrait.jpg",
       "role": "대통령"
     },
     {
@@ -46,7 +46,7 @@
       "party": "무소속",
       "event": "8월 사임",
       "edu": "서울대·메이지대",
-      "photo": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Presidents_of_the_Republic_Of_Korea_%284261836786%29_Choi.jpg",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Presidents_of_the_Republic_Of_Korea_%284261836786%29_Choi.jpg/500px-Presidents_of_the_Republic_Of_Korea_%284261836786%29_Choi.jpg",
       "role": "대통령"
     },
     {
@@ -58,7 +58,7 @@
       "party": "민주정의당",
       "event": "",
       "edu": "육군사관학교(11기)",
-      "photo": "https://upload.wikimedia.org/wikipedia/commons/2/26/Chun_Doo-hwan_%28%EC%A0%84%EB%91%90%ED%99%98%29_Presidential_Portrait.jpg",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Chun_Doo-hwan_%28%EC%A0%84%EB%91%90%ED%99%98%29_Presidential_Portrait.jpg/500px-Chun_Doo-hwan_%28%EC%A0%84%EB%91%90%ED%99%98%29_Presidential_Portrait.jpg",
       "role": "대통령"
     },
     {
@@ -70,7 +70,7 @@
       "party": "민주정의당→민주자유당",
       "event": "",
       "edu": "경복고·육사",
-      "photo": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Roh_Tae-woo_%28%EB%85%B8%ED%83%9C%EC%9A%B0_%29_Presidential_Potraits.jpg",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Roh_Tae-woo_%28%EB%85%B8%ED%83%9C%EC%9A%B0_%29_Presidential_Potraits.jpg/500px-Roh_Tae-woo_%28%EB%85%B8%ED%83%9C%EC%9A%B0_%29_Presidential_Potraits.jpg",
       "role": "대통령"
     },
     {
@@ -106,7 +106,7 @@
       "party": "새천년민주당→열린우리당",
       "event": "탄핵소추→기각",
       "edu": "사법고시(독학) · 부산 인권변론",
-      "photo": "https://upload.wikimedia.org/wikipedia/commons/3/30/Roh_Moo-hyun_presidential_portrait.jpg",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Roh_Moo-hyun_presidential_portrait.jpg/500px-Roh_Moo-hyun_presidential_portrait.jpg",
       "role": "대통령"
     },
     {
@@ -117,7 +117,7 @@
       "party": "한나라당→새누리당",
       "event": "",
       "edu": "고려대 · 현대그룹 출신",
-      "photo": "https://upload.wikimedia.org/wikipedia/commons/0/04/Lee_Myung-bak_presidential_portrait.jpg",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Lee_Myung-bak_presidential_portrait.jpg/500px-Lee_Myung-bak_presidential_portrait.jpg",
       "role": "대통령"
     },
     {
@@ -128,7 +128,7 @@
       "party": "새누리당",
       "event": "탄핵(2017.3)",
       "edu": "서강대 · 박정희 딸",
-      "photo": "https://upload.wikimedia.org/wikipedia/commons/5/52/Park_Geun-hye_presidential_portrait.png",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Park_Geun-hye_presidential_portrait.png/500px-Park_Geun-hye_presidential_portrait.png",
       "role": "대통령"
     },
     {
@@ -139,7 +139,7 @@
       "party": "더불어민주당",
       "event": "",
       "edu": "경희대 법학 · 사법연수원 23기",
-      "photo": "https://upload.wikimedia.org/wikipedia/commons/0/0d/President_Moon_Jae_In.jpg",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/President_Moon_Jae_In.jpg/500px-President_Moon_Jae_In.jpg",
       "role": "대통령"
     },
     {
@@ -243,7 +243,7 @@
       "born": 1952,
       "party": "더불어민주당",
       "edu": "서울대 신문학 · JP계보→민주당",
-      "photo": "https://upload.wikimedia.org/wikipedia/commons/0/08/South_Korean_Prime_Minister_Lee_-_2017_%2836235112603%29_%28cropped%29.jpg",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/South_Korean_Prime_Minister_Lee_-_2017_%2836235112603%29_%28cropped%29.jpg/500px-South_Korean_Prime_Minister_Lee_-_2017_%2836235112603%29_%28cropped%29.jpg",
       "role": "총리·장관"
     },
     {
@@ -252,7 +252,7 @@
       "born": 1942,
       "party": "더불어민주당",
       "edu": "고려대 정외 · DJ 최측근",
-      "photo": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Park_Ji-won_in_2017.png",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Park_Ji-won_in_2017.png/500px-Park_Ji-won_in_2017.png",
       "role": "국회의원"
     },
     {
@@ -261,7 +261,7 @@
       "born": 1950,
       "party": "더불어민주당",
       "edu": "고려대 정외 · 문재인 정부 총리",
-      "photo": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Chung_Sye-kyun_20161027.jpg",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Chung_Sye-kyun_20161027.jpg/500px-Chung_Sye-kyun_20161027.jpg",
       "role": "총리·장관"
     },
     {
@@ -270,7 +270,7 @@
       "born": 1956,
       "party": "더불어민주당",
       "edu": "중앙대 신방 · 이재명과 동문",
-      "photo": "https://upload.wikimedia.org/wikipedia/commons/2/2d/%EA%B9%80%ED%95%9C%EA%B8%B8_%EA%B5%AD%EB%AF%BC%ED%86%B5%ED%95%A9%EC%9C%84%EC%9B%90%EC%9E%A5.jpg",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/%EA%B9%80%ED%95%9C%EA%B8%B8_%EA%B5%AD%EB%AF%BC%ED%86%B5%ED%95%A9%EC%9C%84%EC%9B%90%EC%9E%A5.jpg/500px-%EA%B9%80%ED%95%9C%EA%B8%B8_%EA%B5%AD%EB%AF%BC%ED%86%B5%ED%95%A9%EC%9C%84%EC%9B%90%EC%9E%A5.jpg",
       "role": "국회의원"
     },
     {
@@ -279,7 +279,7 @@
       "born": 1968,
       "party": "더불어민주당",
       "edu": "서울대 법학 · 친명",
-      "photo": "https://upload.wikimedia.org/wikipedia/commons/5/58/Park_Beom-gye_ministerial_portrait.png",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Park_Beom-gye_ministerial_portrait.png/500px-Park_Beom-gye_ministerial_portrait.png",
       "role": "총리·장관"
     },
     {
@@ -288,7 +288,7 @@
       "born": 1962,
       "party": "무소속",
       "edu": "서울대 의대 · 3대 중도 후보",
-      "photo": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Ahn_Cheol-Soo%27s_Portrait_%282025%29.png",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Ahn_Cheol-Soo%27s_Portrait_%282025%29.png/500px-Ahn_Cheol-Soo%27s_Portrait_%282025%29.png",
       "role": "국회의원"
     },
     {
@@ -297,7 +297,7 @@
       "born": 1965,
       "party": "조국혁신당(대표)",
       "edu": "서울대·버클리 · 문재인 정부 청와대",
-      "photo": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Cho_Kuk%27s_Portrait_%282024.3%29.png",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Cho_Kuk%27s_Portrait_%282024.3%29.png/500px-Cho_Kuk%27s_Portrait_%282024.3%29.png",
       "role": "총리·장관"
     },
     {
@@ -330,7 +330,7 @@
       "event": "내각책임제 총리",
       "edu": "연희전문 · 국무총리",
       "president": "4대 내각(1960~62)",
-      "photo": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Chang_Myon_1955.jpg",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Chang_Myon_1955.jpg/500px-Chang_Myon_1955.jpg",
       "role": "총리·장관"
     },
     {
@@ -487,7 +487,7 @@
       "party": "민주공화당",
       "event": "박정희 암살 후 처형",
       "edu": "육사 · 중앙정보부장",
-      "photo": "https://upload.wikimedia.org/wikipedia/commons/c/c1/19681021%E9%87%91%E8%BC%89%E5%9C%AD.jpg"
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/19681021%E9%87%91%E8%BC%89%E5%9C%AD.jpg/500px-19681021%E9%87%91%E8%BC%89%E5%9C%AD.jpg"
     },
     {
       "id": "박태준",
@@ -524,7 +524,7 @@
       "role": "지방단체장",
       "party": "신한국당(대표)",
       "edu": "서울대 경제 · 서울시장·당대표",
-      "photo": "https://upload.wikimedia.org/wikipedia/commons/f/f0/%EC%A1%B0%EC%88%9C_%EB%B0%95%EC%82%AC.jpg"
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/%EC%A1%B0%EC%88%9C_%EB%B0%95%EC%82%AC.jpg/500px-%EC%A1%B0%EC%88%9C_%EB%B0%95%EC%82%AC.jpg"
     },
     {
       "id": "정몽준",
@@ -533,7 +533,7 @@
       "role": "국회의원",
       "party": "국민의힘",
       "edu": "서울대·MIT · 국회의장(역)·새누리 대표",
-      "photo": "https://upload.wikimedia.org/wikipedia/commons/0/0d/CMJhyundai.JPG"
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/CMJhyundai.JPG/500px-CMJhyundai.JPG"
     },
     {
       "id": "김무성",
@@ -551,7 +551,7 @@
       "role": "국회의원",
       "party": "한나라당",
       "edu": "육사·한양대 · 국회의장(2010~12)",
-      "photo": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Park_Hee-tae_in_2011.jpg"
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Park_Hee-tae_in_2011.jpg/500px-Park_Hee-tae_in_2011.jpg"
     },
     {
       "id": "이해찬",
@@ -560,7 +560,7 @@
       "role": "총리·장관",
       "party": "더불어민주당(대표)",
       "edu": "서울대 사학 · 국무총리·교육부장관",
-      "photo": "https://upload.wikimedia.org/wikipedia/commons/7/76/191028%EB%8D%94%EB%B6%88%EC%96%B4%EB%AF%BC%EC%A3%BC%EB%8B%B9%EC%98%88%EC%82%B0%EC%A0%95%EC%B1%85%ED%98%91%EC%9D%98%ED%9A%8C%283%29.jpg"
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/191028%EB%8D%94%EB%B6%88%EC%96%B4%EB%AF%BC%EC%A3%BC%EB%8B%B9%EC%98%88%EC%82%B0%EC%A0%95%EC%B1%85%ED%98%91%EC%9D%98%ED%9A%8C%283%29.jpg/500px-191028%EB%8D%94%EB%B6%88%EC%96%B4%EB%AF%BC%EC%A3%BC%EB%8B%B9%EC%98%88%EC%82%B0%EC%A0%95%EC%B1%85%ED%98%91%EC%9D%98%ED%9A%8C%283%29.jpg"
     },
     {
       "id": "정동영",
@@ -578,7 +578,7 @@
       "role": "총리·장관",
       "party": "민주당 계열",
       "edu": "고려대 법학 · 법무부장관·원내대표",
-      "photo": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Chun_Jung-bae.jpg"
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Chun_Jung-bae.jpg/500px-Chun_Jung-bae.jpg"
     },
     {
       "id": "김근태",
