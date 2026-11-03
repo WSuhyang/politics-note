@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>정치백과 — 관계도 · 공약 · 용어</title>
+<link rel="stylesheet" crossorigin="anonymous" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script src="data.js?v=20261028"></script>
 <script>try{document.documentElement.dataset.theme=localStorage.getItem("theme")||"light"}catch(e){}</script>
@@ -19,7 +20,7 @@
     --rel-family:#c084fc; --rel-lineage:#60a5fa; --rel-faction:#2dd4bf; --rel-school:#8b95a5; --rel-rival:#f87171;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--bg);color:var(--ink);font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif}
+  body{background:var(--bg);color:var(--ink);font-family:'Pretendard Variable','Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;-webkit-font-smoothing:antialiased}
   header{display:flex;align-items:center;gap:14px;padding:14px 28px;background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}
   header h1{font-size:18px;font-weight:800;letter-spacing:-.02em}
   header .tag{font-size:12px;color:var(--muted)}
@@ -27,7 +28,7 @@
   nav{display:flex;gap:4px;padding:0 28px;background:var(--card);border-bottom:1px solid var(--border)}
   nav button{border:none;background:none;padding:11px 14px;font-size:14px;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent}
   nav button.active{color:var(--accent);border-bottom-color:var(--accent);font-weight:600}
-  main{padding:22px 28px 80px;max-width:1320px}
+  main{padding:22px 28px 80px}
   .page{display:none}.page.active{display:block}
   .hint{font-size:13px;color:var(--muted);margin-bottom:14px}
   .hint b{color:var(--ink)}
