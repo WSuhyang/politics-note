@@ -40,8 +40,10 @@
 
   /* ===== 관계도 (가로 타임라인) ===== */
   #graph-scroll{overflow-x:auto;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:6px 0}
-  /* 오른쪽 인물 프로필 고정 구역 */
-  #note-side{width:400px;flex-shrink:0;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px 24px;overflow-y:auto;max-height:640px}
+  /* 오른쪽 인물 프로필 고정 구역 — 화면 끝까지 full-bleed */
+  #rel-row{display:flex;gap:14px;align-items:stretch;margin:0 -28px}
+  #rel-row #graph-scroll{flex:1;min-width:0;border-radius:14px 0 0 14px}
+  #note-side{width:400px;flex-shrink:0;background:var(--card);border:1px solid var(--border);border-radius:14px 0 0 14px;border-right:none;padding:22px 24px;overflow-y:auto;max-height:640px}
   #note-side .note{padding:0;box-shadow:none;border:none;border-radius:0;height:auto;max-height:none;animation:none;width:auto;background:transparent}
   #graph-scroll::-webkit-scrollbar{height:8px}
   #graph-scroll::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
@@ -167,11 +169,11 @@
         <span><i style="display:inline-block;width:22px;border-top:2.6px dashed var(--rel-rival);vertical-align:middle"></i>갈등·경쟁</span>
       </div>
     </div>
-    <div style="display:flex;gap:14px;align-items:stretch">
-      <div id="graph-scroll" style="flex:1;min-width:0"><svg id="graph-svg" height="620"></svg></div>
+    <div id="rel-row">
+      <div id="graph-scroll"><svg id="graph-svg" height="620"></svg></div>
       <aside id="note-side" aria-label="인물 프로필"></aside>
     </div>
-    <div id="party-map" style="margin-top:18px"></div>
+    <div id="party-map" style="margin:18px -28px 0;padding:0 28px"></div>
   </section>
 
   <section id="page-people" class="page">
@@ -255,7 +257,7 @@ const isNonPres=p=>p.n==="내각"||p.n==="대행";
 
 // x축: 실제 시간 비례 (장기 재임자는 넓게). 극단 겹침(1979~80)만 최소간격 보정
 const YEAR0=1946, YEAR1=2029;
-const GRAPH_W=2150;
+const GRAPH_W=Math.max(2150, (document.getElementById("graph-scroll").clientWidth||2150)-8); // 화면이 넓으면 그래프도 끝까지 늘어남
 const xOf=year=>80+(year-YEAR0)/(YEAR1-YEAR0)*(GRAPH_W-160);
 const presX={};
 {
