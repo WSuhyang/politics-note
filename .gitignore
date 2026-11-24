@@ -3,5 +3,6 @@ _check.js
 _*.txt
 _*.html
 _*.json
+_*.js
 # node
 node_modules/
