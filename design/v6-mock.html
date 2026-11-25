@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>정치백과 v6 시안 — 인물 중심</title>
+<link rel="stylesheet" href="v6-mock.css">
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <h1>정치백과</h1>
+    <span class="tag">v6 시안 · 인물 중심</span>
+    <span class="date">데이터 기준 <span id="date"></span></span>
+    <div class="search">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+      <input id="q" type="text" placeholder="인물 검색" autocomplete="off">
+      <div id="drop" class="drop"></div>
+    </div>
+  </div>
+  <nav class="tabs"><span class="on">인물</span><span>정책</span><span>공약 이행도</span><span>정당 지도</span></nav>
+</header>
+<main>
+  <div class="note-bar"><b>시안 안내</b><span>이준석만 위키백과(2026.11.24 열람)로 새로 정리한 예시 데이터입니다. 다른 인물을 누르면 현재 사이트 데이터가 그대로 보여, 데이터가 얼마나 비어 있는지 확인할 수 있습니다.</span></div>
+  <div class="rail" id="rail"></div>
+  <div id="page"></div>
+</main>
+<div id="pop" class="pop" hidden></div>
+<script src="../data.js"></script>
+<script src="v6-mock-data.js"></script>
+<script src="v6-mock.js"></script>
+</body>
+</html>

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>정치백과 — 관계도 · 공약 · 용어</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script src="data.js?v=20261124"></script>
+<script src="data.js?v=20261125"></script>
 <meta name="description" content="한국 정치 입문자를 위한 가로 타임라인 관계도 · 인물백과 · 정책백과 · 공약 이행도 · 용어 사전 — 모든 정보에 출처와 수집일 표기">
 <meta property="og:title" content="정치백과 — 관계도로 보는 한국 정치">
 <meta property="og:description" content="가로 타임라인 관계도로 보는 한국 정치 인맥, 공약 이행도 추적, 입문자용 용어 사전">
@@ -66,31 +66,6 @@
   .src-note{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;font-size:12.5px;color:var(--muted);margin-bottom:14px;padding:10px 14px;background:var(--card);border:1px solid var(--border);border-radius:10px;line-height:1.6}
   .src-note b{color:var(--ink);font-weight:600;margin-right:4px}
   .src-note a{color:var(--accent);text-decoration:none}.src-note a:hover{text-decoration:underline}
-  /* 정치 입문 가이드 */
-  .guide-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px}
-  .guide-step{display:flex;gap:14px;align-items:center;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px}
-  .guide-step .num{width:34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px}
-  .guide-step b{display:block;font-size:14px;margin-bottom:2px}
-  .guide-step span{font-size:12.5px;color:var(--muted);display:block}
-  .guide-step .chip{margin-left:auto;flex-shrink:0}
-  .guide-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
-  .gcard{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 22px;display:flex;flex-direction:column}
-  .gcard .gk{font-size:10.5px;font-weight:700;color:var(--accent);letter-spacing:.08em;margin-bottom:6px}
-  .gcard h3{font-size:16.5px;margin-bottom:8px;letter-spacing:-.01em}
-  .gcard p{font-size:13.5px;line-height:1.75;color:var(--ink)}
-  .gcard p b{font-weight:700}
-  .gcard .links,.guide-terms .links{margin-top:auto;padding-top:14px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-  .gcard .links .lbl,.guide-terms .lbl{font-size:11px;color:var(--muted);margin-right:2px}
-  .chip{font-size:12px;padding:4px 10px;border-radius:999px;border:1px solid var(--border);background:var(--bg);color:var(--ink);cursor:pointer;transition:border-color .12s,color .12s;line-height:1.5}
-  .chip:hover{border-color:var(--accent);color:var(--accent)}
-  .legend-row{display:flex;gap:12px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin-top:10px}
-  .legend-row span{display:inline-flex;align-items:center;gap:6px}
-  .sw{width:18px;height:3px;border-radius:2px;display:inline-block}
-  .guide-terms{margin-top:22px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 22px}
-  .guide-terms h3{font-size:14px;margin-bottom:4px}
-  .guide-terms p{font-size:12.5px;color:var(--muted)}
-  .guide-terms .links{margin-top:12px;padding-top:0}
-  @keyframes cardflash{0%{box-shadow:0 0 0 3px var(--accent)}100%{box-shadow:0 0 0 0 transparent}}
   .pol-card.flash{animation:cardflash 1.6s ease-out}
 
   /* ===== 관계도 (가로 타임라인) ===== */
@@ -196,9 +171,6 @@
     .note-side{width:auto;max-height:none;border-radius:0 0 14px 14px;border-right:1px solid var(--border);border-top:none;scroll-margin-top:calc(var(--hdr-h,58px) + var(--nav-h,45px) + 8px)}
     #people-note-side{position:static;max-height:none}
     #party-map{margin:14px -16px 0;padding:0 16px}
-    .guide-steps{grid-template-columns:1fr}
-    .guide-grid{grid-template-columns:1fr}
-    .guide-step .chip{margin-left:0}
     .party-row{grid-template-columns:120px 1fr 90px}
     #policy-list{grid-template-columns:1fr!important}
   }
@@ -218,7 +190,6 @@
 </header>
 <nav>
   <button id="tab-rel" class="active">정치 관계도</button>
-  <button id="tab-guide">정치 입문</button>
   <button id="tab-people">인물백과</button>
   <button id="tab-pol">정책백과</button>
   <button id="tab-prom">공약 이행도</button>
@@ -315,35 +286,6 @@
     <div id="gloss-dict"></div>
   </section>
 
-  <section id="page-guide" class="page">
-    <div class="guide-steps">
-      <div class="guide-step"><div class="num">1</div><div><b>관계도에서 현재 대통령 클릭</b><span>오른쪽에 이력·인맥·주요 정책이 뜬다</span></div><button class="chip" data-goto="person" data-person="이재명">이재명 보기</button></div>
-      <div class="guide-step"><div class="num">2</div><div><b>선 색으로 인맥 종류 확인</b><span>호버하면 그 인물의 관계만 강조된다</span></div><button class="chip" data-goto="rel">관계도로</button></div>
-      <div class="guide-step"><div class="num">3</div><div><b>공약 이행도까지 확인</b><span>언론·시민단체 집계를 인용한 수치</span></div><button class="chip" data-goto="pledge" data-politician="이재명">공약 탭으로</button></div>
-    </div>
-    <div class="guide-grid">
-      <article class="gcard"><div class="gk">01 · 권력 구조</div><h3>권력은 세 갈래로 나뉜다</h3>
-        <p><b>입법</b>(국회 — 법과 예산) · <b>행정</b>(정부·대통령 — 집행) · <b>사법</b>(법원 — 재판). 한국은 대통령 중심제라 대통령 권한이 크고, 국회 다수당이 야당이면 <b>여소야대</b>로 국정이 막힌다. 대통령이 직무를 못 하면 국무총리가 <b>권한대행</b>한다.</p>
-        <div class="links"><span class="lbl">관련</span><button class="chip" data-goto="term" data-term="여소야대">여소야대</button><button class="chip" data-goto="term" data-term="권한대행">권한대행</button><button class="chip" data-goto="term" data-term="개헌">개헌</button><button class="chip" data-goto="person" data-person="우원식">국회의장 우원식</button></div></article>
-      <article class="gcard"><div class="gk">02 · 선거</div><h3>선거는 네 종류, 주기가 다르다</h3>
-        <p><b>대선</b> 5년 단임 · <b>총선</b> 4년(국회의원 300석) · <b>지선</b> 4년(시장·지사·교육감) · 결원 시 <b>보궐선거</b>. 총선과 지선이 같은 해 열리는 해는 정치 일정이 집중된다. 총선 결과는 관계도 하단의 정당지도(제22대 의석 분포)에서 바로 볼 수 있다.</p>
-        <div class="links"><span class="lbl">관련</span><button class="chip" data-goto="rel">정당지도 보기</button><button class="chip" data-goto="term" data-term="87년 체제">87년 체제</button></div></article>
-      <article class="gcard"><div class="gk">03 · 진영</div><h3>정당 이름보다 '진영'부터 읽자</h3>
-        <p><b>보수</b>(국민의힘 계열 · 빨강) · <b>민주진영</b>(더불어민주당 계열 · 파랑) · <b>제3지대·진보</b>(회색). 정당 이름은 합당·개명으로 자주 바뀌지만 진영 색은 오래 간다 — 관계도의 진영 필터로 한쪽 인맥만 떼어 볼 수 있다.</p>
-        <div class="links"><span class="lbl">관련</span><button class="chip" data-goto="rel" data-camp="con">보수만 보기</button><button class="chip" data-goto="rel" data-camp="dem">민주진영만 보기</button><button class="chip" data-goto="term" data-term="지역주의">지역주의</button></div></article>
-      <article class="gcard"><div class="gk">04 · 관계도 읽는 법</div><h3>선 색이 인맥의 종류다</h3>
-        <p>사각형은 대통령, 원은 일반 인물. 인물에 호버하면 그 인물의 선만 강조된다. <b>계보</b>(정치적 후계·문하)와 <b>동맹</b>(합당·연합)가 정치 지형을 만들고, <b>갈등</b> 선은 대선·경선 라이벌 구도다.</p>
-        <div class="legend-row"><span><i class="sw" style="background:var(--rel-family)"></i>혈연</span><span><i class="sw" style="background:var(--rel-lineage)"></i>계보</span><span><i class="sw" style="background:var(--rel-faction)"></i>동맹·합당</span><span><i class="sw" style="background:var(--rel-school)"></i>동문·동기</span><span><i class="sw" style="background:var(--rel-rival)"></i>갈등</span></div>
-        <div class="links"><span class="lbl">관련</span><button class="chip" data-goto="person" data-person="김종필">3당 합당의 김종필</button><button class="chip" data-goto="person" data-person="노무현">참여정부 노무현</button></div></article>
-      <article class="gcard"><div class="gk">05 · 공약</div><h3>공약은 약속 목록, 이행도는 감사 보고서</h3>
-        <p>후보가 선거 때 내놓은 구체적 공약 목록. 이행 여부는 언론·시민단체(뉴스톱·경실련)가 집계하고, 이 사이트는 그 <b>집계를 인용</b>한다 — 자체 판정하지 않는다. 공약 원문은 중앙선거관리위원회에 등록된다.</p>
-        <div class="links"><span class="lbl">관련</span><button class="chip" data-goto="pledge" data-politician="문재인">문재인 공약</button><button class="chip" data-goto="pledge" data-politician="윤석열">윤석열 공약</button></div></article>
-      <article class="gcard"><div class="gk">06 · 뉴스</div><h3>정치 뉴스 읽는 순서</h3>
-        <p>① 인물이 어느 <b>진영·계보</b>인지 → ② 핵심 <b>용어</b>(탄핵·계파·공수처 등) → ③ 그 인물의 <b>과거 정책</b>. 관계도 → 인물백과 → 정책백과 순으로 따라가면 맥락이 잡힌다. 모든 항목에 출처와 수집일이 붙어 있다.</p>
-        <div class="links"><span class="lbl">관련</span><button class="chip" data-goto="gloss">용어 사전</button><button class="chip" data-goto="term" data-term="탄핵">탄핵</button><button class="chip" data-goto="term" data-term="검찰개혁">검찰개혁</button></div></article>
-    </div>
-    <div class="guide-terms"><h3>입문자가 가장 먼저 만나는 용어</h3><p>누르면 용어 사전에서 바로 펼쳐진다.</p><div id="guide-terms" class="links"></div></div>
-  </section>
 </main>
 
 <div id="note-overlay"><div class="note" id="note-body"></div></div>
@@ -355,7 +297,7 @@ const GLOSSARY = DB.glossary;
 const SRC_WIKI = "위키백과 · 2026-10 수집";
 
 // ===== 탭 (주소 hash 연동: #people #pol … 북마크·공유 링크·뒤로가기) =====
-const TABS=['rel','guide','people','pol','prom','gloss'];
+const TABS=['rel','people','pol','prom','gloss'];
 function showTab(t,scrollTop){
   if(!TABS.includes(t)) t='rel';
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
@@ -378,7 +320,7 @@ setHdrH(); addEventListener('resize',setHdrH);
   el.title='인물·정책·공약 데이터는 위키백과 기반, 뉴스는 관련 보도 수집분';
 }
 
-// ===== 심층 이동 (전역 검색·가이드 칩 공용): 탭 전환 + 해당 항목으로 스크롤/하이라이트 =====
+// ===== 심층 이동 (전역 검색 공용): 탭 전환 + 해당 항목으로 스크롤/하이라이트 =====
 function goDeep(kind,d){
   d=d||{};
   if(kind==='person'&&d.person){
@@ -402,7 +344,6 @@ function goDeep(kind,d){
   }
   showTab(kind,true);
 }
-document.getElementById('page-guide').addEventListener('click',e=>{ const b=e.target.closest('[data-goto]'); if(b) goDeep(b.dataset.goto,b.dataset); });
 
 // ===== 전역 검색 (인물 · 정책 · 공약 · 용어) =====
 const gsInput=document.getElementById('gsearch'), gsDrop=document.getElementById('gsearch-drop');
@@ -989,13 +930,6 @@ function renderGloss(q){
 document.getElementById("gloss-search").addEventListener("input",e=>renderGloss(e.target.value));
 renderGloss("");
 
-// 가이드 — 입문자 우선 용어 칩 (용어사전에 실제로 등록된 것만 노출)
-{
-  const PREF=['탄핵','계파','여소야대','총선','지방선거','권한대행','계보','삼김','87년 체제','지역주의','공수처','검찰개혁','촛불집회','게이트'];
-  let terms=PREF.filter(t=>GLOSSARY.some(g=>g.t===t));
-  if(terms.length<6) GLOSSARY.forEach(g=>{ if(terms.length<10&&!terms.includes(g.t)) terms.push(g.t); });
-  document.getElementById('guide-terms').innerHTML='<span class="lbl">바로가기</span>'+terms.map(t=>'<button class="chip" data-goto="term" data-term="'+t.replace(/"/g,'')+'">'+t+'</button>').join('');
-}
 // 주소 hash로 직접 진입(#people 등) + 뒤로가기
 addEventListener('hashchange',()=>{ const h=location.hash.slice(1); if(TABS.includes(h)&&!document.getElementById('page-'+h).classList.contains('active')) showTab(h); });
 { const h=location.hash.slice(1); showTab(TABS.includes(h)?h:'rel'); }
